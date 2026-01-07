@@ -1,0 +1,51 @@
+[
+  {"ID": 1, "Name": "Strategy Development - Test 06 Jan", "Domain": "Strategic Management", "Parent": null, "Level": 1, "Maturity": null, "Risk": null, "TIME": null},
+  {"ID": 2, "Name": "Strategic Planning", "Domain": "Strategic Management", "Parent": 1, "Level": 2, "Maturity": 4.2, "Risk": 1.8, "TIME": "I"},
+  {"ID": 3, "Name": "Business Model Innovation", "Domain": "Strategic Management", "Parent": 1, "Level": 2, "Maturity": 2.7, "Risk": 3.4, "TIME": "I"},
+  {"ID": 4, "Name": "Portfolio Management", "Domain": "Strategic Management", "Parent": 1, "Level": 2, "Maturity": 4.8, "Risk": 1.2, "TIME": "I"},
+  
+  {"ID": 5, "Name": "Performance Management", "Domain": "Strategic Management", "Parent": null, "Level": 1, "Maturity": null, "Risk": null, "TIME": null},
+  {"ID": 6, "Name": "KPI Management", "Domain": "Strategic Management", "Parent": 5, "Level": 2, "Maturity": 1.9, "Risk": 4.1, "TIME": "M"},
+  {"ID": 7, "Name": "Balanced Scorecard", "Domain": "Strategic Management", "Parent": 5, "Level": 2, "Maturity": 3.3, "Risk": 2.8, "TIME": "T"},
+  
+  {"ID": 8, "Name": "QWERTY - Risk & Compliance", "Domain": "Strategic Management", "Parent": null, "Level": 1, "Maturity": null, "Risk": null, "TIME": null},
+  {"ID": 9, "Name": "QWERTY - Enterprise Risk Mgmt", "Domain": "Strategic Management", "Parent": 8, "Level": 2, "Maturity": 3.9, "Risk": 2.2, "TIME": "I"},
+  {"ID": 10, "Name": "QWERTY - Regulatory Compliance", "Domain": "Strategic Management", "Parent": 8, "Level": 2, "Maturity": 4.4, "Risk": 1.6, "TIME": "I"},
+  
+  {"ID": 11, "Name": "Customer Engagement", "Domain": "Customer Relationships", "Parent": null, "Level": 1, "Maturity": null, "Risk": null, "TIME": null},
+  {"ID": 12, "Name": "Client Onboarding", "Domain": "Customer Relationships", "Parent": 11, "Level": 2, "Maturity": 3.1, "Risk": 2.9, "TIME": "I"},
+  {"ID": 13, "Name": "QWERTY - Relationship Management", "Domain": "Customer Relationships", "Parent": 11, "Level": 2, "Maturity": 2.3, "Risk": 3.7, "TIME": "M"},
+  {"ID": 14, "Name": "QWERTY - Client Reporting", "Domain": "Customer Relationships", "Parent": 11, "Level": 2, "Maturity": 4.1, "Risk": 1.9, "TIME": "I"},
+  
+  {"ID": 15, "Name": "Customer Insights", "Domain": "Customer Relationships", "Parent": null, "Level": 1, "Maturity": null, "Risk": null, "TIME": null},
+  {"ID": 16, "Name": "Customer Analytics", "Domain": "Customer Relationships", "Parent": 15, "Level": 2, "Maturity": 1.4, "Risk": 4.6, "TIME": "M"},
+  {"ID": 17, "Name": "Feedback Management", "Domain": "Customer Relationships", "Parent": 15, "Level": 2, "Maturity": 2.1, "Risk": 3.2, "TIME": "I"},
+  
+  {"ID": 18, "Name": "Data Management", "Domain": "Data & Technology", "Parent": null, "Level": 1, "Maturity": null, "Risk": null, "TIME": null},
+  {"ID": 19, "Name": "Data Governance", "Domain": "Data & Technology", "Parent": 18, "Level": 2, "Maturity": 2.4, "Risk": 3.6, "TIME": "I"},
+  {"ID": 20, "Name": "Master Data Mgmt", "Domain": "Data & Technology", "Parent": 18, "Level": 2, "Maturity": 2.2, "Risk": 3.8, "TIME": "I"},
+  {"ID": 21, "Name": "Data Quality", "Domain": "Data & Technology", "Parent": 18, "Level": 2, "Maturity": 2.9, "Risk": 3.1, "TIME": "I"},
+  
+  {"ID": 22, "Name": "Enterprise Architecture", "Domain": "Data & Technology", "Parent": null, "Level": 1, "Maturity": null, "Risk": null, "TIME": null},
+  {"ID": 23, "Name": "Application Portfolio", "Domain": "Data & Technology", "Parent": 22, "Level": 2, "Maturity": 3.4, "Risk": 2.6, "TIME": "I"},
+  {"ID": 24, "Name": "Technology Standards", "Domain": "Data & Technology", "Parent": 22, "Level": 2, "Maturity": 3.0, "Risk": 3.0, "TIME": "I"},
+  {"ID": 25, "Name": "Integration Architecture", "Domain": "Data & Technology", "Parent": 22, "Level": 2, "Maturity": 2.5, "Risk": 3.5, "TIME": "M"},
+  
+  {"ID": 26, "Name": "Financial Management", "Domain": "Finance & Operations", "Parent": null, "Level": 1, "Maturity": null, "Risk": null, "TIME": null},
+  {"ID": 27, "Name": "Accounting", "Domain": "Finance & Operations", "Parent": 26, "Level": 2, "Maturity": 4.1, "Risk": 1.9, "TIME": "T"},
+  {"ID": 28, "Name": "Budgeting & Forecasting", "Domain": "Finance & Operations", "Parent": 26, "Level": 2, "Maturity": 3.7, "Risk": 2.3, "TIME": "I"},
+  {"ID": 29, "Name": "Financial Reporting", "Domain": "Finance & Operations", "Parent": 26, "Level": 2, "Maturity": 4.6, "Risk": 1.4, "TIME": "I"},
+  
+  {"ID": 30, "Name": "Operations", "Domain": "Finance & Operations", "Parent": null, "Level": 1, "Maturity": null, "Risk": null, "TIME": null},
+  {"ID": 31, "Name": "Procurement", "Domain": "Finance & Operations", "Parent": 30, "Level": 2, "Maturity": 3.3, "Risk": 2.7, "TIME": "T"},
+  {"ID": 32, "Name": "Facilities Management", "Domain": "Finance & Operations", "Parent": 30, "Level": 2, "Maturity": 3.1, "Risk": 2.9, "TIME": "T"},
+  
+  {"ID": 33, "Name": "Talent Management", "Domain": "Human Resources", "Parent": null, "Level": 1, "Maturity": null, "Risk": null, "TIME": null},
+  {"ID": 34, "Name": "Recruitment", "Domain": "Human Resources", "Parent": 33, "Level": 2, "Maturity": 3.2, "Risk": 2.8, "TIME": "I"},
+  {"ID": 35, "Name": "Learning & Development", "Domain": "Human Resources", "Parent": 33, "Level": 2, "Maturity": 4.0, "Risk": 2.0, "TIME": "I"},
+  {"ID": 36, "Name": "Performance Reviews", "Domain": "Human Resources", "Parent": 33, "Level": 2, "Maturity": 2.8, "Risk": 3.2, "TIME": "T"},
+  
+  {"ID": 37, "Name": "HR Operations", "Domain": "Human Resources", "Parent": null, "Level": 1, "Maturity": null, "Risk": null, "TIME": null},
+  {"ID": 38, "Name": "Payroll", "Domain": "Human Resources", "Parent": 37, "Level": 2, "Maturity": 4.2, "Risk": 1.8, "TIME": "T"},
+  {"ID": 39, "Name": "Benefits Administration", "Domain": "Human Resources", "Parent": 37, "Level": 2, "Maturity": 3.9, "Risk": 2.1, "TIME": "T"}
+]
