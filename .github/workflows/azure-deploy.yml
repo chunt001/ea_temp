@@ -21,39 +21,3 @@ jobs:
           action: "upload"
           app_location: "/"
           output_location: "/"
-```
-
-6. **Scroll down**
-
-7. **Click the green "Commit changes..." button**
-
-8. **In the popup, click "Commit changes" again**
-
----
-
-## **What Happens Next:**
-
-1. **GitHub creates the workflow file**
-2. **Automatically triggers the workflow** (because you pushed to main branch)
-3. **The workflow runs** and deploys to Azure
-
----
-
-## **Now Go to Actions Tab:**
-
-1. **Click the "Actions" tab** at the top
-2. **You should now see your workflow running!**
-3. **Click on it to watch progress**
-4. **Wait for the green checkmark** ✓
-
----
-
-## **Visual Guide:**
-```
-Step 1: Click "<> Code" tab to go to main repo page
-Step 2: Click "Add file" → "Create new file"
-Step 3: Type filename: .github/workflows/azure-deploy.yml
-Step 4: Paste the YAML code above
-Step 5: Click "Commit changes"
-Step 6: Go to "Actions" tab
-Step 7: Watch it deploy!
