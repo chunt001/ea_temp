@@ -1,0 +1,14 @@
+{
+  "name": "legal-affairs-ea-api",
+  "version": "1.0.0",
+  "description": "Azure Functions API for Legal Affairs EA Assessment",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "parse-multipart": "^1.0.4",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {}
+}
