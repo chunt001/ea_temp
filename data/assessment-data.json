@@ -1,0 +1,3249 @@
+{
+  "capabilities": {
+    "capabilities": [
+      {
+        "l1_id": "L1-001",
+        "l1_name": "Contract Legal Services",
+        "l1_description": "Legal services within contract lifecycle management across all BCI business units, including drafting, review, and recommendations. Legal's contribution to enterprise-wide Contract Management (Procurement owns vendor contracts, asset classes own investment contracts, HR owns employment contracts)",
+        "l2_capabilities": [
+          {
+            "l2_id": "L2-001",
+            "l2_name": "Investment Transaction Legal Guidance & Due Diligence",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 3.0,
+            "automation_level": 5,
+            "technology_fit_score": 1,
+            "tech_team_tech_fit": 1,
+            "strategic_importance": 5,
+            "current_technologies": [
+              "NetDocuments",
+              "Docusign"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Highly Automated",
+            "technology_fit_label": "Poor Fit",
+            "strategic_importance_label": "Mission-Critical",
+            "priority_level": "Maintain",
+            "bh_notes": "Core to investment mandate; due diligence directly protects beneficiaries. No current issues reported.",
+            "btf_notes": "Deal management system fully integrated with due diligence workflows; automated document assembly and tracking; users highly satisfied with functionality.",
+            "recommended_action": "Fix"
+          },
+          {
+            "l2_id": "L2-002",
+            "l2_name": "Investment Management Agreements Management",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 3.0,
+            "automation_level": 3,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "NetDocuments",
+              "Docusign",
+              "Litera Compare"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Moderate Priority",
+            "bh_notes": "Essential for fund relationships but some contract tracking gaps noted in recent audit.",
+            "btf_notes": "IMA tracking system covers core needs but renewal reminders require manual follow-up; some reporting gaps identified.",
+            "recommended_action": "Improve"
+          },
+          {
+            "l2_id": "L2-003",
+            "l2_name": "Fund Documentation & Structuring",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 5.0,
+            "automation_level": 5,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 5,
+            "current_technologies": [
+              "NetDocuments",
+              "Practical Law"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Highly Automated",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Mission-Critical",
+            "priority_level": "Maintain",
+            "bh_notes": "Regulatory requirement for fund formation; processes well-established and documented.",
+            "btf_notes": "Fund documentation platform comprehensive with automated clause libraries and version control; enables best practices across all fund types.",
+            "recommended_action": "Maintain"
+          },
+          {
+            "l2_id": "L2-004",
+            "l2_name": "Co-Investment & Joint Venture Legal Services",
+            "l2_description": "",
+            "current_maturity": 2,
+            "business_tech_fit": 2.0,
+            "automation_level": 3,
+            "technology_fit_score": 1,
+            "tech_team_tech_fit": 1,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "NetDocuments",
+              "Docusign"
+            ],
+            "operational_health_label": "Unhealthy",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Poor Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "High Priority",
+            "bh_notes": "Supports deal flow but currently experiencing delays due to resource constraints and unclear workflows.",
+            "btf_notes": "JV documentation handled through generic tools not designed for complex deal structures; significant manual coordination required; evaluate specialized solution.",
+            "recommended_action": "Evaluate"
+          },
+          {
+            "l2_id": "L2-005",
+            "l2_name": "Securities & Investment Regulatory Compliance",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 2.5,
+            "automation_level": 2,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 5,
+            "current_technologies": [
+              "FundApps",
+              "Aosphere LLP"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Mostly Manual",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Mission-Critical",
+            "priority_level": "High Priority",
+            "bh_notes": "Fiduciary obligation; some compliance monitoring gaps identified requiring attention.",
+            "btf_notes": "Regulatory tracking adequate but mostly manual monitoring of compliance deadlines; good opportunity for workflow automation.",
+            "recommended_action": "Automate"
+          }
+        ]
+      },
+      {
+        "l1_id": "L1-002",
+        "l1_name": "Corporate Governance",
+        "l1_description": "Management of corporate governance, board operations, policy administration, and corporate records management.",
+        "l2_capabilities": [
+          {
+            "l2_id": "L2-006",
+            "l2_name": "Contract Review",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 4.0,
+            "automation_level": 3,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "NetDocuments",
+              "Litera Compare"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Maintain",
+            "bh_notes": "Standard business enabler; current processes functioning well with no complaints.",
+            "btf_notes": "Contract review AI tool excellent fit for standard agreements; minimal manual effort needed for routine reviews.",
+            "recommended_action": "Automate"
+          },
+          {
+            "l2_id": "L2-007",
+            "l2_name": "Contract Drafting & Template Management",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 2.5,
+            "automation_level": 2,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 3,
+            "current_technologies": [
+              "NetDocuments",
+              "Litera Compare",
+              "Docusign"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Mostly Manual",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Supporting",
+            "priority_level": "Low Priority",
+            "bh_notes": "Efficiency-focused capability; template library outdated and needs refresh.",
+            "btf_notes": "Template library functional but manual version control; high volume creates opportunity for automation with clause management system.",
+            "recommended_action": "Automate"
+          }
+        ]
+      },
+      {
+        "l1_id": "L1-003",
+        "l1_name": "Government Relations",
+        "l1_description": "Management of BCI's relationships with government entities, regulatory stakeholders, and freedom of information requests",
+        "l2_capabilities": [
+          {
+            "l2_id": "L2-008",
+            "l2_name": "Litigation Management",
+            "l2_description": "",
+            "current_maturity": 2,
+            "business_tech_fit": 2.0,
+            "automation_level": 3,
+            "technology_fit_score": 1,
+            "tech_team_tech_fit": 1,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "Onit",
+              "NetDocuments"
+            ],
+            "operational_health_label": "Unhealthy",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Poor Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "High Priority",
+            "bh_notes": "Important for risk mitigation but active matters showing coordination challenges with outside counsel.",
+            "btf_notes": "E-billing system partial fit for litigation tracking; matter management gaps require parallel spreadsheet tracking; assess fit before further investment.",
+            "recommended_action": "Evaluate"
+          },
+          {
+            "l2_id": "L2-009",
+            "l2_name": "General Matter Management",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 5.0,
+            "automation_level": 5,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "Onit",
+              "NetDocuments"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Highly Automated",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Maintain",
+            "bh_notes": "Operational necessity; intake process streamlined and stakeholders satisfied.",
+            "btf_notes": "Matter intake system highly automated with self-service portal; excellent integration with case management; stakeholders satisfied.",
+            "recommended_action": "Maintain"
+          }
+        ]
+      },
+      {
+        "l1_id": "L1-004",
+        "l1_name": "Investment Legal Services",
+        "l1_description": "Legal services supporting BCI's investment activities, including fund investments, investment manager relationships, and securities compliance specific to investment operations",
+        "l2_capabilities": [
+          {
+            "l2_id": "L2-010",
+            "l2_name": "Regulatory Intelligence & Change Management",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 2.5,
+            "automation_level": 2,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 5,
+            "current_technologies": [
+              "Aosphere LLP",
+              "Practical Law"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Mostly Manual",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Mission-Critical",
+            "priority_level": "High Priority",
+            "bh_notes": "Critical for staying ahead of regulatory changes; monitoring tools need enhancement.",
+            "btf_notes": "Regulatory intelligence relies on manual monitoring and email alerts; adequate coverage but automation would improve timeliness.",
+            "recommended_action": "Automate"
+          },
+          {
+            "l2_id": "L2-011",
+            "l2_name": "Legal Compliance Program Design & Advisory",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 5.0,
+            "automation_level": 5,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 5,
+            "current_technologies": [
+              "STAR Compliance",
+              "SharePoint Online"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Highly Automated",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Mission-Critical",
+            "priority_level": "Maintain",
+            "bh_notes": "Regulatory requirement; program framework solid with clean audit results.",
+            "btf_notes": "Compliance program fully supported by GRC platform; automated policy attestation and training tracking; clean audit results.",
+            "recommended_action": "Maintain"
+          },
+          {
+            "l2_id": "L2-012",
+            "l2_name": "Personal, Private, and Sensitive Information Protection Legal Advisory",
+            "l2_description": "",
+            "current_maturity": 2,
+            "business_tech_fit": 1.5,
+            "automation_level": 2,
+            "technology_fit_score": 1,
+            "tech_team_tech_fit": 1,
+            "strategic_importance": 5,
+            "current_technologies": [
+              "SharePoint Online",
+              "ServiceNow"
+            ],
+            "operational_health_label": "Unhealthy",
+            "automation_level_label": "Mostly Manual",
+            "technology_fit_label": "Poor Fit",
+            "strategic_importance_label": "Mission-Critical",
+            "priority_level": "Critical Priority",
+            "bh_notes": "Privacy compliance mandatory; recent PIPEDA assessment revealed gaps requiring remediation.",
+            "btf_notes": "Privacy tools inadequate for current regulatory requirements; manual tracking of data subject requests; replacement recommended.",
+            "recommended_action": "Replace"
+          },
+          {
+            "l2_id": "L2-013",
+            "l2_name": "Trading & MNPI Controls",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 3.0,
+            "automation_level": 3,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "STAR Compliance",
+              "Confidentiality Walls & Restricted Lists",
+              "BB AIM",
+              "PIT Plans"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Moderate Priority",
+            "bh_notes": "Supports trading compliance; preclearance system functional but manual workarounds needed.",
+            "btf_notes": "MNPI controls partially automated through information barriers system; some manual attestation processes; targeted improvements needed.",
+            "recommended_action": "Improve"
+          },
+          {
+            "l2_id": "L2-014",
+            "l2_name": "Ethics & Code of Conduct Management",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 5.0,
+            "automation_level": 5,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 5,
+            "current_technologies": [
+              "STAR Compliance",
+              "Workday"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Highly Automated",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Mission-Critical",
+            "priority_level": "Maintain",
+            "bh_notes": "Foundational to culture; ethics program well-received with high completion rates.",
+            "btf_notes": "Ethics platform comprehensive with automated disclosures, gift tracking, and annual certifications; highly effective.",
+            "recommended_action": "Maintain"
+          }
+        ]
+      },
+      {
+        "l1_id": "L1-005",
+        "l1_name": "Legal Advisory & Research",
+        "l1_description": "Legal advisory, research, and education services provided to BCI business units, supporting business decision-making, risk assessment, and legal awareness",
+        "l2_capabilities": [
+          {
+            "l2_id": "L2-015",
+            "l2_name": "Legal Research & Analysis",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 3.0,
+            "automation_level": 3,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "Westlaw Canada",
+              "Practical Law"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Moderate Priority",
+            "bh_notes": "Enables informed decisions; research tools adequate but response times could improve.",
+            "btf_notes": "Legal research databases adequate but search functionality limited; AI-assisted research tools could improve efficiency.",
+            "recommended_action": "Improve"
+          },
+          {
+            "l2_id": "L2-016",
+            "l2_name": "Legal Opinion & Guidance",
+            "l2_description": "",
+            "current_maturity": 2,
+            "business_tech_fit": 2.0,
+            "automation_level": 3,
+            "technology_fit_score": 1,
+            "tech_team_tech_fit": 1,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "NetDocuments",
+              "Westlaw Canada"
+            ],
+            "operational_health_label": "Unhealthy",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Poor Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "High Priority",
+            "bh_notes": "Key advisory function but backlog growing and some stakeholder dissatisfaction noted.",
+            "btf_notes": "Opinion drafting heavily manual with limited template support; system doesn't meet complex advisory needs; evaluate fit before automation.",
+            "recommended_action": "Evaluate"
+          },
+          {
+            "l2_id": "L2-017",
+            "l2_name": "Corporate Transaction Guidance & Due Diligence",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 3.5,
+            "automation_level": 2,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 3,
+            "current_technologies": [
+              "NetDocuments",
+              "Practical Law"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Mostly Manual",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Supporting",
+            "priority_level": "Maintain",
+            "bh_notes": "Supports M&A activity; current capacity sufficient for transaction volume.",
+            "btf_notes": "M&A due diligence tools excellent fit; virtual data room fully integrated; manual approach appropriate for high-judgment work.",
+            "recommended_action": "Right-Size"
+          },
+          {
+            "l2_id": "L2-018",
+            "l2_name": "Risk Assessment & Advisory",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 3.0,
+            "automation_level": 3,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "SharePoint Online",
+              "Moody's Analytics Credit Ratings"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Moderate Priority",
+            "bh_notes": "Valuable for decision support; methodology needs standardization across practice areas.",
+            "btf_notes": "Risk assessment partially automated; framework adequate but scoring mechanisms need refinement.",
+            "recommended_action": "Improve"
+          },
+          {
+            "l2_id": "L2-019",
+            "l2_name": "Stakeholder Legal Education & Training",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 3.5,
+            "automation_level": 2,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 3,
+            "current_technologies": [
+              "SharePoint Online",
+              "Workday"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Mostly Manual",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Supporting",
+            "priority_level": "Maintain",
+            "bh_notes": "Nice-to-have capability; training well-received when delivered but not consistently scheduled.",
+            "btf_notes": "Training delivery through LMS works well for compliance modules; manual effort appropriate for interactive legal workshops.",
+            "recommended_action": "Right-Size"
+          }
+        ]
+      },
+      {
+        "l1_id": "L1-006",
+        "l1_name": "Legal Operations & Administration",
+        "l1_description": "Operational capabilities that enable Legal Affairs to function effectively, including external counsel management, budget, technology, knowledge, performance, and project management",
+        "l2_capabilities": [
+          {
+            "l2_id": "L2-020",
+            "l2_name": "Corporate Governance Guidance",
+            "l2_description": "",
+            "current_maturity": 2,
+            "business_tech_fit": 3.0,
+            "automation_level": 5,
+            "technology_fit_score": 1,
+            "tech_team_tech_fit": 1,
+            "strategic_importance": 5,
+            "current_technologies": [
+              "Diligent Board Books",
+              "NetDocuments"
+            ],
+            "operational_health_label": "Unhealthy",
+            "automation_level_label": "Highly Automated",
+            "technology_fit_label": "Poor Fit",
+            "strategic_importance_label": "Mission-Critical",
+            "priority_level": "Critical Priority",
+            "bh_notes": "Board-critical capability; governance framework struggling with recent regulatory changes.",
+            "btf_notes": "Board portal highly automated but poor integration with document management; workflow conflicts causing user frustration; prioritize fix.",
+            "recommended_action": "Fix"
+          },
+          {
+            "l2_id": "L2-021",
+            "l2_name": "Board & Committee Guidance",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 3.0,
+            "automation_level": 3,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "Diligent Board Books",
+              "NetDocuments"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Moderate Priority",
+            "bh_notes": "Supports board effectiveness; some delays in materials preparation noted.",
+            "btf_notes": "Committee support partially automated; calendar and materials distribution adequate; agenda management needs improvement.",
+            "recommended_action": "Improve"
+          },
+          {
+            "l2_id": "L2-022",
+            "l2_name": "Policy & Directive Management",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 4.0,
+            "automation_level": 3,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "SharePoint Online",
+              "NetDocuments"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Maintain",
+            "bh_notes": "Operational enabler; policy repository organized and accessible.",
+            "btf_notes": "Policy management system excellent fit with automated review cycles; opportunity to add workflow automation for approvals.",
+            "recommended_action": "Automate"
+          },
+          {
+            "l2_id": "L2-023",
+            "l2_name": "Records Management",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 2.5,
+            "automation_level": 2,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 3,
+            "current_technologies": [
+              "NetDocuments",
+              "SharePoint Online"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Mostly Manual",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Supporting",
+            "priority_level": "Low Priority",
+            "bh_notes": "Administrative function; retention schedules need review and updates.",
+            "btf_notes": "Records management mostly manual with file shares; adequate for current needs but automation would improve retrieval efficiency.",
+            "recommended_action": "Automate"
+          }
+        ]
+      },
+      {
+        "l1_id": "L1-007",
+        "l1_name": "Legal Regulatory & Compliance",
+        "l1_description": "Enterprise-wide regulatory compliance and ethics program management, including regulatory intelligence, privacy compliance, trading controls, and ethics programs. Legal owns this at BCI.",
+        "l2_capabilities": [
+          {
+            "l2_id": "L2-024",
+            "l2_name": "External Counsel & Vendor Management",
+            "l2_description": "",
+            "current_maturity": 2,
+            "business_tech_fit": 2.0,
+            "automation_level": 3,
+            "technology_fit_score": 1,
+            "tech_team_tech_fit": 1,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "Onit",
+              "Onit"
+            ],
+            "operational_health_label": "Unhealthy",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Poor Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "High Priority",
+            "bh_notes": "Cost management important; vendor relationships strained due to billing disputes.",
+            "btf_notes": "Outside counsel management system partial fit; rate tracking works but matter assignment process has gaps; assess before automating.",
+            "recommended_action": "Evaluate"
+          },
+          {
+            "l2_id": "L2-025",
+            "l2_name": "Legal Affairs Financial Management",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 3.5,
+            "automation_level": 2,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 3,
+            "current_technologies": [
+              "Onit",
+              "MS Dynamics NAV"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Mostly Manual",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Supporting",
+            "priority_level": "Maintain",
+            "bh_notes": "Internal function; budget tracking adequate for current needs.",
+            "btf_notes": "Legal spend tracking excellent fit in finance system; mostly manual but low volume doesn't justify automation investment.",
+            "recommended_action": "Right-Size"
+          },
+          {
+            "l2_id": "L2-026",
+            "l2_name": "Legal Affairs Technology Management",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 2.5,
+            "automation_level": 2,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 3,
+            "current_technologies": [
+              "ServiceNow",
+              "JIRA"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Mostly Manual",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Supporting",
+            "priority_level": "Low Priority",
+            "bh_notes": "Efficiency driver; technology stack fragmented with user adoption challenges.",
+            "btf_notes": "Legal tech stack adequate but manual integration between systems; good automation opportunity for data synchronization.",
+            "recommended_action": "Automate"
+          },
+          {
+            "l2_id": "L2-027",
+            "l2_name": "Legal Affairs Knowledge Management",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 4.0,
+            "automation_level": 3,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "NetDocuments",
+              "LIPS"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Maintain",
+            "bh_notes": "Knowledge sharing valuable; repository exists but utilization is low.",
+            "btf_notes": "Knowledge management excellent fit with search and taxonomy; opportunity to automate content tagging and curation.",
+            "recommended_action": "Automate"
+          },
+          {
+            "l2_id": "L2-028",
+            "l2_name": "Legal Affairs Performance Management",
+            "l2_description": "",
+            "current_maturity": 2,
+            "business_tech_fit": 1.5,
+            "automation_level": 2,
+            "technology_fit_score": 1,
+            "tech_team_tech_fit": 1,
+            "strategic_importance": 3,
+            "current_technologies": [
+              "Onit",
+              "SharePoint Online"
+            ],
+            "operational_health_label": "Unhealthy",
+            "automation_level_label": "Mostly Manual",
+            "technology_fit_label": "Poor Fit",
+            "strategic_importance_label": "Supporting",
+            "priority_level": "Moderate Priority",
+            "bh_notes": "Performance visibility needed; metrics not consistently tracked or reported.",
+            "btf_notes": "Performance metrics tracked manually in spreadsheets; current tools don't meet reporting needs; consider replacement.",
+            "recommended_action": "Replace"
+          },
+          {
+            "l2_id": "L2-029",
+            "l2_name": "Entity Management",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 3.0,
+            "automation_level": 3,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "NetDocuments",
+              "Diligent Board Books"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Moderate Priority",
+            "bh_notes": "Compliance requirement; entity records current but process is manual.",
+            "btf_notes": "Entity management partially automated; corporate records adequate but subsidiary tracking needs improvement.",
+            "recommended_action": "Improve"
+          },
+          {
+            "l2_id": "L2-030",
+            "l2_name": "Legal Affairs Training and Development",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 3.5,
+            "automation_level": 2,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 3,
+            "current_technologies": [
+              "Workday",
+              "SharePoint Online"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Mostly Manual",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Supporting",
+            "priority_level": "Maintain",
+            "bh_notes": "Staff development important; CLE tracking in place and functioning well.",
+            "btf_notes": "Training tracking manual but LMS platform excellent fit; low volume makes manual approach cost-effective.",
+            "recommended_action": "Right-Size"
+          },
+          {
+            "l2_id": "L2-031",
+            "l2_name": "Legal Affairs Project Management",
+            "l2_description": "",
+            "current_maturity": 3,
+            "business_tech_fit": 3.0,
+            "automation_level": 3,
+            "technology_fit_score": 3,
+            "tech_team_tech_fit": 3,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "JIRA",
+              "SharePoint Online"
+            ],
+            "operational_health_label": "Moderate Concerns",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Adequate Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Moderate Priority",
+            "bh_notes": "Project delivery support; no formal methodology causing inconsistent outcomes.",
+            "btf_notes": "Project tracking adequate through generic PM tool; some legal-specific workflow gaps; targeted improvements recommended.",
+            "recommended_action": "Improve"
+          }
+        ]
+      },
+      {
+        "l1_id": "L1-008",
+        "l1_name": "Matter & Case Management",
+        "l1_description": "Management of legal matters, cases, and legal work across Legal Affairs, including litigation, disputes, and general legal matters, tracked through matter management systems",
+        "l2_capabilities": [
+          {
+            "l2_id": "L2-032",
+            "l2_name": "Government Relations Strategy & Engagement",
+            "l2_description": "",
+            "current_maturity": 2,
+            "business_tech_fit": 3.0,
+            "automation_level": 5,
+            "technology_fit_score": 1,
+            "tech_team_tech_fit": 1,
+            "strategic_importance": 5,
+            "current_technologies": [
+              "SharePoint Online",
+              "NetDocuments"
+            ],
+            "operational_health_label": "Unhealthy",
+            "automation_level_label": "Highly Automated",
+            "technology_fit_label": "Poor Fit",
+            "strategic_importance_label": "Mission-Critical",
+            "priority_level": "Critical Priority",
+            "bh_notes": "Strategically important; government relationships strong but recent regulatory changes creating challenges.",
+            "btf_notes": "Stakeholder database highly automated but poor fit for government relations tracking; contact management inadequate; fix urgently.",
+            "recommended_action": "Fix"
+          },
+          {
+            "l2_id": "L2-033",
+            "l2_name": "Freedom of Information (FOI) Management",
+            "l2_description": "",
+            "current_maturity": 5,
+            "business_tech_fit": 4.0,
+            "automation_level": 3,
+            "technology_fit_score": 5,
+            "tech_team_tech_fit": 5,
+            "strategic_importance": 4,
+            "current_technologies": [
+              "ServiceNow",
+              "NetDocuments"
+            ],
+            "operational_health_label": "Healthy",
+            "automation_level_label": "Partially Automated",
+            "technology_fit_label": "Excellent Fit",
+            "strategic_importance_label": "Important",
+            "priority_level": "Maintain",
+            "bh_notes": "Compliance obligation; FOI response process efficient with good deadline management.",
+            "btf_notes": "FOI request system excellent fit with automated workflows; opportunity to further automate response assembly.",
+            "recommended_action": "Automate"
+          }
+        ]
+      }
+    ],
+    "maturity_levels": {
+      "1": {
+        "label": "Critical Gap",
+        "description": "Unhealthy / Poor Fit",
+        "color": "#d32f2f"
+      },
+      "2": {
+        "label": "Needs Improvement",
+        "description": "Unhealthy / Mostly Manual",
+        "color": "#f57c00"
+      },
+      "3": {
+        "label": "Adequate",
+        "description": "Moderate Concerns / Adequate Fit",
+        "color": "#fbc02d"
+      },
+      "4": {
+        "label": "Good",
+        "description": "Between Adequate and Excellent",
+        "color": "#7cb342"
+      },
+      "5": {
+        "label": "Excellent",
+        "description": "Healthy / Excellent Fit",
+        "color": "#388e3c"
+      }
+    },
+    "scoring_methodology": {
+      "strategic_importance": {
+        "Mission-Critical": 5,
+        "Important": 4,
+        "Supporting": 3
+      },
+      "operational_health": {
+        "Healthy": 5,
+        "Moderate Concerns": 3,
+        "Unhealthy": 2
+      },
+      "automation_level": {
+        "Highly Automated": 5,
+        "Partially Automated": 3,
+        "Mostly Manual": 2,
+        "Fully Manual": 1
+      },
+      "technology_fit": {
+        "Excellent Fit": 5,
+        "Adequate Fit": 3,
+        "Poor Fit": 1
+      }
+    }
+  },
+  "painPoints": [
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Investment Transaction Legal Guidance & Due Diligence",
+      "l2_id": "L2-001",
+      "strategic_importance": 5,
+      "operational_health": 5,
+      "automation_level": 5,
+      "technology_fit": 1,
+      "issues": [
+        {
+          "type": "Technology Fit",
+          "severity": "Critical",
+          "description": "Technology poorly aligned to business needs"
+        }
+      ],
+      "bh_notes": "Core to investment mandate; due diligence directly protects beneficiaries. No current issues reported.",
+      "btf_notes": "Deal management system fully integrated with due diligence workflows; automated document assembly and tracking; users highly satisfied with functionality.",
+      "recommended_action": "Fix",
+      "technologies": [
+        "NetDocuments",
+        "Docusign"
+      ]
+    },
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Investment Management Agreements Management",
+      "l2_id": "L2-002",
+      "strategic_importance": 4,
+      "operational_health": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        }
+      ],
+      "bh_notes": "Essential for fund relationships but some contract tracking gaps noted in recent audit.",
+      "btf_notes": "IMA tracking system covers core needs but renewal reminders require manual follow-up; some reporting gaps identified.",
+      "recommended_action": "Improve",
+      "technologies": [
+        "NetDocuments",
+        "Docusign",
+        "Litera Compare"
+      ]
+    },
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Co-Investment & Joint Venture Legal Services",
+      "l2_id": "L2-004",
+      "strategic_importance": 4,
+      "operational_health": 2,
+      "automation_level": 3,
+      "technology_fit": 1,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Critical",
+          "description": "Operational health issues identified"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Critical",
+          "description": "Technology poorly aligned to business needs"
+        }
+      ],
+      "bh_notes": "Supports deal flow but currently experiencing delays due to resource constraints and unclear workflows.",
+      "btf_notes": "JV documentation handled through generic tools not designed for complex deal structures; significant manual coordination required; evaluate specialized solution.",
+      "recommended_action": "Evaluate",
+      "technologies": [
+        "NetDocuments",
+        "Docusign"
+      ]
+    },
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Securities & Investment Regulatory Compliance",
+      "l2_id": "L2-005",
+      "strategic_importance": 5,
+      "operational_health": 3,
+      "automation_level": 2,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        },
+        {
+          "type": "Manual Work",
+          "severity": "High",
+          "description": "Heavy manual effort (Mostly Manual)"
+        }
+      ],
+      "bh_notes": "Fiduciary obligation; some compliance monitoring gaps identified requiring attention.",
+      "btf_notes": "Regulatory tracking adequate but mostly manual monitoring of compliance deadlines; good opportunity for workflow automation.",
+      "recommended_action": "Automate",
+      "technologies": [
+        "FundApps",
+        "Aosphere LLP"
+      ]
+    },
+    {
+      "l1_capability": "Corporate Governance",
+      "l2_capability": "Contract Drafting & Template Management",
+      "l2_id": "L2-007",
+      "strategic_importance": 3,
+      "operational_health": 3,
+      "automation_level": 2,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        },
+        {
+          "type": "Manual Work",
+          "severity": "Moderate",
+          "description": "Heavy manual effort (Mostly Manual)"
+        }
+      ],
+      "bh_notes": "Efficiency-focused capability; template library outdated and needs refresh.",
+      "btf_notes": "Template library functional but manual version control; high volume creates opportunity for automation with clause management system.",
+      "recommended_action": "Automate",
+      "technologies": [
+        "NetDocuments",
+        "Litera Compare",
+        "Docusign"
+      ]
+    },
+    {
+      "l1_capability": "Government Relations",
+      "l2_capability": "Litigation Management",
+      "l2_id": "L2-008",
+      "strategic_importance": 4,
+      "operational_health": 2,
+      "automation_level": 3,
+      "technology_fit": 1,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Critical",
+          "description": "Operational health issues identified"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Critical",
+          "description": "Technology poorly aligned to business needs"
+        }
+      ],
+      "bh_notes": "Important for risk mitigation but active matters showing coordination challenges with outside counsel.",
+      "btf_notes": "E-billing system partial fit for litigation tracking; matter management gaps require parallel spreadsheet tracking; assess fit before further investment.",
+      "recommended_action": "Evaluate",
+      "technologies": [
+        "Onit",
+        "NetDocuments"
+      ]
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Regulatory Intelligence & Change Management",
+      "l2_id": "L2-010",
+      "strategic_importance": 5,
+      "operational_health": 3,
+      "automation_level": 2,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        },
+        {
+          "type": "Manual Work",
+          "severity": "High",
+          "description": "Heavy manual effort (Mostly Manual)"
+        }
+      ],
+      "bh_notes": "Critical for staying ahead of regulatory changes; monitoring tools need enhancement.",
+      "btf_notes": "Regulatory intelligence relies on manual monitoring and email alerts; adequate coverage but automation would improve timeliness.",
+      "recommended_action": "Automate",
+      "technologies": [
+        "Aosphere LLP",
+        "Practical Law"
+      ]
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Personal, Private, and Sensitive Information Protection Legal Advisory",
+      "l2_id": "L2-012",
+      "strategic_importance": 5,
+      "operational_health": 2,
+      "automation_level": 2,
+      "technology_fit": 1,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Critical",
+          "description": "Operational health issues identified"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Critical",
+          "description": "Technology poorly aligned to business needs"
+        },
+        {
+          "type": "Manual Work",
+          "severity": "High",
+          "description": "Heavy manual effort (Mostly Manual)"
+        }
+      ],
+      "bh_notes": "Privacy compliance mandatory; recent PIPEDA assessment revealed gaps requiring remediation.",
+      "btf_notes": "Privacy tools inadequate for current regulatory requirements; manual tracking of data subject requests; replacement recommended.",
+      "recommended_action": "Replace",
+      "technologies": [
+        "SharePoint Online",
+        "ServiceNow"
+      ]
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Trading & MNPI Controls",
+      "l2_id": "L2-013",
+      "strategic_importance": 4,
+      "operational_health": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        }
+      ],
+      "bh_notes": "Supports trading compliance; preclearance system functional but manual workarounds needed.",
+      "btf_notes": "MNPI controls partially automated through information barriers system; some manual attestation processes; targeted improvements needed.",
+      "recommended_action": "Improve",
+      "technologies": [
+        "STAR Compliance",
+        "Confidentiality Walls & Restricted Lists",
+        "BB AIM",
+        "PIT Plans"
+      ]
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Legal Research & Analysis",
+      "l2_id": "L2-015",
+      "strategic_importance": 4,
+      "operational_health": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        }
+      ],
+      "bh_notes": "Enables informed decisions; research tools adequate but response times could improve.",
+      "btf_notes": "Legal research databases adequate but search functionality limited; AI-assisted research tools could improve efficiency.",
+      "recommended_action": "Improve",
+      "technologies": [
+        "Westlaw Canada",
+        "Practical Law"
+      ]
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Legal Opinion & Guidance",
+      "l2_id": "L2-016",
+      "strategic_importance": 4,
+      "operational_health": 2,
+      "automation_level": 3,
+      "technology_fit": 1,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Critical",
+          "description": "Operational health issues identified"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Critical",
+          "description": "Technology poorly aligned to business needs"
+        }
+      ],
+      "bh_notes": "Key advisory function but backlog growing and some stakeholder dissatisfaction noted.",
+      "btf_notes": "Opinion drafting heavily manual with limited template support; system doesn't meet complex advisory needs; evaluate fit before automation.",
+      "recommended_action": "Evaluate",
+      "technologies": [
+        "NetDocuments",
+        "Westlaw Canada"
+      ]
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Corporate Transaction Guidance & Due Diligence",
+      "l2_id": "L2-017",
+      "strategic_importance": 3,
+      "operational_health": 5,
+      "automation_level": 2,
+      "technology_fit": 5,
+      "issues": [
+        {
+          "type": "Manual Work",
+          "severity": "Moderate",
+          "description": "Heavy manual effort (Mostly Manual)"
+        }
+      ],
+      "bh_notes": "Supports M&A activity; current capacity sufficient for transaction volume.",
+      "btf_notes": "M&A due diligence tools excellent fit; virtual data room fully integrated; manual approach appropriate for high-judgment work.",
+      "recommended_action": "Right-Size",
+      "technologies": [
+        "NetDocuments",
+        "Practical Law"
+      ]
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Risk Assessment & Advisory",
+      "l2_id": "L2-018",
+      "strategic_importance": 4,
+      "operational_health": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        }
+      ],
+      "bh_notes": "Valuable for decision support; methodology needs standardization across practice areas.",
+      "btf_notes": "Risk assessment partially automated; framework adequate but scoring mechanisms need refinement.",
+      "recommended_action": "Improve",
+      "technologies": [
+        "SharePoint Online",
+        "Moody's Analytics Credit Ratings"
+      ]
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Stakeholder Legal Education & Training",
+      "l2_id": "L2-019",
+      "strategic_importance": 3,
+      "operational_health": 5,
+      "automation_level": 2,
+      "technology_fit": 5,
+      "issues": [
+        {
+          "type": "Manual Work",
+          "severity": "Moderate",
+          "description": "Heavy manual effort (Mostly Manual)"
+        }
+      ],
+      "bh_notes": "Nice-to-have capability; training well-received when delivered but not consistently scheduled.",
+      "btf_notes": "Training delivery through LMS works well for compliance modules; manual effort appropriate for interactive legal workshops.",
+      "recommended_action": "Right-Size",
+      "technologies": [
+        "SharePoint Online",
+        "Workday"
+      ]
+    },
+    {
+      "l1_capability": "Legal Operations & Administration",
+      "l2_capability": "Corporate Governance Guidance",
+      "l2_id": "L2-020",
+      "strategic_importance": 5,
+      "operational_health": 2,
+      "automation_level": 5,
+      "technology_fit": 1,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Critical",
+          "description": "Operational health issues identified"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Critical",
+          "description": "Technology poorly aligned to business needs"
+        }
+      ],
+      "bh_notes": "Board-critical capability; governance framework struggling with recent regulatory changes.",
+      "btf_notes": "Board portal highly automated but poor integration with document management; workflow conflicts causing user frustration; prioritize fix.",
+      "recommended_action": "Fix",
+      "technologies": [
+        "Diligent Board Books",
+        "NetDocuments"
+      ]
+    },
+    {
+      "l1_capability": "Legal Operations & Administration",
+      "l2_capability": "Board & Committee Guidance",
+      "l2_id": "L2-021",
+      "strategic_importance": 4,
+      "operational_health": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        }
+      ],
+      "bh_notes": "Supports board effectiveness; some delays in materials preparation noted.",
+      "btf_notes": "Committee support partially automated; calendar and materials distribution adequate; agenda management needs improvement.",
+      "recommended_action": "Improve",
+      "technologies": [
+        "Diligent Board Books",
+        "NetDocuments"
+      ]
+    },
+    {
+      "l1_capability": "Legal Operations & Administration",
+      "l2_capability": "Records Management",
+      "l2_id": "L2-023",
+      "strategic_importance": 3,
+      "operational_health": 3,
+      "automation_level": 2,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        },
+        {
+          "type": "Manual Work",
+          "severity": "Moderate",
+          "description": "Heavy manual effort (Mostly Manual)"
+        }
+      ],
+      "bh_notes": "Administrative function; retention schedules need review and updates.",
+      "btf_notes": "Records management mostly manual with file shares; adequate for current needs but automation would improve retrieval efficiency.",
+      "recommended_action": "Automate",
+      "technologies": [
+        "NetDocuments",
+        "SharePoint Online"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "External Counsel & Vendor Management",
+      "l2_id": "L2-024",
+      "strategic_importance": 4,
+      "operational_health": 2,
+      "automation_level": 3,
+      "technology_fit": 1,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Critical",
+          "description": "Operational health issues identified"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Critical",
+          "description": "Technology poorly aligned to business needs"
+        }
+      ],
+      "bh_notes": "Cost management important; vendor relationships strained due to billing disputes.",
+      "btf_notes": "Outside counsel management system partial fit; rate tracking works but matter assignment process has gaps; assess before automating.",
+      "recommended_action": "Evaluate",
+      "technologies": [
+        "Onit",
+        "Onit"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Financial Management",
+      "l2_id": "L2-025",
+      "strategic_importance": 3,
+      "operational_health": 5,
+      "automation_level": 2,
+      "technology_fit": 5,
+      "issues": [
+        {
+          "type": "Manual Work",
+          "severity": "Moderate",
+          "description": "Heavy manual effort (Mostly Manual)"
+        }
+      ],
+      "bh_notes": "Internal function; budget tracking adequate for current needs.",
+      "btf_notes": "Legal spend tracking excellent fit in finance system; mostly manual but low volume doesn't justify automation investment.",
+      "recommended_action": "Right-Size",
+      "technologies": [
+        "Onit",
+        "MS Dynamics NAV"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Technology Management",
+      "l2_id": "L2-026",
+      "strategic_importance": 3,
+      "operational_health": 3,
+      "automation_level": 2,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        },
+        {
+          "type": "Manual Work",
+          "severity": "Moderate",
+          "description": "Heavy manual effort (Mostly Manual)"
+        }
+      ],
+      "bh_notes": "Efficiency driver; technology stack fragmented with user adoption challenges.",
+      "btf_notes": "Legal tech stack adequate but manual integration between systems; good automation opportunity for data synchronization.",
+      "recommended_action": "Automate",
+      "technologies": [
+        "ServiceNow",
+        "JIRA"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Performance Management",
+      "l2_id": "L2-028",
+      "strategic_importance": 3,
+      "operational_health": 2,
+      "automation_level": 2,
+      "technology_fit": 1,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Critical",
+          "description": "Operational health issues identified"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Critical",
+          "description": "Technology poorly aligned to business needs"
+        },
+        {
+          "type": "Manual Work",
+          "severity": "Moderate",
+          "description": "Heavy manual effort (Mostly Manual)"
+        }
+      ],
+      "bh_notes": "Performance visibility needed; metrics not consistently tracked or reported.",
+      "btf_notes": "Performance metrics tracked manually in spreadsheets; current tools don't meet reporting needs; consider replacement.",
+      "recommended_action": "Replace",
+      "technologies": [
+        "Onit",
+        "SharePoint Online"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Entity Management",
+      "l2_id": "L2-029",
+      "strategic_importance": 4,
+      "operational_health": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        }
+      ],
+      "bh_notes": "Compliance requirement; entity records current but process is manual.",
+      "btf_notes": "Entity management partially automated; corporate records adequate but subsidiary tracking needs improvement.",
+      "recommended_action": "Improve",
+      "technologies": [
+        "NetDocuments",
+        "Diligent Board Books"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Training and Development",
+      "l2_id": "L2-030",
+      "strategic_importance": 3,
+      "operational_health": 5,
+      "automation_level": 2,
+      "technology_fit": 5,
+      "issues": [
+        {
+          "type": "Manual Work",
+          "severity": "Moderate",
+          "description": "Heavy manual effort (Mostly Manual)"
+        }
+      ],
+      "bh_notes": "Staff development important; CLE tracking in place and functioning well.",
+      "btf_notes": "Training tracking manual but LMS platform excellent fit; low volume makes manual approach cost-effective.",
+      "recommended_action": "Right-Size",
+      "technologies": [
+        "Workday",
+        "SharePoint Online"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Project Management",
+      "l2_id": "L2-031",
+      "strategic_importance": 4,
+      "operational_health": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Moderate",
+          "description": "Some operational concerns"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Moderate",
+          "description": "Technology meets basic needs with gaps"
+        }
+      ],
+      "bh_notes": "Project delivery support; no formal methodology causing inconsistent outcomes.",
+      "btf_notes": "Project tracking adequate through generic PM tool; some legal-specific workflow gaps; targeted improvements recommended.",
+      "recommended_action": "Improve",
+      "technologies": [
+        "JIRA",
+        "SharePoint Online"
+      ]
+    },
+    {
+      "l1_capability": "Matter & Case Management",
+      "l2_capability": "Government Relations Strategy & Engagement",
+      "l2_id": "L2-032",
+      "strategic_importance": 5,
+      "operational_health": 2,
+      "automation_level": 5,
+      "technology_fit": 1,
+      "issues": [
+        {
+          "type": "Process Health",
+          "severity": "Critical",
+          "description": "Operational health issues identified"
+        },
+        {
+          "type": "Technology Fit",
+          "severity": "Critical",
+          "description": "Technology poorly aligned to business needs"
+        }
+      ],
+      "bh_notes": "Strategically important; government relationships strong but recent regulatory changes creating challenges.",
+      "btf_notes": "Stakeholder database highly automated but poor fit for government relations tracking; contact management inadequate; fix urgently.",
+      "recommended_action": "Fix",
+      "technologies": [
+        "SharePoint Online",
+        "NetDocuments"
+      ]
+    }
+  ],
+  "initiatives": [
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Investment Transaction Legal Guidance & Due Diligence",
+      "l2_id": "L2-001",
+      "value": 2.6,
+      "complexity": 2,
+      "effort_months": 6,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 5,
+      "total_gap": 1.0,
+      "current_maturity": 5,
+      "automation_level": 5,
+      "technology_fit": 1,
+      "recommended_action": "Fix",
+      "technologies": [
+        "NetDocuments",
+        "Docusign"
+      ]
+    },
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Investment Management Agreements Management",
+      "l2_id": "L2-002",
+      "value": 2.8,
+      "complexity": 3,
+      "effort_months": 9,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 4,
+      "total_gap": 2.0,
+      "current_maturity": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "recommended_action": "Improve",
+      "technologies": [
+        "NetDocuments",
+        "Docusign",
+        "Litera Compare"
+      ]
+    },
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Fund Documentation & Structuring",
+      "l2_id": "L2-003",
+      "value": 2.0,
+      "complexity": 1,
+      "effort_months": 3,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 5,
+      "total_gap": 0.0,
+      "current_maturity": 5,
+      "automation_level": 5,
+      "technology_fit": 5,
+      "recommended_action": "Maintain",
+      "technologies": [
+        "NetDocuments",
+        "Practical Law"
+      ]
+    },
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Co-Investment & Joint Venture Legal Services",
+      "l2_id": "L2-004",
+      "value": 3.4,
+      "complexity": 5,
+      "effort_months": 15,
+      "timeframe": "Long Term (12+ months)",
+      "strategic_importance": 4,
+      "total_gap": 3.0,
+      "current_maturity": 2,
+      "automation_level": 3,
+      "technology_fit": 1,
+      "recommended_action": "Evaluate",
+      "technologies": [
+        "NetDocuments",
+        "Docusign"
+      ]
+    },
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Securities & Investment Regulatory Compliance",
+      "l2_id": "L2-005",
+      "value": 3.35,
+      "complexity": 4,
+      "effort_months": 12,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 5,
+      "total_gap": 2.25,
+      "current_maturity": 3,
+      "automation_level": 2,
+      "technology_fit": 3,
+      "recommended_action": "Automate",
+      "technologies": [
+        "FundApps",
+        "Aosphere LLP"
+      ]
+    },
+    {
+      "l1_capability": "Corporate Governance",
+      "l2_capability": "Contract Review",
+      "l2_id": "L2-006",
+      "value": 1.9,
+      "complexity": 1,
+      "effort_months": 3,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 4,
+      "total_gap": 0.5,
+      "current_maturity": 5,
+      "automation_level": 3,
+      "technology_fit": 5,
+      "recommended_action": "Automate",
+      "technologies": [
+        "NetDocuments",
+        "Litera Compare"
+      ]
+    },
+    {
+      "l1_capability": "Corporate Governance",
+      "l2_capability": "Contract Drafting & Template Management",
+      "l2_id": "L2-007",
+      "value": 2.55,
+      "complexity": 4,
+      "effort_months": 12,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 3,
+      "total_gap": 2.25,
+      "current_maturity": 3,
+      "automation_level": 2,
+      "technology_fit": 3,
+      "recommended_action": "Automate",
+      "technologies": [
+        "NetDocuments",
+        "Litera Compare",
+        "Docusign"
+      ]
+    },
+    {
+      "l1_capability": "Government Relations",
+      "l2_capability": "Litigation Management",
+      "l2_id": "L2-008",
+      "value": 3.4,
+      "complexity": 5,
+      "effort_months": 15,
+      "timeframe": "Long Term (12+ months)",
+      "strategic_importance": 4,
+      "total_gap": 3.0,
+      "current_maturity": 2,
+      "automation_level": 3,
+      "technology_fit": 1,
+      "recommended_action": "Evaluate",
+      "technologies": [
+        "Onit",
+        "NetDocuments"
+      ]
+    },
+    {
+      "l1_capability": "Government Relations",
+      "l2_capability": "General Matter Management",
+      "l2_id": "L2-009",
+      "value": 1.6,
+      "complexity": 1,
+      "effort_months": 3,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 4,
+      "total_gap": 0.0,
+      "current_maturity": 5,
+      "automation_level": 5,
+      "technology_fit": 5,
+      "recommended_action": "Maintain",
+      "technologies": [
+        "Onit",
+        "NetDocuments"
+      ]
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Regulatory Intelligence & Change Management",
+      "l2_id": "L2-010",
+      "value": 3.35,
+      "complexity": 4,
+      "effort_months": 12,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 5,
+      "total_gap": 2.25,
+      "current_maturity": 3,
+      "automation_level": 2,
+      "technology_fit": 3,
+      "recommended_action": "Automate",
+      "technologies": [
+        "Aosphere LLP",
+        "Practical Law"
+      ]
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Legal Compliance Program Design & Advisory",
+      "l2_id": "L2-011",
+      "value": 2.0,
+      "complexity": 1,
+      "effort_months": 3,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 5,
+      "total_gap": 0.0,
+      "current_maturity": 5,
+      "automation_level": 5,
+      "technology_fit": 5,
+      "recommended_action": "Maintain",
+      "technologies": [
+        "STAR Compliance",
+        "SharePoint Online"
+      ]
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Personal, Private, and Sensitive Information Protection Legal Advisory",
+      "l2_id": "L2-012",
+      "value": 3.95,
+      "complexity": 5,
+      "effort_months": 15,
+      "timeframe": "Long Term (12+ months)",
+      "strategic_importance": 5,
+      "total_gap": 3.25,
+      "current_maturity": 2,
+      "automation_level": 2,
+      "technology_fit": 1,
+      "recommended_action": "Replace",
+      "technologies": [
+        "SharePoint Online",
+        "ServiceNow"
+      ]
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Trading & MNPI Controls",
+      "l2_id": "L2-013",
+      "value": 2.8,
+      "complexity": 3,
+      "effort_months": 9,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 4,
+      "total_gap": 2.0,
+      "current_maturity": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "recommended_action": "Improve",
+      "technologies": [
+        "STAR Compliance",
+        "Confidentiality Walls & Restricted Lists",
+        "BB AIM",
+        "PIT Plans"
+      ]
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Ethics & Code of Conduct Management",
+      "l2_id": "L2-014",
+      "value": 2.0,
+      "complexity": 1,
+      "effort_months": 3,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 5,
+      "total_gap": 0.0,
+      "current_maturity": 5,
+      "automation_level": 5,
+      "technology_fit": 5,
+      "recommended_action": "Maintain",
+      "technologies": [
+        "STAR Compliance",
+        "Workday"
+      ]
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Legal Research & Analysis",
+      "l2_id": "L2-015",
+      "value": 2.8,
+      "complexity": 3,
+      "effort_months": 9,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 4,
+      "total_gap": 2.0,
+      "current_maturity": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "recommended_action": "Improve",
+      "technologies": [
+        "Westlaw Canada",
+        "Practical Law"
+      ]
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Legal Opinion & Guidance",
+      "l2_id": "L2-016",
+      "value": 3.4,
+      "complexity": 5,
+      "effort_months": 15,
+      "timeframe": "Long Term (12+ months)",
+      "strategic_importance": 4,
+      "total_gap": 3.0,
+      "current_maturity": 2,
+      "automation_level": 3,
+      "technology_fit": 1,
+      "recommended_action": "Evaluate",
+      "technologies": [
+        "NetDocuments",
+        "Westlaw Canada"
+      ]
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Corporate Transaction Guidance & Due Diligence",
+      "l2_id": "L2-017",
+      "value": 1.65,
+      "complexity": 2,
+      "effort_months": 6,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 3,
+      "total_gap": 0.75,
+      "current_maturity": 5,
+      "automation_level": 2,
+      "technology_fit": 5,
+      "recommended_action": "Right-Size",
+      "technologies": [
+        "NetDocuments",
+        "Practical Law"
+      ]
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Risk Assessment & Advisory",
+      "l2_id": "L2-018",
+      "value": 2.8,
+      "complexity": 3,
+      "effort_months": 9,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 4,
+      "total_gap": 2.0,
+      "current_maturity": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "recommended_action": "Improve",
+      "technologies": [
+        "SharePoint Online",
+        "Moody's Analytics Credit Ratings"
+      ]
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Stakeholder Legal Education & Training",
+      "l2_id": "L2-019",
+      "value": 1.65,
+      "complexity": 2,
+      "effort_months": 6,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 3,
+      "total_gap": 0.75,
+      "current_maturity": 5,
+      "automation_level": 2,
+      "technology_fit": 5,
+      "recommended_action": "Right-Size",
+      "technologies": [
+        "SharePoint Online",
+        "Workday"
+      ]
+    },
+    {
+      "l1_capability": "Legal Operations & Administration",
+      "l2_capability": "Corporate Governance Guidance",
+      "l2_id": "L2-020",
+      "value": 3.5,
+      "complexity": 5,
+      "effort_months": 15,
+      "timeframe": "Long Term (12+ months)",
+      "strategic_importance": 5,
+      "total_gap": 2.5,
+      "current_maturity": 2,
+      "automation_level": 5,
+      "technology_fit": 1,
+      "recommended_action": "Fix",
+      "technologies": [
+        "Diligent Board Books",
+        "NetDocuments"
+      ]
+    },
+    {
+      "l1_capability": "Legal Operations & Administration",
+      "l2_capability": "Board & Committee Guidance",
+      "l2_id": "L2-021",
+      "value": 2.8,
+      "complexity": 3,
+      "effort_months": 9,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 4,
+      "total_gap": 2.0,
+      "current_maturity": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "recommended_action": "Improve",
+      "technologies": [
+        "Diligent Board Books",
+        "NetDocuments"
+      ]
+    },
+    {
+      "l1_capability": "Legal Operations & Administration",
+      "l2_capability": "Policy & Directive Management",
+      "l2_id": "L2-022",
+      "value": 1.9,
+      "complexity": 1,
+      "effort_months": 3,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 4,
+      "total_gap": 0.5,
+      "current_maturity": 5,
+      "automation_level": 3,
+      "technology_fit": 5,
+      "recommended_action": "Automate",
+      "technologies": [
+        "SharePoint Online",
+        "NetDocuments"
+      ]
+    },
+    {
+      "l1_capability": "Legal Operations & Administration",
+      "l2_capability": "Records Management",
+      "l2_id": "L2-023",
+      "value": 2.55,
+      "complexity": 4,
+      "effort_months": 12,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 3,
+      "total_gap": 2.25,
+      "current_maturity": 3,
+      "automation_level": 2,
+      "technology_fit": 3,
+      "recommended_action": "Automate",
+      "technologies": [
+        "NetDocuments",
+        "SharePoint Online"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "External Counsel & Vendor Management",
+      "l2_id": "L2-024",
+      "value": 3.4,
+      "complexity": 5,
+      "effort_months": 15,
+      "timeframe": "Long Term (12+ months)",
+      "strategic_importance": 4,
+      "total_gap": 3.0,
+      "current_maturity": 2,
+      "automation_level": 3,
+      "technology_fit": 1,
+      "recommended_action": "Evaluate",
+      "technologies": [
+        "Onit",
+        "Onit"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Financial Management",
+      "l2_id": "L2-025",
+      "value": 1.65,
+      "complexity": 2,
+      "effort_months": 6,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 3,
+      "total_gap": 0.75,
+      "current_maturity": 5,
+      "automation_level": 2,
+      "technology_fit": 5,
+      "recommended_action": "Right-Size",
+      "technologies": [
+        "Onit",
+        "MS Dynamics NAV"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Technology Management",
+      "l2_id": "L2-026",
+      "value": 2.55,
+      "complexity": 4,
+      "effort_months": 12,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 3,
+      "total_gap": 2.25,
+      "current_maturity": 3,
+      "automation_level": 2,
+      "technology_fit": 3,
+      "recommended_action": "Automate",
+      "technologies": [
+        "ServiceNow",
+        "JIRA"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Knowledge Management",
+      "l2_id": "L2-027",
+      "value": 1.9,
+      "complexity": 1,
+      "effort_months": 3,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 4,
+      "total_gap": 0.5,
+      "current_maturity": 5,
+      "automation_level": 3,
+      "technology_fit": 5,
+      "recommended_action": "Automate",
+      "technologies": [
+        "NetDocuments",
+        "LIPS"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Performance Management",
+      "l2_id": "L2-028",
+      "value": 3.15,
+      "complexity": 5,
+      "effort_months": 15,
+      "timeframe": "Long Term (12+ months)",
+      "strategic_importance": 3,
+      "total_gap": 3.25,
+      "current_maturity": 2,
+      "automation_level": 2,
+      "technology_fit": 1,
+      "recommended_action": "Replace",
+      "technologies": [
+        "Onit",
+        "SharePoint Online"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Entity Management",
+      "l2_id": "L2-029",
+      "value": 2.8,
+      "complexity": 3,
+      "effort_months": 9,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 4,
+      "total_gap": 2.0,
+      "current_maturity": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "recommended_action": "Improve",
+      "technologies": [
+        "NetDocuments",
+        "Diligent Board Books"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Training and Development",
+      "l2_id": "L2-030",
+      "value": 1.65,
+      "complexity": 2,
+      "effort_months": 6,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 3,
+      "total_gap": 0.75,
+      "current_maturity": 5,
+      "automation_level": 2,
+      "technology_fit": 5,
+      "recommended_action": "Right-Size",
+      "technologies": [
+        "Workday",
+        "SharePoint Online"
+      ]
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Project Management",
+      "l2_id": "L2-031",
+      "value": 2.8,
+      "complexity": 3,
+      "effort_months": 9,
+      "timeframe": "Medium Term (6-12 months)",
+      "strategic_importance": 4,
+      "total_gap": 2.0,
+      "current_maturity": 3,
+      "automation_level": 3,
+      "technology_fit": 3,
+      "recommended_action": "Improve",
+      "technologies": [
+        "JIRA",
+        "SharePoint Online"
+      ]
+    },
+    {
+      "l1_capability": "Matter & Case Management",
+      "l2_capability": "Government Relations Strategy & Engagement",
+      "l2_id": "L2-032",
+      "value": 3.5,
+      "complexity": 5,
+      "effort_months": 15,
+      "timeframe": "Long Term (12+ months)",
+      "strategic_importance": 5,
+      "total_gap": 2.5,
+      "current_maturity": 2,
+      "automation_level": 5,
+      "technology_fit": 1,
+      "recommended_action": "Fix",
+      "technologies": [
+        "SharePoint Online",
+        "NetDocuments"
+      ]
+    },
+    {
+      "l1_capability": "Matter & Case Management",
+      "l2_capability": "Freedom of Information (FOI) Management",
+      "l2_id": "L2-033",
+      "value": 1.9,
+      "complexity": 1,
+      "effort_months": 3,
+      "timeframe": "Quick Win (0-6 months)",
+      "strategic_importance": 4,
+      "total_gap": 0.5,
+      "current_maturity": 5,
+      "automation_level": 3,
+      "technology_fit": 5,
+      "recommended_action": "Automate",
+      "technologies": [
+        "ServiceNow",
+        "NetDocuments"
+      ]
+    }
+  ],
+  "evolution": [
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Investment Transaction Legal Guidance & Due Diligence",
+      "l2_id": "L2-001",
+      "strategic_importance": 5,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 1
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 2
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 2.5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 3.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Investment Management Agreements Management",
+      "l2_id": "L2-002",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 4.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Fund Documentation & Structuring",
+      "l2_id": "L2-003",
+      "strategic_importance": 5,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Co-Investment & Joint Venture Legal Services",
+      "l2_id": "L2-004",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 2,
+        "automation": 3,
+        "tech_fit": 1
+      },
+      "year1_2": {
+        "operational_health": 3,
+        "automation": 3,
+        "tech_fit": 2
+      },
+      "year3": {
+        "operational_health": 3,
+        "automation": 4.5,
+        "tech_fit": 2.5
+      },
+      "year4_5": {
+        "operational_health": 3.5,
+        "automation": 5,
+        "tech_fit": 3.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Contract Legal Services",
+      "l2_capability": "Securities & Investment Regulatory Compliance",
+      "l2_id": "L2-005",
+      "strategic_importance": 5,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 2,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 2,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 3.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 4.5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Corporate Governance",
+      "l2_capability": "Contract Review",
+      "l2_id": "L2-006",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 3,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 3,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 4.5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Corporate Governance",
+      "l2_capability": "Contract Drafting & Template Management",
+      "l2_id": "L2-007",
+      "strategic_importance": 3,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 2,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 2,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 3.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 4.5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 4,
+        "tech_fit": 4
+      }
+    },
+    {
+      "l1_capability": "Government Relations",
+      "l2_capability": "Litigation Management",
+      "l2_id": "L2-008",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 2,
+        "automation": 3,
+        "tech_fit": 1
+      },
+      "year1_2": {
+        "operational_health": 3,
+        "automation": 3,
+        "tech_fit": 2
+      },
+      "year3": {
+        "operational_health": 3,
+        "automation": 4.5,
+        "tech_fit": 2.5
+      },
+      "year4_5": {
+        "operational_health": 3.5,
+        "automation": 5,
+        "tech_fit": 3.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Government Relations",
+      "l2_capability": "General Matter Management",
+      "l2_id": "L2-009",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Regulatory Intelligence & Change Management",
+      "l2_id": "L2-010",
+      "strategic_importance": 5,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 2,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 2,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 3.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 4.5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Legal Compliance Program Design & Advisory",
+      "l2_id": "L2-011",
+      "strategic_importance": 5,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Personal, Private, and Sensitive Information Protection Legal Advisory",
+      "l2_id": "L2-012",
+      "strategic_importance": 5,
+      "current_state": {
+        "operational_health": 2,
+        "automation": 2,
+        "tech_fit": 1
+      },
+      "year1_2": {
+        "operational_health": 3,
+        "automation": 2,
+        "tech_fit": 2
+      },
+      "year3": {
+        "operational_health": 3,
+        "automation": 3.5,
+        "tech_fit": 2.5
+      },
+      "year4_5": {
+        "operational_health": 3.5,
+        "automation": 4.5,
+        "tech_fit": 3.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Trading & MNPI Controls",
+      "l2_id": "L2-013",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 4.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Investment Legal Services",
+      "l2_capability": "Ethics & Code of Conduct Management",
+      "l2_id": "L2-014",
+      "strategic_importance": 5,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Legal Research & Analysis",
+      "l2_id": "L2-015",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 4.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Legal Opinion & Guidance",
+      "l2_id": "L2-016",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 2,
+        "automation": 3,
+        "tech_fit": 1
+      },
+      "year1_2": {
+        "operational_health": 3,
+        "automation": 3,
+        "tech_fit": 2
+      },
+      "year3": {
+        "operational_health": 3,
+        "automation": 4.5,
+        "tech_fit": 2.5
+      },
+      "year4_5": {
+        "operational_health": 3.5,
+        "automation": 5,
+        "tech_fit": 3.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Corporate Transaction Guidance & Due Diligence",
+      "l2_id": "L2-017",
+      "strategic_importance": 3,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 2,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 2,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 3.5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 4.5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 4,
+        "tech_fit": 4
+      }
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Risk Assessment & Advisory",
+      "l2_id": "L2-018",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 4.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Legal Advisory & Research",
+      "l2_capability": "Stakeholder Legal Education & Training",
+      "l2_id": "L2-019",
+      "strategic_importance": 3,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 2,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 2,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 3.5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 4.5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 4,
+        "tech_fit": 4
+      }
+    },
+    {
+      "l1_capability": "Legal Operations & Administration",
+      "l2_capability": "Corporate Governance Guidance",
+      "l2_id": "L2-020",
+      "strategic_importance": 5,
+      "current_state": {
+        "operational_health": 2,
+        "automation": 5,
+        "tech_fit": 1
+      },
+      "year1_2": {
+        "operational_health": 3,
+        "automation": 5,
+        "tech_fit": 2
+      },
+      "year3": {
+        "operational_health": 3,
+        "automation": 5,
+        "tech_fit": 2.5
+      },
+      "year4_5": {
+        "operational_health": 3.5,
+        "automation": 5,
+        "tech_fit": 3.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Legal Operations & Administration",
+      "l2_capability": "Board & Committee Guidance",
+      "l2_id": "L2-021",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 4.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Legal Operations & Administration",
+      "l2_capability": "Policy & Directive Management",
+      "l2_id": "L2-022",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 3,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 3,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 4.5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Legal Operations & Administration",
+      "l2_capability": "Records Management",
+      "l2_id": "L2-023",
+      "strategic_importance": 3,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 2,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 2,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 3.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 4.5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 4,
+        "tech_fit": 4
+      }
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "External Counsel & Vendor Management",
+      "l2_id": "L2-024",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 2,
+        "automation": 3,
+        "tech_fit": 1
+      },
+      "year1_2": {
+        "operational_health": 3,
+        "automation": 3,
+        "tech_fit": 2
+      },
+      "year3": {
+        "operational_health": 3,
+        "automation": 4.5,
+        "tech_fit": 2.5
+      },
+      "year4_5": {
+        "operational_health": 3.5,
+        "automation": 5,
+        "tech_fit": 3.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Financial Management",
+      "l2_id": "L2-025",
+      "strategic_importance": 3,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 2,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 2,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 3.5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 4.5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 4,
+        "tech_fit": 4
+      }
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Technology Management",
+      "l2_id": "L2-026",
+      "strategic_importance": 3,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 2,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 2,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 3.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 4.5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 4,
+        "tech_fit": 4
+      }
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Knowledge Management",
+      "l2_id": "L2-027",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 3,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 3,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 4.5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Performance Management",
+      "l2_id": "L2-028",
+      "strategic_importance": 3,
+      "current_state": {
+        "operational_health": 2,
+        "automation": 2,
+        "tech_fit": 1
+      },
+      "year1_2": {
+        "operational_health": 3,
+        "automation": 2,
+        "tech_fit": 2
+      },
+      "year3": {
+        "operational_health": 3,
+        "automation": 3.5,
+        "tech_fit": 2.5
+      },
+      "year4_5": {
+        "operational_health": 3.5,
+        "automation": 4.5,
+        "tech_fit": 3.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 4,
+        "tech_fit": 4
+      }
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Entity Management",
+      "l2_id": "L2-029",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 4.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Training and Development",
+      "l2_id": "L2-030",
+      "strategic_importance": 3,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 2,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 2,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 3.5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 4.5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 4,
+        "tech_fit": 4
+      }
+    },
+    {
+      "l1_capability": "Legal Regulatory & Compliance",
+      "l2_capability": "Legal Affairs Project Management",
+      "l2_id": "L2-031",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 3,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year1_2": {
+        "operational_health": 4,
+        "automation": 3,
+        "tech_fit": 3
+      },
+      "year3": {
+        "operational_health": 4,
+        "automation": 4.5,
+        "tech_fit": 3.5
+      },
+      "year4_5": {
+        "operational_health": 4.5,
+        "automation": 5,
+        "tech_fit": 4.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Matter & Case Management",
+      "l2_capability": "Government Relations Strategy & Engagement",
+      "l2_id": "L2-032",
+      "strategic_importance": 5,
+      "current_state": {
+        "operational_health": 2,
+        "automation": 5,
+        "tech_fit": 1
+      },
+      "year1_2": {
+        "operational_health": 3,
+        "automation": 5,
+        "tech_fit": 2
+      },
+      "year3": {
+        "operational_health": 3,
+        "automation": 5,
+        "tech_fit": 2.5
+      },
+      "year4_5": {
+        "operational_health": 3.5,
+        "automation": 5,
+        "tech_fit": 3.0
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    },
+    {
+      "l1_capability": "Matter & Case Management",
+      "l2_capability": "Freedom of Information (FOI) Management",
+      "l2_id": "L2-033",
+      "strategic_importance": 4,
+      "current_state": {
+        "operational_health": 5,
+        "automation": 3,
+        "tech_fit": 5
+      },
+      "year1_2": {
+        "operational_health": 5,
+        "automation": 3,
+        "tech_fit": 5
+      },
+      "year3": {
+        "operational_health": 5,
+        "automation": 4.5,
+        "tech_fit": 5
+      },
+      "year4_5": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      },
+      "target_state": {
+        "operational_health": 5,
+        "automation": 5,
+        "tech_fit": 5
+      }
+    }
+  ]
+}
