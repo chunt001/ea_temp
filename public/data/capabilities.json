@@ -8,7 +8,7 @@
         {
           "l2_id": "L2-001",
           "l2_name": "Investment Transaction Legal Guidance & Due Diligence",
-          "l2_description": "",
+          "l2_description": "Legal due diligence, transaction structuring, and legal guidance for BCI's investment transactions, including fund investments, co-investments, and portfolio company transactions",
           "current_maturity": 5,
           "business_tech_fit": 3.0,
           "automation_level": 5,
@@ -31,7 +31,7 @@
         {
           "l2_id": "L2-002",
           "l2_name": "Investment Management Agreements Management",
-          "l2_description": "",
+          "l2_description": "Drafting, negotiating, reviewing, and managing legal agreements with regards to investment and fund management.",
           "current_maturity": 3,
           "business_tech_fit": 3.0,
           "automation_level": 3,
@@ -55,7 +55,7 @@
         {
           "l2_id": "L2-003",
           "l2_name": "Fund Documentation & Structuring",
-          "l2_description": "",
+          "l2_description": "Legal guidance for fund formation / documentation, subscription agreements, and investment / fund structure optimization",
           "current_maturity": 5,
           "business_tech_fit": 5.0,
           "automation_level": 5,
@@ -78,7 +78,7 @@
         {
           "l2_id": "L2-004",
           "l2_name": "Co-Investment & Joint Venture Legal Services",
-          "l2_description": "",
+          "l2_description": "Legal guidance on structuring and documentation for co-investment opportunities and joint venture arrangements with other investors or partners",
           "current_maturity": 2,
           "business_tech_fit": 2.0,
           "automation_level": 3,
@@ -101,7 +101,7 @@
         {
           "l2_id": "L2-005",
           "l2_name": "Securities & Investment Regulatory Compliance",
-          "l2_description": "",
+          "l2_description": "Ensuring compliance with securities regulations, investment restrictions, regulatory requirements specific to investment activities (e.g., prospectus requirements, securities filings, investment limits)",
           "current_maturity": 3,
           "business_tech_fit": 2.5,
           "automation_level": 2,
@@ -131,7 +131,7 @@
         {
           "l2_id": "L2-006",
           "l2_name": "Contract Review",
-          "l2_description": "",
+          "l2_description": "Legal review of contracts initiated by business units (procurement, HR, IT), including risk assessment, legal terms negotiation, and approval workflows",
           "current_maturity": 5,
           "business_tech_fit": 4.0,
           "automation_level": 3,
@@ -154,7 +154,7 @@
         {
           "l2_id": "L2-007",
           "l2_name": "Contract Drafting & Template Management",
-          "l2_description": "",
+          "l2_description": "Drafting BCI led contracts (NDAs, settlement agreements, legal service agreements) and maintaining contract templates, clause libraries, and contract standards",
           "current_maturity": 3,
           "business_tech_fit": 2.5,
           "automation_level": 2,
@@ -185,7 +185,7 @@
         {
           "l2_id": "L2-008",
           "l2_name": "Litigation Management",
-          "l2_description": "",
+          "l2_description": "Management of litigation matters including court proceedings, discovery, legal strategy, outside counsel coordination, legal holds, settlements, and court filings",
           "current_maturity": 2,
           "business_tech_fit": 2.0,
           "automation_level": 3,
@@ -208,7 +208,7 @@
         {
           "l2_id": "L2-009",
           "l2_name": "General Matter Management",
-          "l2_description": "",
+          "l2_description": "Intake, tracking, assignment, collaboration, and closure of non-litigation legal matters across all practice areas (investment, advisory, compliance, transactional), including matter workflow management and resource allocation",
           "current_maturity": 5,
           "business_tech_fit": 5.0,
           "automation_level": 5,
@@ -238,7 +238,7 @@
         {
           "l2_id": "L2-010",
           "l2_name": "Regulatory Intelligence & Change Management",
-          "l2_description": "",
+          "l2_description": "Monitoring regulatory changes, horizon scanning, regulatory interpretation, impact analysis, and maintaining regulatory content repository to keep Legal and business informed of regulatory developments",
           "current_maturity": 3,
           "business_tech_fit": 2.5,
           "automation_level": 2,
@@ -261,7 +261,7 @@
         {
           "l2_id": "L2-011",
           "l2_name": "Legal Compliance Program Design & Advisory",
-          "l2_description": "",
+          "l2_description": "Development and management of compliance programs, compliance assessments, compliance monitoring and testing, regulatory reporting and filings, and compliance advisory to business units",
           "current_maturity": 5,
           "business_tech_fit": 5.0,
           "automation_level": 5,
@@ -284,7 +284,7 @@
         {
           "l2_id": "L2-012",
           "l2_name": "Personal, Private, and Sensitive Information Protection Legal Advisory",
-          "l2_description": "",
+          "l2_description": "Privacy compliance (e.g. PIPEDA, GDPR), privacy impact assessments, privacy policy development, personal, private, and sensitive information protection advisory, privacy breach response and notification, and consent management",
           "current_maturity": 2,
           "business_tech_fit": 1.5,
           "automation_level": 2,
@@ -307,7 +307,7 @@
         {
           "l2_id": "L2-013",
           "l2_name": "Trading & MNPI Controls",
-          "l2_description": "",
+          "l2_description": "Personal trading preclearance, trade monitoring, material non-public information (MNPI) management, and restricted list management",
           "current_maturity": 3,
           "business_tech_fit": 3.0,
           "automation_level": 3,
@@ -332,7 +332,7 @@
         {
           "l2_id": "L2-014",
           "l2_name": "Ethics & Code of Conduct Management",
-          "l2_description": "",
+          "l2_description": "Code of Conduct administration, ethics programs, misconduct case management (intake, investigation, resolution), whistleblower hotline management, and ethics training.",
           "current_maturity": 5,
           "business_tech_fit": 5.0,
           "automation_level": 5,
@@ -362,7 +362,7 @@
         {
           "l2_id": "L2-015",
           "l2_name": "Legal Research & Analysis",
-          "l2_description": "",
+          "l2_description": "Legal research using legal databases (Westlaw, LexisNexis, Practical Law), precedent analysis, statutory interpretation, case law research, and legal intelligence gathering",
           "current_maturity": 3,
           "business_tech_fit": 3.0,
           "automation_level": 3,
@@ -385,7 +385,7 @@
         {
           "l2_id": "L2-016",
           "l2_name": "Legal Opinion & Guidance",
-          "l2_description": "",
+          "l2_description": "Providing legal opinions, and guidance to business stakeholders on legal questions, typically delivered through memos or emails",
           "current_maturity": 2,
           "business_tech_fit": 2.0,
           "automation_level": 3,
@@ -408,7 +408,7 @@
         {
           "l2_id": "L2-017",
           "l2_name": "Corporate Transaction Guidance & Due Diligence",
-          "l2_description": "",
+          "l2_description": "Legal guidance for BCI corporate transactions (M&A involving BCI itself, corporate partnerships, strategic alliances) and due diligence. Note: Distinct from Investment Transaction guidance (which covers BCI's investment activities)",
           "current_maturity": 5,
           "business_tech_fit": 3.5,
           "automation_level": 2,
@@ -431,7 +431,7 @@
         {
           "l2_id": "L2-018",
           "l2_name": "Risk Assessment & Advisory",
-          "l2_description": "",
+          "l2_description": "Legal risk identification, assessment, and advisory to support business decision-making, including legal risk scoring, risk mitigation recommendations, and decision support",
           "current_maturity": 3,
           "business_tech_fit": 3.0,
           "automation_level": 3,
@@ -454,7 +454,7 @@
         {
           "l2_id": "L2-019",
           "l2_name": "Stakeholder Legal Education & Training",
-          "l2_description": "",
+          "l2_description": "Training and educating business stakeholders on legal topics, compliance requirements, policy changes, legal developments, and legal literacy to enable proactive risk management. Note: This is Legal training THE BUSINESS (distinct from Legal Talent Development which trains Legal staff)",
           "current_maturity": 5,
           "business_tech_fit": 3.5,
           "automation_level": 2,
@@ -484,7 +484,7 @@
         {
           "l2_id": "L2-020",
           "l2_name": "Corporate Governance Guidance",
-          "l2_description": "",
+          "l2_description": "Managing corporate governance framework, governance policies, corporate governance best practices, and governance advisory to ensure BCI meets governance standards and obligations",
           "current_maturity": 2,
           "business_tech_fit": 3.0,
           "automation_level": 5,
@@ -507,7 +507,7 @@
         {
           "l2_id": "L2-021",
           "l2_name": "Board & Committee Guidance",
-          "l2_description": "",
+          "l2_description": "Managing board and committee meetings, preparing board materials, maintaining board minutes and resolutions, managing board approvals, and coordinating board-related legal activities",
           "current_maturity": 3,
           "business_tech_fit": 3.0,
           "automation_level": 3,
@@ -530,7 +530,7 @@
         {
           "l2_id": "L2-022",
           "l2_name": "Policy & Directive Management",
-          "l2_description": "",
+          "l2_description": "Development, maintenance, review, and retirement of corporate policies and directives, including policy approval workflows, policy communication, and policy repository management",
           "current_maturity": 5,
           "business_tech_fit": 4.0,
           "automation_level": 3,
@@ -553,7 +553,7 @@
         {
           "l2_id": "L2-023",
           "l2_name": "Records Management",
-          "l2_description": "",
+          "l2_description": "Management of BCI's records management definitions and practices, including record classifications and retention schedules, and archiving to ensure compliance with records retention regulations and obligations.",
           "current_maturity": 3,
           "business_tech_fit": 2.5,
           "automation_level": 2,
@@ -583,7 +583,7 @@
         {
           "l2_id": "L2-024",
           "l2_name": "External Counsel & Vendor Management",
-          "l2_description": "",
+          "l2_description": "Selection, engagement, management, and oversight of external law firms and legal service providers (e.g. legal research vendors, legal technology vendors), including outside counsel guidelines and e-billing",
           "current_maturity": 2,
           "business_tech_fit": 2.0,
           "automation_level": 3,
@@ -606,7 +606,7 @@
         {
           "l2_id": "L2-025",
           "l2_name": "Legal Affairs Financial Management",
-          "l2_description": "",
+          "l2_description": "Legal Affairs department budgeting, forecasting, spend tracking, variance analysis, invoice processing, and financial reporting to manage Legal Affairs' financial resources effectively. Note: Enterprise budgeting owned by Finance; this is Legal's departmental budget",
           "current_maturity": 5,
           "business_tech_fit": 3.5,
           "automation_level": 2,
@@ -629,7 +629,7 @@
         {
           "l2_id": "L2-026",
           "l2_name": "Legal Affairs Technology Management",
-          "l2_description": "",
+          "l2_description": "Management of Legal Affairs' technology stack (e.g. matter management, law firm e-billing, document management, research databases), vendor relationships, technology implementation, user adoption, system optimization, first line technical support and technology strategy.",
           "current_maturity": 3,
           "business_tech_fit": 2.5,
           "automation_level": 2,
@@ -652,7 +652,7 @@
         {
           "l2_id": "L2-027",
           "l2_name": "Legal Affairs Knowledge Management",
-          "l2_description": "",
+          "l2_description": "Management of Legal's knowledge assets including knowledge repository, precedent libraries, playbooks, templates, best practices, and expertise directories to capture and share legal knowledge",
           "current_maturity": 5,
           "business_tech_fit": 4.0,
           "automation_level": 3,
@@ -675,7 +675,7 @@
         {
           "l2_id": "L2-028",
           "l2_name": "Legal Affairs Performance Management",
-          "l2_description": "",
+          "l2_description": "Legal operations analytics, dashboards, KPIs, metrics, performance reporting, and business intelligence to measure Legal Affairs' effectiveness, efficiency, and value delivery",
           "current_maturity": 2,
           "business_tech_fit": 1.5,
           "automation_level": 2,
@@ -721,7 +721,7 @@
         {
           "l2_id": "L2-030",
           "l2_name": "Legal Affairs Training and Development",
-          "l2_description": "",
+          "l2_description": "Professional development of Legal Affairs staff including continuing legal education (CLE), skills development, training programs, career development, and succession planning for Legal Affairs team members. Note: This develops Legal staff (distinct from Stakeholder Legal Education which trains business)",
           "current_maturity": 5,
           "business_tech_fit": 3.5,
           "automation_level": 2,
@@ -744,7 +744,7 @@
         {
           "l2_id": "L2-031",
           "l2_name": "Legal Affairs Project Management",
-          "l2_description": "",
+          "l2_description": "Manage legal-related projects, ensuring compliance, timely delivery, and alignment with organizational objectives through structured planning, resource management, and risk oversight.",
           "current_maturity": 3,
           "business_tech_fit": 3.0,
           "automation_level": 3,
@@ -774,7 +774,7 @@
         {
           "l2_id": "L2-032",
           "l2_name": "Government Relations Strategy & Engagement",
-          "l2_description": "",
+          "l2_description": "Development and execution of government relations strategies, engagement with government entities and regulatory stakeholders, advocacy, issues management, and managing BCI's government affairs activities",
           "current_maturity": 2,
           "business_tech_fit": 3.0,
           "automation_level": 5,
@@ -797,7 +797,7 @@
         {
           "l2_id": "L2-033",
           "l2_name": "Freedom of Information (FOI) Management",
-          "l2_description": "",
+          "l2_description": "Complete FOI request lifecycle management including FOI intake, assessment, response coordination, disclosure review, FOI tracking, deadline management, and FOI compliance to meet access to information obligations",
           "current_maturity": 5,
           "business_tech_fit": 4.0,
           "automation_level": 3,

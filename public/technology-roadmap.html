@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Affairs 5-Year Technology Roadmap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #2c3e50;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .controls {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .control-group label {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .control-group select {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .legend {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .legend-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+        }
+        
+        .legend-label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .roadmap-row {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .roadmap-row.hidden {
+            display: none;
+        }
+        
+        .l1-header {
+            background: #667eea;
+            color: white;
+            padding: 1.25rem 1.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .l1-header:hover {
+            background: #5a6fd8;
+        }
+        
+        .l1-description {
+            font-size: 0.85rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 0.25rem;
+        }
+        
+        .current-tech-banner {
+            background: #f8f9fa;
+            padding: 1rem 1.5rem;
+            border-bottom: 2px solid #e1e8ed;
+        }
+        
+        .current-tech-label {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-badge {
+            background: #e8f4f8;
+            color: #2980b9;
+            padding: 0.35rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .tech-badge.current {
+            background: #d5f4e6;
+            color: #27ae60;
+        }
+        
+        .tech-badge.proposed {
+            background: #fff4e6;
+            color: #f39c12;
+        }
+        
+        .tech-badge.new {
+            background: #e8f4f8;
+            color: #3498db;
+            border: 2px dashed #3498db;
+        }
+        
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1px;
+            background: #e1e8ed;
+        }
+        
+        .year-column {
+            background: white;
+            padding: 1.5rem;
+            min-height: 200px;
+        }
+        
+        .year-header {
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e1e8ed;
+        }
+        
+        .tech-section {
+            margin-bottom: 1.25rem;
+        }
+        
+        .tech-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .tech-section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .tech-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        
+        .tech-item {
+            font-size: 0.8rem;
+            color: #2c3e50;
+            padding: 0.35rem 0.6rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            line-height: 1.3;
+        }
+        
+        .tech-item.current {
+            background: #d5f4e6;
+            color: #27ae60;
+            font-weight: 600;
+        }
+        
+        .tech-item.proposed {
+            background: #fff4e6;
+            color: #f39c12;
+            font-weight: 600;
+        }
+        
+        .deliverables {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e1e8ed;
+        }
+        
+        .deliverable-item {
+            font-size: 0.8rem;
+            color: #555;
+            padding: 0.4rem 0;
+            line-height: 1.4;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .deliverable-item::before {
+            content: "▸";
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .phase-indicator {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+        
+        .phase-1 {
+            background: #fee;
+            color: #e74c3c;
+        }
+        
+        .phase-2 {
+            background: #fef5e7;
+            color: #f39c12;
+        }
+        
+        .phase-3 {
+            background: #e8f8f5;
+            color: #27ae60;
+        }
+        
+        .expand-icon {
+            transition: transform 0.3s;
+        }
+        
+        .roadmap-row.collapsed .timeline-grid {
+            display: none;
+        }
+        
+        .roadmap-row.collapsed .current-tech-banner {
+            display: none;
+        }
+        
+        .roadmap-row.collapsed .expand-icon {
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Legal Affairs 5-Year Technology Transformation Roadmap</h1>
+        <p>Current and Proposed Technology by L1 Capability</p>
+    </div>
+    
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <label>Organization Unit:</label>
+                <select id="orgUnitFilter" onchange="filterByOrgUnit()">
+                    <option value="all">All Organization Units</option>
+                    <option value="Legal Affairs" selected>Legal Affairs</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label>L1 Capability:</label>
+                <select id="l1Filter" onchange="filterByL1()">
+                    <option value="all">All Capabilities</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label>View:</label>
+                <select id="viewMode" onchange="updateViewMode()">
+                    <option value="expanded">All Expanded</option>
+                    <option value="collapsed">All Collapsed</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #d5f4e6; border: 2px solid #27ae60;"></div>
+                <div>
+                    <div class="legend-label">Current Technology</div>
+                    <div style="font-size: 0.75rem; color: #7f8c8d;">In use today</div>
+                </div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #fff4e6; border: 2px solid #f39c12;"></div>
+                <div>
+                    <div class="legend-label">Proposed Technology</div>
+                    <div style="font-size: 0.75rem; color: #7f8c8d;">Planned implementation</div>
+                </div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #fee; border: 2px solid #e74c3c;"></div>
+                <div>
+                    <div class="legend-label">Phase 1: Foundation</div>
+                    <div style="font-size: 0.75rem; color: #7f8c8d;">2026-2027</div>
+                </div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #fef5e7; border: 2px solid #f39c12;"></div>
+                <div>
+                    <div class="legend-label">Phase 2: Automation</div>
+                    <div style="font-size: 0.75rem; color: #7f8c8d;">2028-2029</div>
+                </div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #e8f8f5; border: 2px solid #27ae60;"></div>
+                <div>
+                    <div class="legend-label">Phase 3: Optimization</div>
+                    <div style="font-size: 0.75rem; color: #7f8c8d;">2030</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="roadmapContainer"></div>
+    </div>
+    
+    <script>
+        let roadmapData = [
+  {
+    "l1_id": "L1-001",
+    "l1_name": "Contract Legal Services",
+    "l1_description": "Legal services within contract lifecycle management across all BCI business units, including drafting, review, and recommendations. Legal's contribution to enterprise-wide Contract Management (Procurement owns vendor contracts, asset classes own investment contracts, HR owns employment contracts)",
+    "org_unit": "Legal Affairs",
+    "current_technologies": [
+      "Aosphere LLP",
+      "Docusign",
+      "FundApps",
+      "Litera Compare",
+      "NetDocuments",
+      "Practical Law"
+    ],
+    "roadmap": {
+      "2026": {
+        "current": [
+          "Onit",
+          "NetDocuments",
+          "Word",
+          "Email",
+          "Litera"
+        ],
+        "proposed": [
+          "CLM Platform (Icertis/Agiloft)",
+          "DocuSign",
+          "Contract AI Assistant"
+        ],
+        "deliverables": [
+          "CLM platform selection & Phase 1 deployment",
+          "E-signature integration",
+          "Automated contract intake"
+        ]
+      },
+      "2027": {
+        "current": [
+          "CLM Platform",
+          "DocuSign",
+          "NetDocuments",
+          "Contract AI"
+        ],
+        "proposed": [
+          "AI Contract Analyzer",
+          "Advanced Workflow Engine",
+          "Obligation Management"
+        ],
+        "deliverables": [
+          "AI-powered contract analysis",
+          "Advanced workflow automation",
+          "Smart obligation tracking"
+        ]
+      },
+      "2028": {
+        "current": [
+          "CLM Platform",
+          "AI Suite",
+          "DocuSign"
+        ],
+        "proposed": [
+          "Predictive Analytics",
+          "Smart Template Engine",
+          "Risk Scoring AI"
+        ],
+        "deliverables": [
+          "Predictive contracting",
+          "Intelligent templates with AI",
+          "Automated risk scoring"
+        ]
+      },
+      "2029": {
+        "current": [
+          "Integrated CLM Suite",
+          "AI Analytics Platform"
+        ],
+        "proposed": [
+          "Advanced Contract Intelligence",
+          "Negotiation AI Support"
+        ],
+        "deliverables": [
+          "Full lifecycle optimization",
+          "AI contract insights",
+          "Advanced analytics dashboards"
+        ]
+      },
+      "2030": {
+        "current": [
+          "Next-Gen CLM Platform",
+          "Autonomous AI"
+        ],
+        "proposed": [
+          "Agentic Contract AI",
+          "Smart Contract Integration"
+        ],
+        "deliverables": [
+          "Autonomous contract workflows",
+          "AI negotiation support",
+          "Blockchain integration"
+        ]
+      }
+    }
+  },
+  {
+    "l1_id": "L1-002",
+    "l1_name": "Corporate Governance",
+    "l1_description": "Management of corporate governance, board operations, policy administration, and corporate records management.",
+    "org_unit": "Legal Affairs",
+    "current_technologies": [
+      "Docusign",
+      "Litera Compare",
+      "NetDocuments"
+    ],
+    "roadmap": {
+      "2026": {
+        "current": [
+          "Diligent Boards",
+          "NetDocuments",
+          "Word"
+        ],
+        "proposed": [
+          "Board Portal Enhancement",
+          "Policy Management System (Blueprint)"
+        ],
+        "deliverables": [
+          "Enhanced board collaboration tools",
+          "Centralized policy repository"
+        ]
+      },
+      "2027": {
+        "current": [
+          "Diligent Boards",
+          "Policy Mgmt System",
+          "NetDocuments"
+        ],
+        "proposed": [
+          "AI Policy Analyzer",
+          "Compliance Workflow Automation"
+        ],
+        "deliverables": [
+          "AI-powered policy analysis",
+          "Automated compliance workflows"
+        ]
+      },
+      "2028": {
+        "current": [
+          "Governance Platform",
+          "AI Policy Tools"
+        ],
+        "proposed": [
+          "Advanced Governance Analytics",
+          "Stakeholder Portal"
+        ],
+        "deliverables": [
+          "Governance dashboards",
+          "Enhanced stakeholder access"
+        ]
+      },
+      "2029": {
+        "current": [
+          "Comprehensive Governance Suite"
+        ],
+        "proposed": [
+          "Predictive Compliance",
+          "Board Intelligence AI"
+        ],
+        "deliverables": [
+          "Predictive governance insights",
+          "AI board support"
+        ]
+      },
+      "2030": {
+        "current": [
+          "Next-Gen Governance Platform"
+        ],
+        "proposed": [
+          "Autonomous Governance AI"
+        ],
+        "deliverables": [
+          "Fully automated governance processes"
+        ]
+      }
+    }
+  },
+  {
+    "l1_id": "L1-003",
+    "l1_name": "Government Relations",
+    "l1_description": "Management of BCI's relationships with government entities, regulatory stakeholders, and freedom of information requests",
+    "org_unit": "Legal Affairs",
+    "current_technologies": [
+      "NetDocuments",
+      "Onit"
+    ],
+    "roadmap": {
+      "2026": {
+        "current": [
+          "Email",
+          "SharePoint",
+          "Manual Processes"
+        ],
+        "proposed": [
+          "Government Relations CRM",
+          "FOI Management System"
+        ],
+        "deliverables": [
+          "Stakeholder relationship tracking",
+          "FOI request automation"
+        ]
+      },
+      "2027": {
+        "current": [
+          "GR CRM",
+          "FOI System"
+        ],
+        "proposed": [
+          "Regulatory Monitoring Tools",
+          "Communication Automation"
+        ],
+        "deliverables": [
+          "Proactive regulatory monitoring",
+          "Automated stakeholder comms"
+        ]
+      },
+      "2028": {
+        "current": [
+          "Integrated GR Platform"
+        ],
+        "proposed": [
+          "AI Sentiment Analysis",
+          "Trend Prediction"
+        ],
+        "deliverables": [
+          "Stakeholder sentiment tracking",
+          "Policy trend analysis"
+        ]
+      },
+      "2029": {
+        "current": [
+          "Advanced GR Platform"
+        ],
+        "proposed": [
+          "AI Engagement Optimizer"
+        ],
+        "deliverables": [
+          "AI-optimized engagement strategies"
+        ]
+      },
+      "2030": {
+        "current": [
+          "Next-Gen GR Platform"
+        ],
+        "proposed": [
+          "Autonomous Relationship AI"
+        ],
+        "deliverables": [
+          "AI-driven government relations"
+        ]
+      }
+    }
+  },
+  {
+    "l1_id": "L1-004",
+    "l1_name": "Investment Legal Services",
+    "l1_description": "Legal services supporting BCI's investment activities, including fund investments, investment manager relationships, and securities compliance specific to investment operations",
+    "org_unit": "Legal Affairs",
+    "current_technologies": [
+      "Aosphere LLP",
+      "BB AIM",
+      "Confidentiality Walls & Restricted Lists",
+      "PIT Plans",
+      "Practical Law",
+      "STAR Compliance",
+      "ServiceNow",
+      "SharePoint Online",
+      "Workday"
+    ],
+    "roadmap": {
+      "2026": {
+        "current": [
+          "NetDocuments",
+          "Thomson Reuters",
+          "FundApps",
+          "StarCompliance",
+          "Aosphere"
+        ],
+        "proposed": [
+          "Investment Deal Platform",
+          "Enhanced Compliance Suite"
+        ],
+        "deliverables": [
+          "Deal workflow management",
+          "Integrated compliance monitoring"
+        ]
+      },
+      "2027": {
+        "current": [
+          "Deal Platform",
+          "Compliance Suite",
+          "Thomson Reuters"
+        ],
+        "proposed": [
+          "AI Due Diligence Analyzer",
+          "Automated Compliance Alerts",
+          "Deal Analytics"
+        ],
+        "deliverables": [
+          "AI-powered due diligence",
+          "Proactive compliance monitoring",
+          "Deal intelligence"
+        ]
+      },
+      "2028": {
+        "current": [
+          "Integrated Investment Platform",
+          "AI DD Tools"
+        ],
+        "proposed": [
+          "Predictive Risk Scoring",
+          "Portfolio Compliance AI",
+          "Deal Database"
+        ],
+        "deliverables": [
+          "Automated risk assessment",
+          "Portfolio-wide compliance",
+          "Deal precedent library"
+        ]
+      },
+      "2029": {
+        "current": [
+          "Advanced Investment Platform",
+          "AI Analytics"
+        ],
+        "proposed": [
+          "Real-time Compliance Monitoring",
+          "AI Investment Analysis"
+        ],
+        "deliverables": [
+          "Continuous compliance monitoring",
+          "AI-driven investment insights"
+        ]
+      },
+      "2030": {
+        "current": [
+          "Next-Gen Investment Platform"
+        ],
+        "proposed": [
+          "Autonomous Compliance AI",
+          "AI Deal Structuring"
+        ],
+        "deliverables": [
+          "Fully autonomous compliance",
+          "AI-optimized deal structures"
+        ]
+      }
+    }
+  },
+  {
+    "l1_id": "L1-005",
+    "l1_name": "Legal Advisory & Research",
+    "l1_description": "Legal advisory, research, and education services provided to BCI business units, supporting business decision-making, risk assessment, and legal awareness",
+    "org_unit": "Legal Affairs",
+    "current_technologies": [
+      "Moody's Analytics Credit Ratings",
+      "NetDocuments",
+      "Practical Law",
+      "SharePoint Online",
+      "Westlaw Canada",
+      "Workday"
+    ],
+    "roadmap": {
+      "2026": {
+        "current": [
+          "Thomson Reuters Westlaw",
+          "Practical Law",
+          "Claude",
+          "NetDocuments",
+          "Word"
+        ],
+        "proposed": [
+          "Claude Enterprise/Team",
+          "Legal Knowledge Platform",
+          "AI Prompt Library"
+        ],
+        "deliverables": [
+          "Enterprise AI governance framework",
+          "Centralized knowledge repository",
+          "Standard AI workflows"
+        ]
+      },
+      "2027": {
+        "current": [
+          "Claude Enterprise",
+          "TR CoCounsel",
+          "KM Platform",
+          "Westlaw"
+        ],
+        "proposed": [
+          "Custom Legal AI Models",
+          "AI Research Assistants",
+          "Knowledge Graphs"
+        ],
+        "deliverables": [
+          "BCI-specific AI models",
+          "Agentic research assistants",
+          "Semantic knowledge network"
+        ]
+      },
+      "2028": {
+        "current": [
+          "Integrated AI Research Platform",
+          "Custom Models"
+        ],
+        "proposed": [
+          "Predictive Legal Analytics",
+          "AI Document Generation",
+          "Advisory AI"
+        ],
+        "deliverables": [
+          "AI-powered legal analytics",
+          "Automated document drafting",
+          "AI advisory support"
+        ]
+      },
+      "2029": {
+        "current": [
+          "Advanced AI Platform",
+          "Generative AI Suite"
+        ],
+        "proposed": [
+          "Autonomous Research AI",
+          "Opinion Generation AI",
+          "Legal Intel Platform"
+        ],
+        "deliverables": [
+          "AI-generated legal opinions",
+          "Fully autonomous research",
+          "Legal intelligence insights"
+        ]
+      },
+      "2030": {
+        "current": [
+          "Next-Gen AI Platform",
+          "Autonomous Agents"
+        ],
+        "proposed": [
+          "Fully Autonomous Legal AI",
+          "Predictive Legal System"
+        ],
+        "deliverables": [
+          "Complete AI-driven research & advisory",
+          "Predictive legal analysis"
+        ]
+      }
+    }
+  },
+  {
+    "l1_id": "L1-006",
+    "l1_name": "Legal Operations & Administration",
+    "l1_description": "Operational capabilities that enable Legal Affairs to function effectively, including external counsel management, budget, technology, knowledge, performance, and project management",
+    "org_unit": "Legal Affairs",
+    "current_technologies": [
+      "Diligent Board Books",
+      "NetDocuments",
+      "SharePoint Online"
+    ],
+    "roadmap": {
+      "2026": {
+        "current": [
+          "ServiceNow",
+          "PowerApps",
+          "PowerAutomate",
+          "WorkDay",
+          "PowerBI"
+        ],
+        "proposed": [
+          "Legal Ops Platform (Apperio/SimpleLegal)",
+          "Enhanced Analytics",
+          "Vendor Management"
+        ],
+        "deliverables": [
+          "Unified legal operations platform",
+          "Legal spend analytics",
+          "Vendor performance tracking"
+        ]
+      },
+      "2027": {
+        "current": [
+          "Legal Ops Platform",
+          "Enhanced Analytics",
+          "WorkDay"
+        ],
+        "proposed": [
+          "AI Resource Planning",
+          "Automated Reporting",
+          "Matter Analytics"
+        ],
+        "deliverables": [
+          "AI-driven resource allocation",
+          "Automated legal dashboards",
+          "Matter intelligence"
+        ]
+      },
+      "2028": {
+        "current": [
+          "Integrated Ops Platform",
+          "AI Analytics"
+        ],
+        "proposed": [
+          "Predictive Resource Analytics",
+          "Budget Optimization AI",
+          "Performance AI"
+        ],
+        "deliverables": [
+          "Predictive workload planning",
+          "AI budget optimization",
+          "Performance insights"
+        ]
+      },
+      "2029": {
+        "current": [
+          "Advanced Ops Platform",
+          "Predictive AI"
+        ],
+        "proposed": [
+          "AI Operations Optimizer",
+          "Autonomous Workflow Engine"
+        ],
+        "deliverables": [
+          "AI-optimized operations",
+          "Self-managing workflows"
+        ]
+      },
+      "2030": {
+        "current": [
+          "Next-Gen Ops Platform",
+          "Autonomous AI"
+        ],
+        "proposed": [
+          "Fully Autonomous Ops AI"
+        ],
+        "deliverables": [
+          "Completely automated legal operations"
+        ]
+      }
+    }
+  },
+  {
+    "l1_id": "L1-007",
+    "l1_name": "Legal Regulatory & Compliance",
+    "l1_description": "Enterprise-wide regulatory compliance and ethics program management, including regulatory intelligence, privacy compliance, trading controls, and ethics programs. Legal owns this at BCI.",
+    "org_unit": "Legal Affairs",
+    "current_technologies": [
+      "Diligent Board Books",
+      "JIRA",
+      "LIPS",
+      "MS Dynamics NAV",
+      "NetDocuments",
+      "Onit",
+      "ServiceNow",
+      "SharePoint Online",
+      "Workday"
+    ],
+    "roadmap": {
+      "2026": {
+        "current": [
+          "SharePoint Online",
+          "LIPS",
+          "Workday",
+          "JIRA",
+          "Onit",
+          "ServiceNow",
+          "NetDocuments",
+          "MS Dynamics NAV",
+          "Diligent Board Books"
+        ],
+        "proposed": [
+          "Platform TBD"
+        ],
+        "deliverables": [
+          "Assessment & planning"
+        ]
+      },
+      "2027": {
+        "current": [],
+        "proposed": [
+          "Implementation"
+        ],
+        "deliverables": [
+          "Platform deployment"
+        ]
+      },
+      "2028": {
+        "current": [],
+        "proposed": [
+          "Enhancement"
+        ],
+        "deliverables": [
+          "Capability enhancement"
+        ]
+      },
+      "2029": {
+        "current": [],
+        "proposed": [
+          "Optimization"
+        ],
+        "deliverables": [
+          "Process optimization"
+        ]
+      },
+      "2030": {
+        "current": [],
+        "proposed": [
+          "Next-Gen"
+        ],
+        "deliverables": [
+          "Transformation complete"
+        ]
+      }
+    }
+  },
+  {
+    "l1_id": "L1-008",
+    "l1_name": "Matter & Case Management",
+    "l1_description": "Management of legal matters, cases, and legal work across Legal Affairs, including litigation, disputes, and general legal matters, tracked through matter management systems",
+    "org_unit": "Legal Affairs",
+    "current_technologies": [
+      "NetDocuments",
+      "ServiceNow",
+      "SharePoint Online"
+    ],
+    "roadmap": {
+      "2026": {
+        "current": [
+          "Onit",
+          "NetDocuments",
+          "Email"
+        ],
+        "proposed": [
+          "Matter Management Platform (Smokeball/Clio)",
+          "E-Discovery Suite (Relativity)"
+        ],
+        "deliverables": [
+          "Unified matter management",
+          "Enhanced e-discovery capabilities"
+        ]
+      },
+      "2027": {
+        "current": [
+          "Matter Platform",
+          "E-Discovery Suite"
+        ],
+        "proposed": [
+          "AI Document Review",
+          "Predictive Case Analytics",
+          "Timeline AI"
+        ],
+        "deliverables": [
+          "AI-assisted document review",
+          "Case outcome prediction",
+          "Automated timeline generation"
+        ]
+      },
+      "2028": {
+        "current": [
+          "Integrated Matter Platform",
+          "AI Review Tools"
+        ],
+        "proposed": [
+          "Litigation Analytics",
+          "Settlement Prediction AI",
+          "Outside Counsel AI"
+        ],
+        "deliverables": [
+          "Data-driven litigation strategy",
+          "AI settlement recommendations",
+          "OC performance analytics"
+        ]
+      },
+      "2029": {
+        "current": [
+          "Advanced Matter Platform",
+          "Litigation AI"
+        ],
+        "proposed": [
+          "AI Case Strategy Engine",
+          "Automated Workflows"
+        ],
+        "deliverables": [
+          "AI-generated case strategies",
+          "Fully automated matter workflows"
+        ]
+      },
+      "2030": {
+        "current": [
+          "Next-Gen Matter Platform"
+        ],
+        "proposed": [
+          "Autonomous Matter AI"
+        ],
+        "deliverables": [
+          "AI-managed matter lifecycle"
+        ]
+      }
+    }
+  }
+];
+        
+        function initializeRoadmap() {
+            populateL1Filter();
+            renderRoadmap();
+        }
+        
+        function populateL1Filter() {
+            const select = document.getElementById('l1Filter');
+            roadmapData.forEach(l1 => {
+                const option = document.createElement('option');
+                option.value = l1.l1_id;
+                option.textContent = l1.l1_name;
+                select.appendChild(option);
+            });
+        }
+        
+        function renderRoadmap() {
+            const container = document.getElementById('roadmapContainer');
+            const l1Filter = document.getElementById('l1Filter').value;
+            const orgFilter = document.getElementById('orgUnitFilter').value;
+            
+            let filtered = roadmapData.filter(l1 => {
+                const l1Match = l1Filter === 'all' || l1.l1_id === l1Filter;
+                const orgMatch = orgFilter === 'all' || l1.org_unit === orgFilter;
+                return l1Match && orgMatch;
+            });
+            
+            container.innerHTML = filtered.map(l1 => {
+                const currentTechBadges = l1.current_technologies.map(tech => 
+                    `<span class="tech-badge current">${tech}</span>`
+                ).join('');
+                
+                const years = ['2026', '2027', '2028', '2029', '2030'];
+                
+                const yearColumns = years.map(year => {
+                    const yearData = l1.roadmap[year];
+                    if (!yearData) return '';
+                    
+                    const phase = year <= '2027' ? 'phase-1' : year <= '2029' ? 'phase-2' : 'phase-3';
+                    const phaseLabel = year <= '2027' ? 'Foundation' : year <= '2029' ? 'Automation' : 'Optimization';
+                    
+                    const currentTechs = yearData.current.map(tech =>
+                        `<div class="tech-item current">✓ ${tech}</div>`
+                    ).join('');
+                    
+                    const proposedTechs = yearData.proposed.map(tech =>
+                        `<div class="tech-item proposed">+ ${tech}</div>`
+                    ).join('');
+                    
+                    const deliverables = yearData.deliverables.map(del =>
+                        `<div class="deliverable-item">${del}</div>`
+                    ).join('');
+                    
+                    return `
+                        <div class="year-column">
+                            <div class="year-header">
+                                ${year}
+                                <span class="phase-indicator ${phase}">${phaseLabel}</span>
+                            </div>
+                            
+                            ${currentTechs ? `
+                                <div class="tech-section">
+                                    <div class="tech-section-title">Current</div>
+                                    <div class="tech-list">${currentTechs}</div>
+                                </div>
+                            ` : ''}
+                            
+                            ${proposedTechs ? `
+                                <div class="tech-section">
+                                    <div class="tech-section-title">Proposed</div>
+                                    <div class="tech-list">${proposedTechs}</div>
+                                </div>
+                            ` : ''}
+                            
+                            ${deliverables ? `
+                                <div class="deliverables">
+                                    <div class="tech-section-title">Deliverables</div>
+                                    ${deliverables}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                }).join('');
+                
+                return `
+                    <div class="roadmap-row" data-l1-id="${l1.l1_id}" data-org-unit="${l1.org_unit}">
+                        <div class="l1-header" onclick="toggleRow('${l1.l1_id}')">
+                            <div>
+                                <div>${l1.l1_name}</div>
+                                <div class="l1-description">${l1.l1_description}</div>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        
+                        <div class="current-tech-banner">
+                            <div class="current-tech-label">Current Technology Landscape:</div>
+                            <div class="tech-badges">
+                                ${currentTechBadges || '<span style="color: #7f8c8d;">No technology currently identified</span>'}
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-grid">
+                            ${yearColumns}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function toggleRow(l1Id) {
+            const row = document.querySelector(`.roadmap-row[data-l1-id="${l1Id}"]`);
+            if (row) {
+                row.classList.toggle('collapsed');
+            }
+        }
+        
+        function filterByOrgUnit() {
+            renderRoadmap();
+        }
+        
+        function filterByL1() {
+            renderRoadmap();
+        }
+        
+        function updateViewMode() {
+            const mode = document.getElementById('viewMode').value;
+            document.querySelectorAll('.roadmap-row').forEach(row => {
+                if (mode === 'collapsed') {
+                    row.classList.add('collapsed');
+                } else {
+                    row.classList.remove('collapsed');
+                }
+            });
+        }
+        
+        window.addEventListener('DOMContentLoaded', initializeRoadmap);
+    </script>
+</body>
+</html>
