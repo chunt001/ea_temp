@@ -108,6 +108,19 @@ def process_excel_file(excel_path, output_dir):
         
         print(f"Found {len(l1_capabilities)} L1 capabilities")
         
+        # Read L2 descriptions from capability catalog (starting row 21)
+        print("Extracting L2 descriptions from catalog...")
+        l2_descriptions = {}
+        for i in range(21, len(cap_raw)):
+            if pd.notna(cap_raw.iloc[i, 0]) and str(cap_raw.iloc[i, 0]).startswith('L2'):
+                l2_id = cap_raw.iloc[i, 0]
+                l2_name = cap_raw.iloc[i, 2]  # Column C has L2 name
+                l2_desc = cap_raw.iloc[i, 3] if pd.notna(cap_raw.iloc[i, 3]) else ""  # Column D has L2 description
+                if l2_name:
+                    l2_descriptions[str(l2_id)] = str(l2_desc)
+        
+        print(f"Found {len(l2_descriptions)} L2 descriptions")
+        
         # Build capability structure
         print("Building capability structure...")
         capability_data = {
@@ -180,7 +193,7 @@ def process_excel_file(excel_path, output_dir):
                 l2_data = {
                     'l2_id': l2_id,
                     'l2_name': l2_name,
-                    'l2_description': '',
+                    'l2_description': l2_descriptions.get(str(l2_id), ''),
                     'current_maturity': operational_health,
                     'business_tech_fit': business_tech_fit,
                     'automation_level': automation_level,
@@ -255,6 +268,30 @@ def process_excel_file(excel_path, output_dir):
         with open(f"{output_dir}/assessment-data.json", 'w') as f:
             json.dump(combined_data, f, indent=2)
             files_created.append('assessment-data.json')
+        
+        # Extract and save assessment guides
+        print("Extracting assessment guides...")
+        guides_data = extract_assessment_guides(excel_path)
+        
+        with open(f"{output_dir}/guides.json", 'w') as f:
+            json.dump(guides_data, f, indent=2)
+            files_created.append('guides.json')
+        
+        # Generate capability map data
+        print("Generating capability map data...")
+        map_data = generate_capability_map_data(capability_data)
+        
+        with open(f"{output_dir}/capability-map-data.json", 'w') as f:
+            json.dump(map_data, f, indent=2)
+            files_created.append('capability-map-data.json')
+        
+        # Generate technology roadmap
+        print("Generating technology roadmap...")
+        roadmap_data = generate_technology_roadmap(capability_data)
+        
+        with open(f"{output_dir}/technology-roadmap.json", 'w') as f:
+            json.dump(roadmap_data, f, indent=2)
+            files_created.append('technology-roadmap.json')
         
         print("\n✅ SUCCESS! Generated files:")
         for file in files_created:
@@ -427,6 +464,194 @@ def generate_evolution(cap_data):
             })
     
     return evolution
+
+def extract_assessment_guides(excel_path):
+    """Extract assessment guide sheets from Excel"""
+    
+    bh_guide = pd.read_excel(excel_path, sheet_name='BH Assessment Guide', header=None)
+    btf_guide = pd.read_excel(excel_path, sheet_name='BTF Assessment Guide', header=None)
+    th_guide = pd.read_excel(excel_path, sheet_name='TH Assessment Guide', header=None)
+    
+    def parse_guide_sheet(df):
+        guide_content = {
+            'title': '',
+            'overview': '',
+            'dimensions': []
+        }
+        
+        current_dimension = None
+        
+        for i in range(len(df)):
+            row = df.iloc[i].tolist()
+            first_col = row[0] if pd.notna(row[0]) else None
+            
+            if not first_col:
+                continue
+            
+            first_col_str = str(first_col).strip()
+            
+            # Title
+            if i == 0:
+                guide_content['title'] = first_col_str
+            elif i == 1:
+                guide_content['overview'] = first_col_str
+            
+            # Dimension headers (ALL CAPS)
+            elif first_col_str.isupper() and len(first_col_str) > 3 and 'GUIDE' not in first_col_str:
+                if current_dimension:
+                    guide_content['dimensions'].append(current_dimension)
+                
+                current_dimension = {
+                    'name': first_col_str,
+                    'question': '',
+                    'scale': []
+                }
+            
+            # Question row
+            elif first_col_str.startswith('Question:'):
+                if current_dimension:
+                    current_dimension['question'] = first_col_str.replace('Question: ', '')
+            
+            # Header row for scale
+            elif first_col_str in ['Label', 'Score', 'Weight']:
+                if current_dimension:
+                    current_dimension['headers'] = [str(x) for x in row if pd.notna(x)]
+            
+            # Scale data rows
+            elif current_dimension and 'headers' in current_dimension:
+                row_data = {}
+                for j, val in enumerate(row):
+                    if pd.notna(val) and j < len(current_dimension.get('headers', [])):
+                        header = current_dimension['headers'][j]
+                        row_data[header] = str(val)
+                
+                if row_data and len(row_data) > 1:  # At least 2 fields
+                    current_dimension['scale'].append(row_data)
+        
+        # Add last dimension
+        if current_dimension:
+            guide_content['dimensions'].append(current_dimension)
+        
+        return guide_content
+    
+    return {
+        'business_health': parse_guide_sheet(bh_guide),
+        'business_tech_fit': parse_guide_sheet(btf_guide),
+        'tech_health': parse_guide_sheet(th_guide)
+    }
+
+def generate_capability_map_data(cap_data):
+    """Generate data structure for visual capability map"""
+    
+    def get_domain_for_l1(l1_name):
+        """Map L1 capabilities to logical domains"""
+        # All capabilities belong to Legal Affairs org unit
+        # But organized into functional domains
+        mapping = {
+            'Contract Legal Services': 'Contract Management',
+            'Investment Legal Services': 'Investment Management',
+            'Corporate Governance': 'Governance & Compliance',
+            'Legal Regulatory & Compliance': 'Governance & Compliance',
+            'Government Relations': 'Governance & Compliance',
+            'Legal Advisory & Research': 'Advisory & Research',
+            'Legal Operations & Administration': 'Operations & Support',
+            'Matter & Case Management': 'Litigation & Matters'
+        }
+        return mapping.get(l1_name, 'Other')
+    
+    domains = {}
+    
+    # Define organization unit (from Excel ASSESSMENT SCOPE)
+    org_unit = "Legal Affairs"  # This comes from row 1 of the Excel file
+    
+    for l1 in cap_data['capabilities']:
+        domain = get_domain_for_l1(l1['l1_name'])
+        
+        if domain not in domains:
+            domains[domain] = {
+                'name': domain,
+                'org_unit': org_unit,
+                'l1_capabilities': []
+            }
+        
+        l1_map_data = {
+            'id': l1['l1_id'],
+            'name': l1['l1_name'],
+            'description': l1['l1_description'],
+            'l2_capabilities': []
+        }
+        
+        for l2 in l1['l2_capabilities']:
+            avg_score = (l2['current_maturity'] + l2['automation_level'] + l2['technology_fit_score']) / 3
+            
+            # Use L2 description from capability catalog, fall back to BH notes
+            description = l2.get('l2_description', '') or l2.get('bh_notes', '') or f"{l2['l2_name']} capability"
+            
+            l1_map_data['l2_capabilities'].append({
+                'id': l2['l2_id'],
+                'name': l2['l2_name'],
+                'description': description,
+                'maturity': l2['current_maturity'],
+                'automation': l2['automation_level'],
+                'tech_fit': l2['technology_fit_score'],
+                'business_tech_fit': l2['business_tech_fit'],
+                'importance': l2['strategic_importance'],
+                'avg_score': round(avg_score, 1)
+            })
+        
+        domains[domain]['l1_capabilities'].append(l1_map_data)
+    
+    return list(domains.values())
+
+def generate_technology_roadmap(cap_data):
+    """Generate technology roadmap showing current and proposed tech by L1 and year"""
+    
+    roadmap = []
+    
+    for l1 in cap_data['capabilities']:
+        # Collect current technologies
+        current_techs = set()
+        for l2 in l1['l2_capabilities']:
+            current_techs.update(l2['current_technologies'])
+        
+        roadmap_entry = {
+            'l1_id': l1['l1_id'],
+            'l1_name': l1['l1_name'],
+            'l1_description': l1['l1_description'],
+            'org_unit': 'Legal Affairs',
+            'current_technologies': sorted(list(current_techs)),
+            'roadmap': {
+                '2026': {
+                    'current': sorted(list(current_techs)),
+                    'proposed': ['Platform Assessment & Selection', 'Integration Planning'],
+                    'deliverables': ['Technology assessment', 'Vendor evaluation', 'Platform selection']
+                },
+                '2027': {
+                    'current': [],
+                    'proposed': ['New Platform Implementation', 'Enhanced Tools'],
+                    'deliverables': ['Platform deployment', 'User training', 'Process automation']
+                },
+                '2028': {
+                    'current': [],
+                    'proposed': ['AI/ML Capabilities', 'Advanced Analytics'],
+                    'deliverables': ['AI integration', 'Analytics implementation', 'Process optimization']
+                },
+                '2029': {
+                    'current': [],
+                    'proposed': ['Advanced Features', 'Predictive Capabilities'],
+                    'deliverables': ['Advanced capabilities', 'Predictive tools', 'Optimization']
+                },
+                '2030': {
+                    'current': [],
+                    'proposed': ['Next-Gen Platform', 'Autonomous AI'],
+                    'deliverables': ['Next-generation capabilities', 'Full automation', 'AI-driven operations']
+                }
+            }
+        }
+        
+        roadmap.append(roadmap_entry)
+    
+    return roadmap
 
 def main():
     print("=" * 60)

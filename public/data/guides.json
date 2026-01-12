@@ -1,0 +1,227 @@
+{
+  "business_health": {
+    "title": "BUSINESS HEALTH ASSESSMENT GUIDE",
+    "overview": "Dimension 1: Assess the strategic value and operational health of business capabilities \u2014 independent of technology",
+    "dimensions": [
+      {
+        "name": "STRATEGIC IMPORTANCE",
+        "question": "How critical is this capability to BCI's mission and strategic objectives?",
+        "scale": [
+          {
+            "Label": "Mission-Critical",
+            "Description": "Essential to BCI's investment mandate; regulatory/fiduciary requirement; failure severely impacts beneficiaries or operations; no viable alternatives",
+            "Assessment Guidance": "Select if: Directly enables investment returns, client commitments, or regulatory compliance. Loss triggers immediate escalation."
+          },
+          {
+            "Label": "Important",
+            "Description": "Contributes meaningfully to operations; supports strategic goals; temporary degradation manageable; standard industry practice",
+            "Assessment Guidance": "Select if: Necessary for efficient operations but short-term absence wouldn't halt critical functions."
+          },
+          {
+            "Label": "Supporting",
+            "Description": "Provides convenience or efficiency gains; alternatives readily available; minimal strategic impact if eliminated",
+            "Assessment Guidance": "Select if: Could be outsourced, eliminated, or significantly reduced without material business impact."
+          }
+        ],
+        "headers": [
+          "Label",
+          "Description",
+          "Assessment Guidance"
+        ]
+      },
+      {
+        "name": "OPERATIONAL HEALTH",
+        "question": "How healthy is this capability from a risk, compliance, and operational perspective?",
+        "scale": [
+          {
+            "Label": "Healthy",
+            "Description": "No significant pain points; low operational risk; meets all compliance requirements; stakeholders satisfied; issues rare",
+            "Assessment Guidance": "Select if: No active issues or complaints. Audit/compliance reviews clean. Stakeholders express satisfaction."
+          },
+          {
+            "Label": "Moderate Concerns",
+            "Description": "Noticeable pain points; moderate risk exposure; some compliance gaps; periodic stakeholder complaints; workarounds needed",
+            "Assessment Guidance": "Select if: Known issues exist but are managed. Some workarounds required. Moderate audit findings."
+          },
+          {
+            "Label": "Unhealthy",
+            "Description": "Severe pain points; high risk exposure; compliance violations; frequent complaints; capability barely functioning",
+            "Assessment Guidance": "Select if: Active escalations, significant audit findings, or risk events. Stakeholders actively dissatisfied."
+          }
+        ],
+        "headers": [
+          "Label",
+          "Description",
+          "Assessment Guidance"
+        ]
+      }
+    ]
+  },
+  "business_tech_fit": {
+    "title": "BUSINESS-TECHNOLOGY FIT ASSESSMENT GUIDE",
+    "overview": "Dimension 2: Assess how well technology serves the business capability \u2014 fit and automation \u2014 from the business perspective",
+    "dimensions": [
+      {
+        "name": "LEVEL OF AUTOMATION",
+        "question": "To what extent does technology automate work vs. requiring manual effort?",
+        "scale": [
+          {
+            "Label": "Highly Automated",
+            "Description": "Routine work automated end-to-end; minimal manual intervention; humans focus on exceptions and judgment; scalable without proportional headcount",
+            "Assessment Guidance": "Select if: Routine tasks automated. Manual effort for exceptions/decisions only. Volume increases don't require proportional staff."
+          },
+          {
+            "Label": "Partially Automated",
+            "Description": "Mix of automated and manual; some routine tasks still require human effort; automation exists but gaps remain",
+            "Assessment Guidance": "Select if: Some automation but significant manual steps persist. Efficiency gains possible through further automation."
+          },
+          {
+            "Label": "Mostly Manual",
+            "Description": "Heavy manual effort; extensive spreadsheet/email work; automation minimal; scaling requires proportional headcount increase",
+            "Assessment Guidance": "Select if: Most work is manual. Heavy reliance on spreadsheets/email. Growth requires adding people."
+          }
+        ],
+        "headers": [
+          "Label",
+          "Description",
+          "Assessment Guidance"
+        ]
+      },
+      {
+        "name": "TECHNOLOGY FIT",
+        "question": "Does technology adequately cover and meet the business requirements of this capability?",
+        "scale": [
+          {
+            "Label": "Excellent Fit",
+            "Description": "Technology comprehensively covers all capability needs; meets business requirements exceptionally well; enables best practices; users satisfied; no significant gaps",
+            "Assessment Guidance": "Select if: All key activities have appropriate tooling. System enables (not constrains) work. Users are satisfied with functionality."
+          },
+          {
+            "Label": "Adequate Fit",
+            "Description": "Technology covers most needs with some gaps; meets core requirements but workarounds exist; functional but not optimal; mixed user satisfaction",
+            "Assessment Guidance": "Select if: Core functions covered but notable gaps. Workarounds needed for some activities. Users express mixed satisfaction."
+          },
+          {
+            "Label": "Poor Fit",
+            "Description": "Technology has major coverage gaps; doesn't meet core business needs; wrong tool for the job; constrains capability; heavy reliance on manual workarounds",
+            "Assessment Guidance": "Select if: Frequent complaints about missing functionality or coverage gaps. System constrains rather than enables work."
+          }
+        ],
+        "headers": [
+          "Label",
+          "Description",
+          "Assessment Guidance"
+        ]
+      }
+    ]
+  },
+  "tech_health": {
+    "title": "TECHNOLOGY HEALTH SCORING GUIDE",
+    "overview": "Dimension 3: Assess the technical health and alignment with BCI's technology standards and direction \u2014 from the IT perspective",
+    "dimensions": [
+      {
+        "name": "TECHNOLOGY OPERATIONAL HEALTH",
+        "question": "How healthy is this technology from reliability, supportability, and lifecycle perspectives?",
+        "scale": [
+          {
+            "Score": "3",
+            "Label": "Healthy",
+            "Description": "Highly reliable; actively supported by vendor; regular updates; modern architecture; well-integrated; no significant technical debt or security concerns",
+            "Assessment Guidance": "Select if: Reliable, well-supported, receives updates, integrates well with ecosystem."
+          },
+          {
+            "Score": "2",
+            "Label": "Moderate Concerns",
+            "Description": "Generally reliable but some issues; support adequate but not excellent; updates infrequent; aging but functional; some integration friction; manageable technical debt",
+            "Assessment Guidance": "Select if: Works but has some reliability/support/integration gaps. May be aging but not urgent to replace."
+          },
+          {
+            "Score": "1",
+            "Label": "Unhealthy",
+            "Description": "Frequent reliability issues; limited/no vendor support; no updates; legacy/obsolete; significant technical debt; security vulnerabilities; poorly integrated",
+            "Assessment Guidance": "Select if: Reliability problems, lacks support, obsolete, has security issues, or creates integration bottlenecks."
+          }
+        ],
+        "headers": [
+          "Score",
+          "Label",
+          "Description",
+          "Assessment Guidance"
+        ]
+      },
+      {
+        "name": "TECHNOLOGY DIRECTION ALIGNMENT",
+        "question": "How well does this technology align with BCI's technology direction? \nNote: assessment based on alignment with specific tech direction components listed below.",
+        "scale": [
+          {
+            "Weight": "0.25",
+            "Tech Direction Component": "BCI Technical Standards",
+            "Description": "Compliance with enterprise architecture principles, approved technology stack, integration patterns",
+            "Assessment Sample Questions": "Does it follow EA standards / guidelines? Uses approved platforms?"
+          },
+          {
+            "Weight": "0.25",
+            "Tech Direction Component": "Cloud Strategy",
+            "Description": "Alignment with BCI's cloud-first direction; cloud-native, cloud-ready, or cloud-compatible",
+            "Assessment Sample Questions": "Is it cloud-native? Can it be migrated? SaaS where possible?"
+          },
+          {
+            "Weight": "0.25",
+            "Tech Direction Component": "Zero-Trust Security",
+            "Description": "Compliance with Zero-Trust architecture principles; identity-centric security; least-privilege access",
+            "Assessment Sample Questions": "Supports MFA? No implicit trust?"
+          },
+          {
+            "Weight": "0.25",
+            "Tech Direction Component": "AI Enablement",
+            "Description": "Readiness to leverage AI/ML capabilities; data accessibility; API availability for AI integration",
+            "Assessment Sample Questions": "Can AI tools integrate? Data accessible for ML?"
+          },
+          {
+            "Score": "1",
+            "Label": "Fully Aligned",
+            "Description": "Assessed technology explicitly aligns with a specific technology direction component."
+          },
+          {
+            "Score": "0.7",
+            "Label": "Partially Aligned",
+            "Description": "Assessed technology meets some requirements from the specific technology direction component."
+          },
+          {
+            "Score": "3",
+            "Label": "Fully Aligned",
+            "Description": "Aligns with BCI technical standards; supports Cloud strategy; compliant with Zero-Trust security model; AI-enabled or AI-ready; on strategic technology roadmap",
+            "Scoring Threshold (Min)": "0.86",
+            "Scoring Threshold (Max)": "1"
+          },
+          {
+            "Score": "2",
+            "Label": "Partially Aligned",
+            "Description": "Meets some technical standards but gaps exist; limited Cloud readiness; partial Zero-Trust compliance; no current AI enablement but not blocking",
+            "Scoring Threshold (Min)": "0.7",
+            "Scoring Threshold (Max)": "0.85"
+          },
+          {
+            "Score": "1",
+            "Label": "Misaligned",
+            "Description": "Conflicts with BCI technical standards; not Cloud-compatible; violates Zero-Trust principles; blocks AI enablement; requires replacement or major remediation",
+            "Scoring Threshold (Min)": "0",
+            "Scoring Threshold (Max)": "0.69"
+          }
+        ],
+        "headers": [
+          "Score",
+          "Label",
+          "Description",
+          "Scoring Threshold (Min)",
+          "Scoring Threshold (Max)"
+        ]
+      },
+      {
+        "name": "OVERALL SCORE INTERPRETATION",
+        "question": "",
+        "scale": []
+      }
+    ]
+  }
+}

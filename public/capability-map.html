@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Affairs Capability Model</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    :root {
+      --maturity-1: #d32f2f;
+      --maturity-2: #f57c00;
+      --maturity-3: #fbc02d;
+      --maturity-4: #7cb342;
+      --maturity-5: #388e3c;
+      
+      --domain-1: #1e3a5f;
+      --domain-2: #00838f;
+      --domain-3: #5a7a8f;
+      --domain-4: #616161;
+      --domain-5: #6a1b9a;
+      --domain-6: #2d5a3a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      margin-bottom: 1.5rem;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .controls {
+      background: white;
+      padding: 1.25rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      margin-bottom: 1.5rem;
+    }
+
+    .control-row {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .control-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .control-group label {
+      font-weight: 600;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .control-group select {
+      padding: 0.5rem 1rem;
+      border: 2px solid #e1e8ed;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      background: white;
+      cursor: pointer;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.3s;
+      border-radius: 26px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #667eea;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
+    .checkbox-panel {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid #e1e8ed;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .checkbox-item label {
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    .quick-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .quick-btn {
+      padding: 0.35rem 0.75rem;
+      border: 1px solid #667eea;
+      background: white;
+      color: #667eea;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .quick-btn:hover {
+      background: #667eea;
+      color: white;
+    }
+
+    .export-btn {
+      padding: 0.6rem 1.25rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s;
+    }
+
+    .export-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      background: #f8f9fa;
+      border-radius: 6px;
+      border: 1px solid #e1e8ed;
+      font-size: 0.85rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+    }
+
+    .domains-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .domain-column {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      break-inside: avoid;
+    }
+    
+    .l1-groups-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .domain-column.hidden {
+      display: none;
+    }
+
+    .domain-header {
+      background: var(--domain-1);
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .l1-group {
+      background: #f7f9fc;
+      border: 2px solid #e4e9f0;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .l1-group.hidden {
+      display: none;
+    }
+
+    .l1-header {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #2c3e50;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e1e8ed;
+    }
+
+    .l2-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .l2-card {
+      background: white;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 2px solid #e1e8ed;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .l2-card:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-color: #667eea;
+    }
+
+    .l2-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1a202c;
+      line-height: 1.3;
+      flex: 1;
+    }
+
+    .l2-score {
+      flex-shrink: 0;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #e1e8ed;
+      color: #2c3e50;
+    }
+    
+    /* Hide scores when in capability model mode (no heat map) */
+    .domains-grid:not(.heatmap-on) .l2-score {
+      display: none;
+    }
+    
+    /* Tooltip for descriptions */
+    .l2-card {
+      position: relative;
+    }
+    
+    .l2-card::after {
+      content: attr(data-description);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      background: #2c3e50;
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      white-space: normal;
+      max-width: 300px;
+      width: max-content;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      line-height: 1.4;
+    }
+    
+    .l2-card:hover::after {
+      opacity: 1;
+    }
+    
+    .l2-card[data-description=""]::after {
+      display: none;
+    }
+
+    /* Heat map colors */
+    .heatmap-on .l2-card[data-score="1"],
+    .heatmap-on .l2-card[data-score="1.0"],
+    .heatmap-on .l2-card[data-score="1.5"] {
+      background: linear-gradient(135deg, #d32f2f 0%, #e57373 100%);
+      border-color: #d32f2f;
+    }
+
+    .heatmap-on .l2-card[data-score="2"],
+    .heatmap-on .l2-card[data-score="2.0"],
+    .heatmap-on .l2-card[data-score="2.5"] {
+      background: linear-gradient(135deg, #f57c00 0%, #ffb74d 100%);
+      border-color: #f57c00;
+    }
+
+    .heatmap-on .l2-card[data-score="3"],
+    .heatmap-on .l2-card[data-score="3.0"],
+    .heatmap-on .l2-card[data-score="3.5"] {
+      background: linear-gradient(135deg, #fbc02d 0%, #fff176 100%);
+      border-color: #fbc02d;
+    }
+
+    .heatmap-on .l2-card[data-score="4"],
+    .heatmap-on .l2-card[data-score="4.0"],
+    .heatmap-on .l2-card[data-score="4.5"] {
+      background: linear-gradient(135deg, #7cb342 0%, #aed581 100%);
+      border-color: #7cb342;
+    }
+
+    .heatmap-on .l2-card[data-score="5"],
+    .heatmap-on .l2-card[data-score="5.0"] {
+      background: linear-gradient(135deg, #388e3c 0%, #66bb6a 100%);
+      border-color: #388e3c;
+    }
+
+    .heatmap-on .l2-card .l2-name {
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .heatmap-on .l2-score {
+      background: rgba(0, 0, 0, 0.15);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Neutral state - ensure good contrast */
+    .l2-card .l2-score {
+      background: #e1e8ed;
+      color: #2c3e50;
+      border: 1px solid #cbd5e0;
+    }
+    
+    .l2-card .l2-name {
+      color: #2c3e50;
+    }
+
+    @media print {
+      .controls {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title">BCI Capability Model</div>
+      <div style="font-size: 0.9rem; color: #7f8c8d;">Enterprise-wide business capabilities organized by domain</div>
+    </div>
+
+    <div class="controls" id="controlsPanel">
+      <div class="control-row">
+        <div class="control-group">
+          <label>ORGANIZATION UNIT:</label>
+          <select id="orgUnitFilter" onchange="updateFilters()">
+            <option value="all">All Organization Units</option>
+          </select>
+        </div>
+        
+        <div class="control-group">
+          <label>VIEW:</label>
+          <select id="viewSelect" onchange="updateView()">
+            <option value="full">Full (L1 + L2)</option>
+            <option value="l1-only">L1 Only</option>
+            <option value="domains-only">Domains Only</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label>COLOR BY:</label>
+          <select id="colorMetric" onchange="updateColors()">
+            <option value="none">None (Capability Model Only)</option>
+            <option value="maturity">Maturity</option>
+            <option value="automation">Automation Level</option>
+            <option value="tech_fit">Technology Fit</option>
+            <option value="business_tech_fit">Business Tech Fit</option>
+            <option value="importance">Strategic Importance</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label class="toggle-switch">
+            <input type="checkbox" id="showHeatMap" onchange="toggleHeatMap()">
+            <span class="slider"></span>
+          </label>
+          <label for="showHeatMap" style="cursor: pointer;">Show Heat Map</label>
+        </div>
+
+        <button class="export-btn" onclick="exportAsImage()">📷 Export as Image</button>
+      </div>
+
+      <div class="control-row" id="domainFilterRow">
+        <div style="flex: 1;">
+          <div style="font-weight: 600; color: #555; font-size: 0.85rem; margin-bottom: 0.5rem;">FILTER BY DOMAIN:</div>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div class="checkbox-panel" style="flex: 1; min-width: 300px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span style="font-weight: 600; font-size: 0.85rem;">Domains</span>
+                <div class="quick-actions">
+                  <button class="quick-btn" onclick="selectAllDomains()">All</button>
+                  <button class="quick-btn" onclick="deselectAllDomains()">None</button>
+                </div>
+              </div>
+              <div class="checkbox-group" id="domainCheckboxes"></div>
+            </div>
+
+            <div class="checkbox-panel" style="flex: 1; min-width: 300px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span style="font-weight: 600; font-size: 0.85rem;">L1 Capabilities</span>
+                <div class="quick-actions">
+                  <button class="quick-btn" onclick="selectAllL1s()">All</button>
+                  <button class="quick-btn" onclick="deselectAllL1s()">None</button>
+                </div>
+              </div>
+              <div class="checkbox-group" id="l1Checkboxes"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-row">
+        <div class="legend" id="legend">
+          <strong>Maturity:</strong>
+          <div class="legend-item"><div class="legend-color" style="background: #d32f2f;"></div><span>1</span></div>
+          <div class="legend-item"><div class="legend-color" style="background: #f57c00;"></div><span>2</span></div>
+          <div class="legend-item"><div class="legend-color" style="background: #fbc02d;"></div><span>3</span></div>
+          <div class="legend-item"><div class="legend-color" style="background: #7cb342;"></div><span>4</span></div>
+          <div class="legend-item"><div class="legend-color" style="background: #388e3c;"></div><span>5</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="domains-grid heatmap-on" id="capabilityMap"></div>
+  </div>
+
+  <script>
+    
+        // DATA STRUCTURE NOTE:
+        // capabilityData is an array of domains, each containing L1 capabilities with L2 capabilities
+        // Currently shows Legal domain - will expand as other domains are assessed
+        // Domain colors are assigned automatically from the color palette
+        // Supports unlimited domains, L1s, and L2s
+        
+        // Data includes org_unit for filtering
+        let capabilityData = [
+  {
+    "name": "Contract Management",
+    "org_unit": "Legal Affairs",
+    "l1_capabilities": [
+      {
+        "id": "L1-001",
+        "name": "Contract Legal Services",
+        "description": "Legal services within contract lifecycle management across all BCI business units, including drafting, review, and recommendations. Legal's contribution to enterprise-wide Contract Management (Procurement owns vendor contracts, asset classes own investment contracts, HR owns employment contracts)",
+        "l2_capabilities": [
+          {
+            "id": "L2-001",
+            "name": "Investment Transaction Legal Guidance & Due Diligence",
+            "description": "Legal due diligence, transaction structuring, and legal guidance for BCI's investment transactions, including fund investments, co-investments, and portfolio company transactions",
+            "maturity": 5,
+            "automation": 5,
+            "tech_fit": 1,
+            "business_tech_fit": 3.0,
+            "importance": 5,
+            "avg_score": 3.7
+          },
+          {
+            "id": "L2-002",
+            "name": "Investment Management Agreements Management",
+            "description": "Drafting, negotiating, reviewing, and managing legal agreements with regards to investment and fund management.",
+            "maturity": 3,
+            "automation": 3,
+            "tech_fit": 3,
+            "business_tech_fit": 3.0,
+            "importance": 4,
+            "avg_score": 3.0
+          },
+          {
+            "id": "L2-003",
+            "name": "Fund Documentation & Structuring",
+            "description": "Legal guidance for fund formation / documentation, subscription agreements, and investment / fund structure optimization",
+            "maturity": 5,
+            "automation": 5,
+            "tech_fit": 5,
+            "business_tech_fit": 5.0,
+            "importance": 5,
+            "avg_score": 5.0
+          },
+          {
+            "id": "L2-004",
+            "name": "Co-Investment & Joint Venture Legal Services",
+            "description": "Legal guidance on structuring and documentation for co-investment opportunities and joint venture arrangements with other investors or partners",
+            "maturity": 2,
+            "automation": 3,
+            "tech_fit": 1,
+            "business_tech_fit": 2.0,
+            "importance": 4,
+            "avg_score": 2.0
+          },
+          {
+            "id": "L2-005",
+            "name": "Securities & Investment Regulatory Compliance",
+            "description": "Ensuring compliance with securities regulations, investment restrictions, regulatory requirements specific to investment activities (e.g., prospectus requirements, securities filings, investment limits)",
+            "maturity": 3,
+            "automation": 2,
+            "tech_fit": 3,
+            "business_tech_fit": 2.5,
+            "importance": 5,
+            "avg_score": 2.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Governance & Compliance",
+    "org_unit": "Legal Affairs",
+    "l1_capabilities": [
+      {
+        "id": "L1-002",
+        "name": "Corporate Governance",
+        "description": "Management of corporate governance, board operations, policy administration, and corporate records management.",
+        "l2_capabilities": [
+          {
+            "id": "L2-006",
+            "name": "Contract Review",
+            "description": "Legal review of contracts initiated by business units (procurement, HR, IT), including risk assessment, legal terms negotiation, and approval workflows",
+            "maturity": 5,
+            "automation": 3,
+            "tech_fit": 5,
+            "business_tech_fit": 4.0,
+            "importance": 4,
+            "avg_score": 4.3
+          },
+          {
+            "id": "L2-007",
+            "name": "Contract Drafting & Template Management",
+            "description": "Drafting BCI led contracts (NDAs, settlement agreements, legal service agreements) and maintaining contract templates, clause libraries, and contract standards",
+            "maturity": 3,
+            "automation": 2,
+            "tech_fit": 3,
+            "business_tech_fit": 2.5,
+            "importance": 3,
+            "avg_score": 2.7
+          }
+        ]
+      },
+      {
+        "id": "L1-003",
+        "name": "Government Relations",
+        "description": "Management of BCI's relationships with government entities, regulatory stakeholders, and freedom of information requests",
+        "l2_capabilities": [
+          {
+            "id": "L2-008",
+            "name": "Litigation Management",
+            "description": "Management of litigation matters including court proceedings, discovery, legal strategy, outside counsel coordination, legal holds, settlements, and court filings",
+            "maturity": 2,
+            "automation": 3,
+            "tech_fit": 1,
+            "business_tech_fit": 2.0,
+            "importance": 4,
+            "avg_score": 2.0
+          },
+          {
+            "id": "L2-009",
+            "name": "General Matter Management",
+            "description": "Intake, tracking, assignment, collaboration, and closure of non-litigation legal matters across all practice areas (investment, advisory, compliance, transactional), including matter workflow management and resource allocation",
+            "maturity": 5,
+            "automation": 5,
+            "tech_fit": 5,
+            "business_tech_fit": 5.0,
+            "importance": 4,
+            "avg_score": 5.0
+          }
+        ]
+      },
+      {
+        "id": "L1-007",
+        "name": "Legal Regulatory & Compliance",
+        "description": "Enterprise-wide regulatory compliance and ethics program management, including regulatory intelligence, privacy compliance, trading controls, and ethics programs. Legal owns this at BCI.",
+        "l2_capabilities": [
+          {
+            "id": "L2-024",
+            "name": "External Counsel & Vendor Management",
+            "description": "Selection, engagement, management, and oversight of external law firms and legal service providers (e.g. legal research vendors, legal technology vendors), including outside counsel guidelines and e-billing",
+            "maturity": 2,
+            "automation": 3,
+            "tech_fit": 1,
+            "business_tech_fit": 2.0,
+            "importance": 4,
+            "avg_score": 2.0
+          },
+          {
+            "id": "L2-025",
+            "name": "Legal Affairs Financial Management",
+            "description": "Legal Affairs department budgeting, forecasting, spend tracking, variance analysis, invoice processing, and financial reporting to manage Legal Affairs' financial resources effectively. Note: Enterprise budgeting owned by Finance; this is Legal's departmental budget",
+            "maturity": 5,
+            "automation": 2,
+            "tech_fit": 5,
+            "business_tech_fit": 3.5,
+            "importance": 3,
+            "avg_score": 4.0
+          },
+          {
+            "id": "L2-026",
+            "name": "Legal Affairs Technology Management",
+            "description": "Management of Legal Affairs' technology stack (e.g. matter management, law firm e-billing, document management, research databases), vendor relationships, technology implementation, user adoption, system optimization, first line technical support and technology strategy.",
+            "maturity": 3,
+            "automation": 2,
+            "tech_fit": 3,
+            "business_tech_fit": 2.5,
+            "importance": 3,
+            "avg_score": 2.7
+          },
+          {
+            "id": "L2-027",
+            "name": "Legal Affairs Knowledge Management",
+            "description": "Management of Legal's knowledge assets including knowledge repository, precedent libraries, playbooks, templates, best practices, and expertise directories to capture and share legal knowledge",
+            "maturity": 5,
+            "automation": 3,
+            "tech_fit": 5,
+            "business_tech_fit": 4.0,
+            "importance": 4,
+            "avg_score": 4.3
+          },
+          {
+            "id": "L2-028",
+            "name": "Legal Affairs Performance Management",
+            "description": "Legal operations analytics, dashboards, KPIs, metrics, performance reporting, and business intelligence to measure Legal Affairs' effectiveness, efficiency, and value delivery",
+            "maturity": 2,
+            "automation": 2,
+            "tech_fit": 1,
+            "business_tech_fit": 1.5,
+            "importance": 3,
+            "avg_score": 1.7
+          },
+          {
+            "id": "L2-029",
+            "name": "Entity Management",
+            "description": "Compliance requirement; entity records current but process is manual.",
+            "maturity": 3,
+            "automation": 3,
+            "tech_fit": 3,
+            "business_tech_fit": 3.0,
+            "importance": 4,
+            "avg_score": 3.0
+          },
+          {
+            "id": "L2-030",
+            "name": "Legal Affairs Training and Development",
+            "description": "Professional development of Legal Affairs staff including continuing legal education (CLE), skills development, training programs, career development, and succession planning for Legal Affairs team members. Note: This develops Legal staff (distinct from Stakeholder Legal Education which trains business)",
+            "maturity": 5,
+            "automation": 2,
+            "tech_fit": 5,
+            "business_tech_fit": 3.5,
+            "importance": 3,
+            "avg_score": 4.0
+          },
+          {
+            "id": "L2-031",
+            "name": "Legal Affairs Project Management",
+            "description": "Manage legal-related projects, ensuring compliance, timely delivery, and alignment with organizational objectives through structured planning, resource management, and risk oversight.",
+            "maturity": 3,
+            "automation": 3,
+            "tech_fit": 3,
+            "business_tech_fit": 3.0,
+            "importance": 4,
+            "avg_score": 3.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Investment Management",
+    "org_unit": "Legal Affairs",
+    "l1_capabilities": [
+      {
+        "id": "L1-004",
+        "name": "Investment Legal Services",
+        "description": "Legal services supporting BCI's investment activities, including fund investments, investment manager relationships, and securities compliance specific to investment operations",
+        "l2_capabilities": [
+          {
+            "id": "L2-010",
+            "name": "Regulatory Intelligence & Change Management",
+            "description": "Monitoring regulatory changes, horizon scanning, regulatory interpretation, impact analysis, and maintaining regulatory content repository to keep Legal and business informed of regulatory developments",
+            "maturity": 3,
+            "automation": 2,
+            "tech_fit": 3,
+            "business_tech_fit": 2.5,
+            "importance": 5,
+            "avg_score": 2.7
+          },
+          {
+            "id": "L2-011",
+            "name": "Legal Compliance Program Design & Advisory",
+            "description": "Development and management of compliance programs, compliance assessments, compliance monitoring and testing, regulatory reporting and filings, and compliance advisory to business units",
+            "maturity": 5,
+            "automation": 5,
+            "tech_fit": 5,
+            "business_tech_fit": 5.0,
+            "importance": 5,
+            "avg_score": 5.0
+          },
+          {
+            "id": "L2-012",
+            "name": "Personal, Private, and Sensitive Information Protection Legal Advisory",
+            "description": "Privacy compliance (e.g. PIPEDA, GDPR), privacy impact assessments, privacy policy development, personal, private, and sensitive information protection advisory, privacy breach response and notification, and consent management",
+            "maturity": 2,
+            "automation": 2,
+            "tech_fit": 1,
+            "business_tech_fit": 1.5,
+            "importance": 5,
+            "avg_score": 1.7
+          },
+          {
+            "id": "L2-013",
+            "name": "Trading & MNPI Controls",
+            "description": "Personal trading preclearance, trade monitoring, material non-public information (MNPI) management, and restricted list management",
+            "maturity": 3,
+            "automation": 3,
+            "tech_fit": 3,
+            "business_tech_fit": 3.0,
+            "importance": 4,
+            "avg_score": 3.0
+          },
+          {
+            "id": "L2-014",
+            "name": "Ethics & Code of Conduct Management",
+            "description": "Code of Conduct administration, ethics programs, misconduct case management (intake, investigation, resolution), whistleblower hotline management, and ethics training.",
+            "maturity": 5,
+            "automation": 5,
+            "tech_fit": 5,
+            "business_tech_fit": 5.0,
+            "importance": 5,
+            "avg_score": 5.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Advisory & Research",
+    "org_unit": "Legal Affairs",
+    "l1_capabilities": [
+      {
+        "id": "L1-005",
+        "name": "Legal Advisory & Research",
+        "description": "Legal advisory, research, and education services provided to BCI business units, supporting business decision-making, risk assessment, and legal awareness",
+        "l2_capabilities": [
+          {
+            "id": "L2-015",
+            "name": "Legal Research & Analysis",
+            "description": "Legal research using legal databases (Westlaw, LexisNexis, Practical Law), precedent analysis, statutory interpretation, case law research, and legal intelligence gathering",
+            "maturity": 3,
+            "automation": 3,
+            "tech_fit": 3,
+            "business_tech_fit": 3.0,
+            "importance": 4,
+            "avg_score": 3.0
+          },
+          {
+            "id": "L2-016",
+            "name": "Legal Opinion & Guidance",
+            "description": "Providing legal opinions, and guidance to business stakeholders on legal questions, typically delivered through memos or emails",
+            "maturity": 2,
+            "automation": 3,
+            "tech_fit": 1,
+            "business_tech_fit": 2.0,
+            "importance": 4,
+            "avg_score": 2.0
+          },
+          {
+            "id": "L2-017",
+            "name": "Corporate Transaction Guidance & Due Diligence",
+            "description": "Legal guidance for BCI corporate transactions (M&A involving BCI itself, corporate partnerships, strategic alliances) and due diligence. Note: Distinct from Investment Transaction guidance (which covers BCI's investment activities)",
+            "maturity": 5,
+            "automation": 2,
+            "tech_fit": 5,
+            "business_tech_fit": 3.5,
+            "importance": 3,
+            "avg_score": 4.0
+          },
+          {
+            "id": "L2-018",
+            "name": "Risk Assessment & Advisory",
+            "description": "Legal risk identification, assessment, and advisory to support business decision-making, including legal risk scoring, risk mitigation recommendations, and decision support",
+            "maturity": 3,
+            "automation": 3,
+            "tech_fit": 3,
+            "business_tech_fit": 3.0,
+            "importance": 4,
+            "avg_score": 3.0
+          },
+          {
+            "id": "L2-019",
+            "name": "Stakeholder Legal Education & Training",
+            "description": "Training and educating business stakeholders on legal topics, compliance requirements, policy changes, legal developments, and legal literacy to enable proactive risk management. Note: This is Legal training THE BUSINESS (distinct from Legal Talent Development which trains Legal staff)",
+            "maturity": 5,
+            "automation": 2,
+            "tech_fit": 5,
+            "business_tech_fit": 3.5,
+            "importance": 3,
+            "avg_score": 4.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Operations & Support",
+    "org_unit": "Legal Affairs",
+    "l1_capabilities": [
+      {
+        "id": "L1-006",
+        "name": "Legal Operations & Administration",
+        "description": "Operational capabilities that enable Legal Affairs to function effectively, including external counsel management, budget, technology, knowledge, performance, and project management",
+        "l2_capabilities": [
+          {
+            "id": "L2-020",
+            "name": "Corporate Governance Guidance",
+            "description": "Managing corporate governance framework, governance policies, corporate governance best practices, and governance advisory to ensure BCI meets governance standards and obligations",
+            "maturity": 2,
+            "automation": 5,
+            "tech_fit": 1,
+            "business_tech_fit": 3.0,
+            "importance": 5,
+            "avg_score": 2.7
+          },
+          {
+            "id": "L2-021",
+            "name": "Board & Committee Guidance",
+            "description": "Managing board and committee meetings, preparing board materials, maintaining board minutes and resolutions, managing board approvals, and coordinating board-related legal activities",
+            "maturity": 3,
+            "automation": 3,
+            "tech_fit": 3,
+            "business_tech_fit": 3.0,
+            "importance": 4,
+            "avg_score": 3.0
+          },
+          {
+            "id": "L2-022",
+            "name": "Policy & Directive Management",
+            "description": "Development, maintenance, review, and retirement of corporate policies and directives, including policy approval workflows, policy communication, and policy repository management",
+            "maturity": 5,
+            "automation": 3,
+            "tech_fit": 5,
+            "business_tech_fit": 4.0,
+            "importance": 4,
+            "avg_score": 4.3
+          },
+          {
+            "id": "L2-023",
+            "name": "Records Management",
+            "description": "Management of BCI's records management definitions and practices, including record classifications and retention schedules, and archiving to ensure compliance with records retention regulations and obligations.",
+            "maturity": 3,
+            "automation": 2,
+            "tech_fit": 3,
+            "business_tech_fit": 2.5,
+            "importance": 3,
+            "avg_score": 2.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Litigation & Matters",
+    "org_unit": "Legal Affairs",
+    "l1_capabilities": [
+      {
+        "id": "L1-008",
+        "name": "Matter & Case Management",
+        "description": "Management of legal matters, cases, and legal work across Legal Affairs, including litigation, disputes, and general legal matters, tracked through matter management systems",
+        "l2_capabilities": [
+          {
+            "id": "L2-032",
+            "name": "Government Relations Strategy & Engagement",
+            "description": "Development and execution of government relations strategies, engagement with government entities and regulatory stakeholders, advocacy, issues management, and managing BCI's government affairs activities",
+            "maturity": 2,
+            "automation": 5,
+            "tech_fit": 1,
+            "business_tech_fit": 3.0,
+            "importance": 5,
+            "avg_score": 2.7
+          },
+          {
+            "id": "L2-033",
+            "name": "Freedom of Information (FOI) Management",
+            "description": "Complete FOI request lifecycle management including FOI intake, assessment, response coordination, disclosure review, FOI tracking, deadline management, and FOI compliance to meet access to information obligations",
+            "maturity": 5,
+            "automation": 3,
+            "tech_fit": 5,
+            "business_tech_fit": 4.0,
+            "importance": 4,
+            "avg_score": 4.3
+          }
+        ]
+      }
+    ]
+  }
+];
+    let domainColors = {};
+
+    function initializeMap() {
+      populateOrgUnitFilter();
+      renderDomainCheckboxes();
+      renderL1Checkboxes();
+      renderCapabilityMap();
+    }
+    
+    function populateOrgUnitFilter() {
+      const orgUnits = new Set();
+      capabilityData.forEach(domain => {
+        if (domain.org_unit) {
+          orgUnits.add(domain.org_unit);
+        }
+      });
+      
+      const select = document.getElementById('orgUnitFilter');
+      Array.from(orgUnits).sort().forEach(org => {
+        const option = document.createElement('option');
+        option.value = org;
+        option.textContent = org;
+        select.appendChild(option);
+      });
+      
+      // Default to first org unit if only one exists
+      if (orgUnits.size === 1) {
+        select.value = Array.from(orgUnits)[0];
+      }
+    }
+    
+    function updateFilters() {
+      const selectedOrg = document.getElementById('orgUnitFilter').value;
+      
+      // Show/hide domains based on org unit filter
+      document.querySelectorAll('.domain-column').forEach(col => {
+        const domainName = col.dataset.domain;
+        const domainData = capabilityData.find(d => d.name === domainName);
+        
+        if (selectedOrg === 'all' || !domainData || domainData.org_unit === selectedOrg) {
+          col.style.display = 'inline-block';
+        } else {
+          col.style.display = 'none';
+        }
+      });
+    }
+
+    function renderDomainCheckboxes() {
+      const container = document.getElementById('domainCheckboxes');
+      const colors = ['#1e3a5f', '#00838f', '#5a7a8f', '#616161', '#6a1b9a', '#2d5a3a'];
+      
+      container.innerHTML = capabilityData.map((domain, idx) => {
+        domainColors[domain.name] = colors[idx % colors.length];
+        return `
+          <div class="checkbox-item">
+            <input type="checkbox" id="domain-${idx}" checked onchange="toggleDomain('${domain.name}')">
+            <label for="domain-${idx}">${domain.name}</label>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderL1Checkboxes() {
+      const container = document.getElementById('l1Checkboxes');
+      let html = '';
+      
+      capabilityData.forEach((domain, dIdx) => {
+        domain.l1_capabilities.forEach((l1, l1Idx) => {
+          const id = `l1-${dIdx}-${l1Idx}`;
+          html += `
+            <div class="checkbox-item">
+              <input type="checkbox" id="${id}" checked onchange="toggleL1('${l1.id}')">
+              <label for="${id}">${l1.name}</label>
+            </div>
+          `;
+        });
+      });
+      
+      container.innerHTML = html;
+    }
+
+    function renderCapabilityMap() {
+      const mapContainer = document.getElementById('capabilityMap');
+      
+      mapContainer.innerHTML = capabilityData.map((domain, dIdx) => {
+        const domainColor = domainColors[domain.name];
+        
+        let l1Html = domain.l1_capabilities.map((l1, l1Idx) => {
+          let l2Html = l1.l2_capabilities.map((l2, l2Idx) => {
+            const description = l2.description || `${l2.name} - Part of ${l1.name}`;
+            return `
+              <div class="l2-card" 
+                   data-score="${l2.maturity}" 
+                   data-maturity="${l2.maturity}"
+                   data-automation="${l2.automation}"
+                   data-tech-fit="${l2.tech_fit}"
+                   data-business-tech-fit="${l2.business_tech_fit}"
+                   data-importance="${l2.importance}"
+                   data-l1-id="${l1.id}"
+                   data-description="${description}">
+                <div class="l2-name">${l2.name}</div>
+                <div class="l2-score">${l2.maturity}</div>
+              </div>
+            `;
+          }).join('');
+          
+          return `
+            <div class="l1-group" data-l1-id="${l1.id}">
+              <div class="l1-header">${l1.name.toUpperCase()}</div>
+              <div class="l2-cards">
+                ${l2Html}
+              </div>
+            </div>
+          `;
+        }).join('');
+        
+        return `
+          <div class="domain-column" data-domain="${domain.name}" data-org-unit="${domain.org_unit || 'Legal Affairs'}">
+            <div class="domain-header" style="background: ${domainColor};">
+              ${domain.name.toUpperCase()}
+            </div>
+            <div class="l1-groups-container">
+              ${l1Html}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function updateView() {
+      const view = document.getElementById('viewSelect').value;
+      
+      if (view === 'full') {
+        document.querySelectorAll('.l1-group').forEach(el => el.style.display = 'block');
+        document.querySelectorAll('.l2-cards').forEach(el => el.style.display = 'flex');
+      } else if (view === 'l1-only') {
+        document.querySelectorAll('.l1-group').forEach(el => el.style.display = 'block');
+        document.querySelectorAll('.l2-cards').forEach(el => el.style.display = 'none');
+      } else if (view === 'domains-only') {
+        document.querySelectorAll('.l1-group').forEach(el => el.style.display = 'none');
+      }
+    }
+
+    function updateColors() {
+      const metric = document.getElementById('colorMetric').value;
+      const legend = document.getElementById('legend');
+      
+      // Update score displays
+      document.querySelectorAll('.l2-card').forEach(card => {
+        const score = card.dataset[metric === 'business_tech_fit' ? 'businessTechFit' : metric.replace('_', '-')];
+        const scoreEl = card.querySelector('.l2-score');
+        if (scoreEl) {
+          scoreEl.textContent = score;
+        }
+        card.dataset.score = score;
+      });
+      
+      // Update legend
+      if (metric === 'none') {
+        legend.style.display = 'none';
+      } else {
+        legend.style.display = 'flex';
+        const metricNames = {
+          'maturity': 'Maturity',
+          'automation': 'Automation Level',
+          'tech_fit': 'Technology Fit',
+          'business_tech_fit': 'Business Tech Fit',
+          'importance': 'Strategic Importance'
+        };
+        legend.querySelector('strong').textContent = metricNames[metric] + ':';
+      }
+    }
+
+    function toggleHeatMap() {
+      const mapContainer = document.getElementById('capabilityMap');
+      const isChecked = document.getElementById('showHeatMap').checked;
+      const colorSelect = document.getElementById('colorMetric');
+      
+      if (isChecked) {
+        mapContainer.classList.add('heatmap-on');
+        // Default to maturity when turning on heat map
+        if (colorSelect.value === 'none') {
+          colorSelect.value = 'maturity';
+        }
+        updateColors();
+      } else {
+        mapContainer.classList.remove('heatmap-on');
+        colorSelect.value = 'none';
+        document.getElementById('legend').style.display = 'none';
+      }
+    }
+
+    function toggleDomain(domainName) {
+      const domainEl = document.querySelector(`.domain-column[data-domain="${domainName}"]`);
+      if (domainEl) {
+        domainEl.classList.toggle('hidden');
+      }
+    }
+
+    function toggleL1(l1Id) {
+      document.querySelectorAll(`.l1-group[data-l1-id="${l1Id}"]`).forEach(el => {
+        el.classList.toggle('hidden');
+      });
+    }
+
+    function selectAllDomains() {
+      document.querySelectorAll('#domainCheckboxes input[type="checkbox"]').forEach(cb => {
+        cb.checked = true;
+      });
+      document.querySelectorAll('.domain-column').forEach(el => {
+        el.classList.remove('hidden');
+      });
+    }
+
+    function deselectAllDomains() {
+      document.querySelectorAll('#domainCheckboxes input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
+      });
+      document.querySelectorAll('.domain-column').forEach(el => {
+        el.classList.add('hidden');
+      });
+    }
+
+    function selectAllL1s() {
+      document.querySelectorAll('#l1Checkboxes input[type="checkbox"]').forEach(cb => {
+        cb.checked = true;
+      });
+      document.querySelectorAll('.l1-group').forEach(el => {
+        el.classList.remove('hidden');
+      });
+    }
+
+    function deselectAllL1s() {
+      document.querySelectorAll('#l1Checkboxes input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
+      });
+      document.querySelectorAll('.l1-group').forEach(el => {
+        el.classList.add('hidden');
+      });
+    }
+
+    async function exportAsImage() {
+      const exportBtn = event.target;
+      exportBtn.textContent = '📷 Exporting...';
+      exportBtn.disabled = true;
+      
+      try {
+        // Hide controls temporarily
+        document.getElementById('controlsPanel').style.display = 'none';
+        
+        // Capture the capability map
+        const canvas = await html2canvas(document.body, {
+          scale: 2,
+          backgroundColor: '#f5f7fa',
+          logging: false
+        });
+        
+        // Show controls again
+        document.getElementById('controlsPanel').style.display = 'block';
+        
+        // Download
+        const link = document.createElement('a');
+        const date = new Date().toISOString().split('T')[0];
+        link.download = `legal-affairs-capability-map-${date}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        
+        exportBtn.textContent = '📷 Export as Image';
+        exportBtn.disabled = false;
+      } catch (error) {
+        console.error('Export failed:', error);
+        alert('Export failed. Make sure you have internet connection to load html2canvas library.');
+        exportBtn.textContent = '📷 Export as Image';
+        exportBtn.disabled = false;
+        document.getElementById('controlsPanel').style.display = 'block';
+      }
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', function() {
+      initializeMap();
+      // Start with capability model view (no heat map, no scores)
+      const mapContainer = document.getElementById('capabilityMap');
+      mapContainer.classList.remove('heatmap-on');
+      document.getElementById('legend').style.display = 'none';
+      updateFilters();
+    });
+  </script>
+</body>
+</html>

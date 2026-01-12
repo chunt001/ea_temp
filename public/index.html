@@ -665,6 +665,9 @@
     </div>
     
     <div class="nav-tabs">
+        <button class="nav-btn" onclick="window.location.href='capability-map.html'" style="background: linear-gradient(135deg, #2980b9 0%, #3498db 100%); color: white; padding: 1rem 2rem; cursor: pointer; border-radius: 8px; font-weight: 700; border: none; font-size: 1.05rem; box-shadow: 0 2px 8px rgba(41, 128, 185, 0.3);">
+            🗺️ Capability Model
+        </button>
         <button class="nav-tab active" onclick="showView('pain-points')">Pain Points & Gaps</button>
         <button class="nav-tab" onclick="showView('roadmap')">5-Year Roadmap</button>
         <button class="nav-tab" onclick="showView('prioritization')">Value vs Complexity</button>
@@ -674,6 +677,9 @@
         <button class="nav-tab" onclick="showView('overview')">Executive Overview</button>
         <button class="nav-tab" onclick="showView('gaps-detailed')">Gap Analysis</button>
         <button class="nav-tab" onclick="showView('technology')">Technology Landscape</button>
+        <button class="nav-btn" onclick="window.location.href='guides.html'" style="background: #f8f9fa; border: 2px solid #667eea; color: #667eea; padding: 1rem 1.5rem; cursor: pointer; border-radius: 8px; font-weight: 600;">
+            📚 Assessment Guides
+        </button>
     </div>
     
     <div class="container">
@@ -1149,6 +1155,85 @@
         }
         
         // ROADMAP FUNCTIONS
+        function renderRoadmap() {
+            // Load technology roadmap data
+            fetch('/data/technology-roadmap.json')
+                .then(r => r.json())
+                .then(roadmapData => {
+                    let html = '<div class="timeline-header">';
+                    html += '<div>L1 Capability</div>';
+                    for (let year = 2026; year <= 2030; year++) {
+                        html += `<div>${year}</div>`;
+                    }
+                    html += '</div>';
+                    
+                    roadmapData.forEach(l1 => {
+                        html += '<div class="timeline-row">';
+                        html += `<div class="timeline-label">${l1.l1_name}</div>`;
+                        
+                        for (let year = 2026; year <= 2030; year++) {
+                            const yearKey = year.toString();
+                            const yearData = l1.roadmap[yearKey];
+                            
+                            let phaseClass = '';
+                            if (year <= 2027) phaseClass = 'phase1';
+                            else if (year <= 2029) phaseClass = 'phase2';
+                            else phaseClass = 'phase3';
+                            
+                            if (yearData) {
+                                let content = '';
+                                
+                                // Add current technologies as small tags
+                                if (yearData.current && yearData.current.length > 0) {
+                                    const currentTags = yearData.current.slice(0, 3).map(tech => 
+                                        `<span style="display: inline-block; background: #d5f4e6; color: #27ae60; padding: 2px 6px; border-radius: 8px; font-size: 0.7rem; margin: 2px; font-weight: 600;">✓ ${tech}</span>`
+                                    ).join(' ');
+                                    content += currentTags;
+                                    if (yearData.current.length > 3) {
+                                        content += `<span style="font-size: 0.7rem; color: #7f8c8d;"> +${yearData.current.length - 3} more</span>`;
+                                    }
+                                    content += '<br><br>';
+                                }
+                                
+                                // Add proposed technologies as small tags
+                                if (yearData.proposed && yearData.proposed.length > 0) {
+                                    const proposedTags = yearData.proposed.slice(0, 2).map(tech =>
+                                        `<span style="display: inline-block; background: #fff4e6; color: #f39c12; padding: 2px 6px; border-radius: 8px; font-size: 0.7rem; margin: 2px; font-weight: 600;">+ ${tech}</span>`
+                                    ).join(' ');
+                                    content += proposedTags;
+                                    if (yearData.proposed.length > 2) {
+                                        content += `<span style="font-size: 0.7rem; color: #7f8c8d;"> +${yearData.proposed.length - 2}</span>`;
+                                    }
+                                    content += '<br><br>';
+                                }
+                                
+                                // Add deliverables
+                                if (yearData.deliverables && yearData.deliverables.length > 0) {
+                                    content += yearData.deliverables.slice(0, 2).map(del =>
+                                        `<div style="font-size: 0.75rem; color: #555; margin-bottom: 4px;">▸ ${del}</div>`
+                                    ).join('');
+                                    if (yearData.deliverables.length > 2) {
+                                        content += `<div style="font-size: 0.7rem; color: #7f8c8d;">+ ${yearData.deliverables.length - 2} more</div>`;
+                                    }
+                                }
+                                
+                                html += `<div class="timeline-item ${phaseClass}">${content}</div>`;
+                            } else {
+                                html += '<div></div>';
+                            }
+                        }
+                        html += '</div>';
+                    });
+                    
+                    document.getElementById('roadmapTimeline').innerHTML = html;
+                })
+                .catch(err => {
+                    console.error('Error loading roadmap:', err);
+                    // Fallback to original static roadmap if data not available
+                    renderStaticRoadmap();
+                });
+        }
+        
         function renderRoadmap() {
             const roadmapData = {
                 'Contract Lifecycle Management': {
