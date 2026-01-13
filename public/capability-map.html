@@ -458,6 +458,20 @@
         </div>
         
         <div class="control-group">
+          <label>COLOR PALETTE:</label>
+          <select id="colorPalette" onchange="updateColorPalette()">
+            <option value="default">Default (Red-Green)</option>
+            <option value="blue">Blue Gradient</option>
+            <option value="purple">Purple Gradient</option>
+            <option value="teal">Teal Gradient</option>
+            <option value="warm">Warm (Orange-Red)</option>
+            <option value="cool">Cool (Blue-Cyan)</option>
+            <option value="viridis">Viridis (Colorblind Safe)</option>
+            <option value="contrast">High Contrast</option>
+          </select>
+        </div>
+        
+        <div class="control-group">
           <label>VIEW:</label>
           <select id="viewSelect" onchange="updateView()">
             <option value="full">Full (L1 + L2)</option>
@@ -1000,6 +1014,43 @@
   }
 ];
     let domainColors = {};
+    
+    const colorPalettes = {
+      "default": {
+        "colors": ["#d32f2f", "#f57c00", "#fbc02d", "#7cb342", "#388e3c"],
+        "domain_colors": ["#1e3a5f", "#00838f", "#5a7a8f", "#616161", "#6a1b9a", "#2d5a3a"]
+      },
+      "blue": {
+        "colors": ["#1565c0", "#1976d2", "#42a5f5", "#64b5f6", "#90caf9"],
+        "domain_colors": ["#0d47a1", "#1565c0", "#1976d2", "#1e88e5", "#2196f3", "#42a5f5"]
+      },
+      "purple": {
+        "colors": ["#6a1b9a", "#8e24aa", "#ab47bc", "#ba68c8", "#ce93d8"],
+        "domain_colors": ["#4a148c", "#6a1b9a", "#7b1fa2", "#8e24aa", "#9c27b0", "#ab47bc"]
+      },
+      "teal": {
+        "colors": ["#00695c", "#00897b", "#26a69a", "#4db6ac", "#80cbc4"],
+        "domain_colors": ["#004d40", "#00695c", "#00796b", "#00897b", "#009688", "#26a69a"]
+      },
+      "warm": {
+        "colors": ["#b71c1c", "#d84315", "#e65100", "#f57c00", "#fb8c00"],
+        "domain_colors": ["#b71c1c", "#c62828", "#d32f2f", "#e53935", "#f44336", "#ef5350"]
+      },
+      "cool": {
+        "colors": ["#01579b", "#0277bd", "#0288d1", "#039be5", "#03a9f4"],
+        "domain_colors": ["#01579b", "#0277bd", "#0288d1", "#0097a7", "#00acc1", "#00bcd4"]
+      },
+      "viridis": {
+        "colors": ["#440154", "#31688e", "#35b779", "#90d743", "#fde724"],
+        "domain_colors": ["#440154", "#46327e", "#365c8d", "#277f8e", "#1fa187", "#4ac16d"]
+      },
+      "contrast": {
+        "colors": ["#000000", "#424242", "#757575", "#bdbdbd", "#f5f5f5"],
+        "domain_colors": ["#1a237e", "#c62828", "#2e7d32", "#f57c00", "#6a1b9a", "#00838f"]
+      }
+    };
+    
+    let currentPalette = "default";
 
     function initializeMap() {
       populateOrgUnitFilter();
@@ -1048,7 +1099,8 @@
 
     function renderDomainCheckboxes() {
       const container = document.getElementById('domainCheckboxes');
-      const colors = ['#1e3a5f', '#00838f', '#5a7a8f', '#616161', '#6a1b9a', '#2d5a3a'];
+      const palette = colorPalettes[currentPalette];
+      const colors = palette.domain_colors;
       
       container.innerHTML = capabilityData.map((domain, idx) => {
         domainColors[domain.name] = colors[idx % colors.length];
@@ -1059,6 +1111,47 @@
           </div>
         `;
       }).join('');
+    }
+    
+    function updateColorPalette() {
+      currentPalette = document.getElementById('colorPalette').value;
+      
+      // Re-render domain colors
+      renderDomainCheckboxes();
+      
+      // Update domain headers with new colors
+      const palette = colorPalettes[currentPalette];
+      document.querySelectorAll('.domain-header').forEach((header, idx) => {
+        header.style.background = palette.domain_colors[idx % palette.domain_colors.length];
+      });
+      
+      // Update heat map colors if active
+      if (document.getElementById('capabilityMap').classList.contains('heatmap-on')) {
+        updateHeatmapColors();
+      }
+    }
+    
+    function updateHeatmapColors() {
+      const palette = colorPalettes[currentPalette];
+      const colors = palette.colors;
+      
+      // Update CSS custom properties
+      document.documentElement.style.setProperty('--maturity-1', colors[0]);
+      document.documentElement.style.setProperty('--maturity-2', colors[1]);
+      document.documentElement.style.setProperty('--maturity-3', colors[2]);
+      document.documentElement.style.setProperty('--maturity-4', colors[3]);
+      document.documentElement.style.setProperty('--maturity-5', colors[4]);
+      
+      // Update legend
+      const legend = document.getElementById('legend');
+      if (legend) {
+        const legendBoxes = legend.querySelectorAll('.legend-color');
+        legendBoxes.forEach((box, idx) => {
+          if (idx < colors.length) {
+            box.style.background = colors[idx];
+          }
+        });
+      }
     }
 
     function renderL1Checkboxes() {

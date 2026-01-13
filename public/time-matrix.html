@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology TIME Matrix - Legal Affairs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #2c3e50;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .explanation {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border-left: 4px solid #667eea;
+        }
+        
+        .explanation h3 {
+            color: #667eea;
+            margin-bottom: 0.75rem;
+        }
+        
+        .explanation p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .controls {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .control-group label {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        
+        .control-group select {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 6px;
+        }
+        
+        .matrix-container {
+            background: white;
+            padding: 3rem 2rem 2rem 4rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .matrix-chart {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+        }
+        
+        /* Quadrant backgrounds */
+        .quadrant-bg {
+            position: absolute;
+            opacity: 0.08;
+        }
+        
+        .quadrant-tolerate {
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+            background: #95a5a6;
+        }
+        
+        .quadrant-invest {
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 50%;
+            background: #27ae60;
+        }
+        
+        .quadrant-eliminate {
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+            background: #e74c3c;
+        }
+        
+        .quadrant-migrate {
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 50%;
+            background: #f39c12;
+        }
+        
+        .axis {
+            position: absolute;
+            background: #2c3e50;
+        }
+        
+        .axis-vertical {
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            transform: translateX(-50%);
+        }
+        
+        .axis-horizontal {
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            transform: translateY(-50%);
+        }
+        
+        .axis-label {
+            position: absolute;
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+        
+        .axis-label-x {
+            bottom: -45px;
+            right: 10px;
+        }
+        
+        .axis-label-y {
+            top: 10px;
+            left: -110px;
+            transform: rotate(-90deg);
+            transform-origin: center;
+        }
+        
+        .quadrant-label {
+            position: absolute;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+            pointer-events: none;
+        }
+        
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+        
+        .bubble:hover {
+            transform: translate(-50%, -50%) scale(1.2) !important;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            z-index: 100;
+        }
+        
+        .bubble.time-invest {
+            background: linear-gradient(135deg, #27ae60 0%, #52be80 100%);
+        }
+        
+        .bubble.time-migrate {
+            background: linear-gradient(135deg, #f39c12 0%, #f5b041 100%);
+        }
+        
+        .bubble.time-tolerate {
+            background: linear-gradient(135deg, #95a5a6 0%, #b2bec3 100%);
+        }
+        
+        .bubble.time-eliminate {
+            background: linear-gradient(135deg, #e74c3c 0%, #ec7063 100%);
+        }
+        
+        .bubble-tooltip {
+            position: fixed;
+            background: #2c3e50;
+            color: white;
+            padding: 1.25rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            z-index: 1000;
+            max-width: 350px;
+            display: none;
+            pointer-events: none;
+        }
+        
+        .bubble-tooltip.active {
+            display: block;
+        }
+        
+        .tooltip-title {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 0.5rem;
+        }
+        
+        .tooltip-detail {
+            font-size: 0.85rem;
+            margin: 0.35rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .tooltip-category {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .legend-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        
+        .legend-label {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .legend-label strong {
+            font-size: 0.9rem;
+        }
+        
+        .legend-label small {
+            font-size: 0.75rem;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Technology TIME Matrix</h1>
+        <p>Tolerate • Invest • Migrate • Eliminate Analysis</p>
+    </div>
+    
+    <div class="container">
+        <div class="explanation">
+            <h3>TIME Matrix for Technology Portfolio Rationalization</h3>
+            <p><strong>Purpose:</strong> Strategic assessment of each technology/application to determine investment disposition</p>
+            <p><strong>X-Axis (Tech Health):</strong> Overall technical health (1-3: Significant Issues → Healthy & Aligned)</p>
+            <p><strong>Y-Axis (Strategic Alignment):</strong> Alignment with BCI technology direction (1-3: Poor → Excellent)</p>
+            <p><strong>Bubble Size:</strong> Configurable dimension (operational health, strategic value, etc.)</p>
+            <p style="margin-top: 1rem; font-weight: 600;">Quadrant Actions:</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+                <div style="padding: 0.75rem; background: #f8f9fa; border-left: 4px solid #95a5a6; border-radius: 4px;">
+                    <strong style="color: #95a5a6;">TOLERATE</strong> (Top-Left) - Low health + High alignment → Monitor but keep
+                </div>
+                <div style="padding: 0.75rem; background: #e8f8f5; border-left: 4px solid #27ae60; border-radius: 4px;">
+                    <strong style="color: #27ae60;">INVEST</strong> (Top-Right) - High health + High alignment → Strategic investment
+                </div>
+                <div style="padding: 0.75rem; background: #fadbd8; border-left: 4px solid #e74c3c; border-radius: 4px;">
+                    <strong style="color: #e74c3c;">ELIMINATE</strong> (Bottom-Left) - Low health + Low alignment → Phase out
+                </div>
+                <div style="padding: 0.75rem; background: #fef5e7; border-left: 4px solid #f39c12; border-radius: 4px;">
+                    <strong style="color: #f39c12;">MIGRATE</strong> (Bottom-Right) - High health + Low alignment → Replace/upgrade
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label>Bubble Size:</label>
+                <select id="bubbleSizeMetric" onchange="renderMatrix()">
+                    <option value="ops_health">Operational Health</option>
+                    <option value="strategic_value">Strategic Value</option>
+                    <option value="tech_health">Tech Health</option>
+                    <option value="alignment">Strategic Alignment</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label>Show Technologies:</label>
+                <select id="categoryFilter" onchange="renderMatrix()">
+                    <option value="all">All Technologies</option>
+                    <option value="INVEST">INVEST Only</option>
+                    <option value="MIGRATE">MIGRATE Only</option>
+                    <option value="TOLERATE">TOLERATE Only</option>
+                    <option value="ELIMINATE">ELIMINATE Only</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label>Priority:</label>
+                <select id="priorityFilter" onchange="renderMatrix()">
+                    <option value="all">All Priorities</option>
+                    <option value="CRITICAL">CRITICAL</option>
+                    <option value="HIGH">HIGH</option>
+                    <option value="MEDIUM">MEDIUM</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="matrix-container">
+            <div class="matrix-chart" id="matrixChart">
+                <!-- Quadrant backgrounds -->
+                <div class="quadrant-bg quadrant-tolerate"></div>
+                <div class="quadrant-bg quadrant-invest"></div>
+                <div class="quadrant-bg quadrant-eliminate"></div>
+                <div class="quadrant-bg quadrant-migrate"></div>
+                
+                <!-- Axes -->
+                <div class="axis axis-vertical"></div>
+                <div class="axis axis-horizontal"></div>
+                
+                <!-- Quadrant labels -->
+                <div class="quadrant-label" style="top: 15%; left: 15%; color: #95a5a6;">
+                    <strong>TOLERATE</strong><br>
+                    <small style="font-size: 0.75rem; font-weight: 400;">Monitor & Maintain</small>
+                </div>
+                <div class="quadrant-label" style="top: 15%; right: 12%; color: #27ae60;">
+                    <strong>INVEST</strong><br>
+                    <small style="font-size: 0.75rem; font-weight: 400;">Strategic Investment</small>
+                </div>
+                <div class="quadrant-label" style="bottom: 12%; left: 15%; color: #e74c3c;">
+                    <strong>ELIMINATE</strong><br>
+                    <small style="font-size: 0.75rem; font-weight: 400;">Phase Out</small>
+                </div>
+                <div class="quadrant-label" style="bottom: 12%; right: 12%; color: #f39c12;">
+                    <strong>MIGRATE</strong><br>
+                    <small style="font-size: 0.75rem; font-weight: 400;">Replace/Upgrade</small>
+                </div>
+                
+                <!-- Axis labels -->
+                <div class="axis-label axis-label-x">Tech Health Score →</div>
+                <div class="axis-label axis-label-y">Strategic Alignment →</div>
+            </div>
+            
+            <div class="legend" id="legend"></div>
+        </div>
+        
+        <div class="bubble-tooltip" id="tooltip"></div>
+    </div>
+    
+    <script>
+        let timeData = [
+  {
+    "id": "APP-001",
+    "name": "NetDocuments",
+    "tech_health": 2.8,
+    "alignment": 2.8,
+    "ops_health": 3,
+    "tech_health_status": "Healthy",
+    "alignment_pct": 93.3,
+    "recommended_action": "Based on TIME analysis: INVEST",
+    "priority": "CRITICAL",
+    "strategic_value": 5,
+    "time_category": "INVEST",
+    "notes": "Technology positioned in INVEST quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-002",
+    "name": "Diligent Boards",
+    "tech_health": 2.8,
+    "alignment": 2.5,
+    "ops_health": 3,
+    "tech_health_status": "Healthy",
+    "alignment_pct": 83.3,
+    "recommended_action": "Based on TIME analysis: INVEST",
+    "priority": "CRITICAL",
+    "strategic_value": 5,
+    "time_category": "INVEST",
+    "notes": "Technology positioned in INVEST quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-003",
+    "name": "ServiceNow",
+    "tech_health": 3.0,
+    "alignment": 2.7,
+    "ops_health": 3,
+    "tech_health_status": "Healthy",
+    "alignment_pct": 90.0,
+    "recommended_action": "Based on TIME analysis: INVEST",
+    "priority": "HIGH",
+    "strategic_value": 4,
+    "time_category": "INVEST",
+    "notes": "Technology positioned in INVEST quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-004",
+    "name": "Onit",
+    "tech_health": 1.9,
+    "alignment": 2.7,
+    "ops_health": 2,
+    "tech_health_status": "Significant Issues",
+    "alignment_pct": 90.0,
+    "recommended_action": "Based on TIME analysis: TOLERATE",
+    "priority": "CRITICAL",
+    "strategic_value": 5,
+    "time_category": "TOLERATE",
+    "notes": "Technology positioned in TOLERATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-005",
+    "name": "Thomson Reuters Westlaw",
+    "tech_health": 2.0,
+    "alignment": 2.5,
+    "ops_health": 2,
+    "tech_health_status": "Moderate Gaps",
+    "alignment_pct": 83.3,
+    "recommended_action": "Based on TIME analysis: TOLERATE",
+    "priority": "CRITICAL",
+    "strategic_value": 5,
+    "time_category": "TOLERATE",
+    "notes": "Technology positioned in TOLERATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-006",
+    "name": "StarCompliance",
+    "tech_health": 1.6,
+    "alignment": 2.8,
+    "ops_health": 2,
+    "tech_health_status": "Significant Issues",
+    "alignment_pct": 93.3,
+    "recommended_action": "Based on TIME analysis: TOLERATE",
+    "priority": "HIGH",
+    "strategic_value": 4,
+    "time_category": "TOLERATE",
+    "notes": "Technology positioned in TOLERATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-007",
+    "name": "Word/Excel",
+    "tech_health": 2.7,
+    "alignment": 1.6,
+    "ops_health": 3,
+    "tech_health_status": "Healthy",
+    "alignment_pct": 53.3,
+    "recommended_action": "Based on TIME analysis: MIGRATE",
+    "priority": "HIGH",
+    "strategic_value": 4,
+    "time_category": "MIGRATE",
+    "notes": "Technology positioned in MIGRATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-008",
+    "name": "Email",
+    "tech_health": 2.8,
+    "alignment": 1.4,
+    "ops_health": 3,
+    "tech_health_status": "Healthy",
+    "alignment_pct": 46.7,
+    "recommended_action": "Based on TIME analysis: MIGRATE",
+    "priority": "MEDIUM",
+    "strategic_value": 3,
+    "time_category": "MIGRATE",
+    "notes": "Technology positioned in MIGRATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-009",
+    "name": "PowerBI",
+    "tech_health": 2.7,
+    "alignment": 1.7,
+    "ops_health": 2,
+    "tech_health_status": "Healthy",
+    "alignment_pct": 56.7,
+    "recommended_action": "Based on TIME analysis: MIGRATE",
+    "priority": "MEDIUM",
+    "strategic_value": 3,
+    "time_category": "MIGRATE",
+    "notes": "Technology positioned in MIGRATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-010",
+    "name": "SharePoint",
+    "tech_health": 1.4,
+    "alignment": 1.4,
+    "ops_health": 1,
+    "tech_health_status": "Significant Issues",
+    "alignment_pct": 46.7,
+    "recommended_action": "Based on TIME analysis: ELIMINATE",
+    "priority": "MEDIUM",
+    "strategic_value": 3,
+    "time_category": "ELIMINATE",
+    "notes": "Technology positioned in ELIMINATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-011",
+    "name": "Litera Compare",
+    "tech_health": 1.7,
+    "alignment": 1.7,
+    "ops_health": 2,
+    "tech_health_status": "Significant Issues",
+    "alignment_pct": 56.7,
+    "recommended_action": "Based on TIME analysis: ELIMINATE",
+    "priority": "MEDIUM",
+    "strategic_value": 3,
+    "time_category": "ELIMINATE",
+    "notes": "Technology positioned in ELIMINATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-012",
+    "name": "FundApps",
+    "tech_health": 1.9,
+    "alignment": 1.6,
+    "ops_health": 2,
+    "tech_health_status": "Significant Issues",
+    "alignment_pct": 53.3,
+    "recommended_action": "Based on TIME analysis: ELIMINATE",
+    "priority": "HIGH",
+    "strategic_value": 4,
+    "time_category": "ELIMINATE",
+    "notes": "Technology positioned in ELIMINATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-013",
+    "name": "Aosphere",
+    "tech_health": 1.4,
+    "alignment": 1.4,
+    "ops_health": 1,
+    "tech_health_status": "Significant Issues",
+    "alignment_pct": 46.7,
+    "recommended_action": "Based on TIME analysis: ELIMINATE",
+    "priority": "MEDIUM",
+    "strategic_value": 3,
+    "time_category": "ELIMINATE",
+    "notes": "Technology positioned in ELIMINATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-014",
+    "name": "ALF Corporate",
+    "tech_health": 1.2,
+    "alignment": 1.5,
+    "ops_health": 1,
+    "tech_health_status": "Significant Issues",
+    "alignment_pct": 50.0,
+    "recommended_action": "Based on TIME analysis: ELIMINATE",
+    "priority": "MEDIUM",
+    "strategic_value": 3,
+    "time_category": "ELIMINATE",
+    "notes": "Technology positioned in ELIMINATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-015",
+    "name": "Gartner",
+    "tech_health": 1.7,
+    "alignment": 1.2,
+    "ops_health": 2,
+    "tech_health_status": "Significant Issues",
+    "alignment_pct": 40.0,
+    "recommended_action": "Based on TIME analysis: ELIMINATE",
+    "priority": "LOW",
+    "strategic_value": 3,
+    "time_category": "ELIMINATE",
+    "notes": "Technology positioned in ELIMINATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-016",
+    "name": "BB AIM",
+    "tech_health": 1.5,
+    "alignment": 1.7,
+    "ops_health": 2,
+    "tech_health_status": "Significant Issues",
+    "alignment_pct": 56.7,
+    "recommended_action": "Based on TIME analysis: ELIMINATE",
+    "priority": "MEDIUM",
+    "strategic_value": 3,
+    "time_category": "ELIMINATE",
+    "notes": "Technology positioned in ELIMINATE quadrant based on health and alignment scores"
+  },
+  {
+    "id": "APP-017",
+    "name": "ICT Compliance Suite",
+    "tech_health": 1.6,
+    "alignment": 1.4,
+    "ops_health": 1,
+    "tech_health_status": "Significant Issues",
+    "alignment_pct": 46.7,
+    "recommended_action": "Based on TIME analysis: ELIMINATE",
+    "priority": "MEDIUM",
+    "strategic_value": 3,
+    "time_category": "ELIMINATE",
+    "notes": "Technology positioned in ELIMINATE quadrant based on health and alignment scores"
+  }
+];
+        
+        function initializeMatrix() {
+            renderMatrix();
+            updateLegend();
+        }
+        
+        function renderMatrix() {
+            const chart = document.getElementById('matrixChart');
+            const bubbleSizeMetric = document.getElementById('bubbleSizeMetric').value;
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const priorityFilter = document.getElementById('priorityFilter').value;
+            
+            // Clear existing bubbles
+            chart.querySelectorAll('.bubble').forEach(b => b.remove());
+            
+            // Filter data
+            let filtered = timeData.filter(tech => {
+                const categoryMatch = categoryFilter === 'all' || tech.time_category === categoryFilter;
+                const priorityMatch = priorityFilter === 'all' || tech.priority === priorityFilter;
+                return categoryMatch && priorityMatch;
+            });
+            
+            // Create bubbles
+            filtered.forEach(tech => {
+                const bubble = document.createElement('div');
+                bubble.className = `bubble time-${tech.time_category.toLowerCase()}`;
+                
+                // Position based on Tech Health (X) and Alignment (Y)
+                // Both are 1-3 scale, map to 0-100%
+                const x = ((tech.tech_health - 1) / 2) * 100;
+                const y = 100 - ((tech.alignment - 1) / 2) * 100; // Invert Y
+                
+                // Size based on selected metric (1-5 scale expected)
+                const sizeValue = tech[bubbleSizeMetric] || 3;
+                const size = Math.max(35, Math.min(120, sizeValue * 25));
+                
+                bubble.style.left = `${x}%`;
+                bubble.style.top = `${y}%`;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.transform = 'translate(-50%, -50%)';
+                
+                // Abbreviated name
+                const words = tech.name.split(' ');
+                let abbrev;
+                if (tech.name.length <= 12) {
+                    abbrev = tech.name.substring(0, 10);
+                } else if (words.length >= 2) {
+                    abbrev = words.slice(0, Math.min(3, words.length)).map(w => w[0]).join('').toUpperCase();
+                } else {
+                    abbrev = tech.name.substring(0, 4).toUpperCase();
+                }
+                bubble.textContent = abbrev;
+                
+                // Tooltip
+                bubble.addEventListener('mouseenter', (e) => showTooltip(e, tech, bubbleSizeMetric));
+                bubble.addEventListener('mouseleave', hideTooltip);
+                bubble.addEventListener('mousemove', moveTooltip);
+                
+                chart.appendChild(bubble);
+            });
+            
+            updateLegend();
+        }
+        
+        function showTooltip(e, tech, sizeMetric) {
+            const tooltip = document.getElementById('tooltip');
+            const sizeValue = tech[sizeMetric] || 3;
+            
+            const categoryColors = {
+                'INVEST': '#27ae60',
+                'MIGRATE': '#f39c12',
+                'TOLERATE': '#95a5a6',
+                'ELIMINATE': '#e74c3c'
+            };
+            
+            tooltip.innerHTML = `
+                <div class="tooltip-title">${tech.name}</div>
+                <div class="tooltip-detail">
+                    <span>Tech Health:</span>
+                    <strong>${tech.tech_health}/3</strong>
+                </div>
+                <div class="tooltip-detail">
+                    <span>Strategic Alignment:</span>
+                    <strong>${tech.alignment}/3 (${tech.alignment_pct}%)</strong>
+                </div>
+                <div class="tooltip-detail">
+                    <span>Operational Health:</span>
+                    <strong>${tech.ops_health}/3</strong>
+                </div>
+                <div class="tooltip-detail">
+                    <span>Priority:</span>
+                    <strong>${tech.priority}</strong>
+                </div>
+                <div class="tooltip-detail">
+                    <span>Bubble Size (${sizeMetric}):</span>
+                    <strong>${sizeValue.toFixed(1)}</strong>
+                </div>
+                <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.3);">
+                    <div class="tooltip-detail">
+                        <span>Recommended Action:</span>
+                    </div>
+                    <div style="font-size: 0.8rem; margin-top: 0.25rem;">${tech.recommended_action}</div>
+                </div>
+                <div class="tooltip-category" style="background: ${categoryColors[tech.time_category]};">
+                    ${tech.time_category}
+                </div>
+            `;
+            tooltip.classList.add('active');
+            moveTooltip(e);
+        }
+        
+        function moveTooltip(e) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.style.left = `${e.pageX + 20}px`;
+            tooltip.style.top = `${e.pageY + 20}px`;
+        }
+        
+        function hideTooltip() {
+            document.getElementById('tooltip').classList.remove('active');
+        }
+        
+        function updateLegend() {
+            const legend = document.getElementById('legend');
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            
+            // Count technologies by category
+            const counts = timeData.reduce((acc, tech) => {
+                acc[tech.time_category] = (acc[tech.time_category] || 0) + 1;
+                return acc;
+            }, {});
+            
+            legend.innerHTML = `
+                <strong style="margin-right: 1rem;">Technology Disposition:</strong>
+                <div class="legend-item">
+                    <div class="legend-circle" style="background: linear-gradient(135deg, #27ae60 0%, #52be80 100%); border: 3px solid white;"></div>
+                    <div class="legend-label">
+                        <strong style="color: #27ae60;">INVEST</strong>
+                        <small>${counts['INVEST'] || 0} technologies</small>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-circle" style="background: linear-gradient(135deg, #f39c12 0%, #f5b041 100%); border: 3px solid white;"></div>
+                    <div class="legend-label">
+                        <strong style="color: #f39c12;">MIGRATE</strong>
+                        <small>${counts['MIGRATE'] || 0} technologies</small>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-circle" style="background: linear-gradient(135deg, #95a5a6 0%, #b2bec3 100%); border: 3px solid white;"></div>
+                    <div class="legend-label">
+                        <strong style="color: #95a5a6;">TOLERATE</strong>
+                        <small>${counts['TOLERATE'] || 0} technologies</small>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-circle" style="background: linear-gradient(135deg, #e74c3c 0%, #ec7063 100%); border: 3px solid white;"></div>
+                    <div class="legend-label">
+                        <strong style="color: #e74c3c;">ELIMINATE</strong>
+                        <small>${counts['ELIMINATE'] || 0} technologies</small>
+                    </div>
+                </div>
+            `;
+        }
+        
+        window.addEventListener('DOMContentLoaded', initializeMatrix);
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+{
+  "maturity_radar": {
+    "current_state": {
+      "Contract Legal Services": 3.6,
+      "Corporate Governance": 4.0,
+      "Government Relations": 3.5,
+      "Investment Legal Services": 3.6,
+      "Legal Advisory & Research": 3.6,
+      "Legal Operations & Administration": 3.2,
+      "Legal Regulatory & Compliance": 3.5,
+      "Matter & Case Management": 3.5
+    },
+    "target_state": {
+      "Contract Legal Services": 4.5,
+      "Corporate Governance": 4.5,
+      "Government Relations": 4.5,
+      "Investment Legal Services": 4.5,
+      "Legal Advisory & Research": 4.5,
+      "Legal Operations & Administration": 4.5,
+      "Legal Regulatory & Compliance": 4.5,
+      "Matter & Case Management": 4.5
+    },
+    "year_2027": {
+      "Contract Legal Services": 4.4,
+      "Corporate Governance": 4.5,
+      "Government Relations": 4.3,
+      "Investment Legal Services": 4.4,
+      "Legal Advisory & Research": 4.4,
+      "Legal Operations & Administration": 4.0,
+      "Legal Regulatory & Compliance": 4.3,
+      "Matter & Case Management": 4.3
+    },
+    "year_2029": {
+      "Contract Legal Services": 4.5,
+      "Corporate Governance": 4.5,
+      "Government Relations": 4.5,
+      "Investment Legal Services": 4.5,
+      "Legal Advisory & Research": 4.5,
+      "Legal Operations & Administration": 4.5,
+      "Legal Regulatory & Compliance": 4.5,
+      "Matter & Case Management": 4.5
+    }
+  },
+  "debt_burndown": {
+    "2026": {
+      "critical_issues": 8,
+      "high_priority": 15,
+      "medium_priority": 10
+    },
+    "2027": {
+      "critical_issues": 5,
+      "high_priority": 10,
+      "medium_priority": 8
+    },
+    "2028": {
+      "critical_issues": 3,
+      "high_priority": 6,
+      "medium_priority": 5
+    },
+    "2029": {
+      "critical_issues": 1,
+      "high_priority": 3,
+      "medium_priority": 3
+    },
+    "2030": {
+      "critical_issues": 0,
+      "high_priority": 0,
+      "medium_priority": 2
+    }
+  },
+  "value_realization": {
+    "2026": {
+      "investment": -2.5,
+      "annual_value": 0.3,
+      "cumulative_value": 0.3
+    },
+    "2027": {
+      "investment": -3.0,
+      "annual_value": 1.2,
+      "cumulative_value": 1.5
+    },
+    "2028": {
+      "investment": -2.0,
+      "annual_value": 2.5,
+      "cumulative_value": 4.0
+    },
+    "2029": {
+      "investment": -1.5,
+      "annual_value": 3.2,
+      "cumulative_value": 7.2
+    },
+    "2030": {
+      "investment": -1.0,
+      "annual_value": 4.0,
+      "cumulative_value": 11.2
+    }
+  },
+  "automation_coverage": {
+    "Contract Legal Services": {
+      "current": 72.0,
+      "target": 90,
+      "gap": 18.0
+    },
+    "Corporate Governance": {
+      "current": 50.0,
+      "target": 90,
+      "gap": 40.0
+    },
+    "Government Relations": {
+      "current": 80.0,
+      "target": 90,
+      "gap": 10.0
+    },
+    "Investment Legal Services": {
+      "current": 68.0,
+      "target": 90,
+      "gap": 22.0
+    },
+    "Legal Advisory & Research": {
+      "current": 52.0,
+      "target": 90,
+      "gap": 38.0
+    },
+    "Legal Operations & Administration": {
+      "current": 65.0,
+      "target": 90,
+      "gap": 25.0
+    },
+    "Legal Regulatory & Compliance": {
+      "current": 50.0,
+      "target": 90,
+      "gap": 40.0
+    },
+    "Matter & Case Management": {
+      "current": 80.0,
+      "target": 90,
+      "gap": 10.0
+    }
+  }
+}
