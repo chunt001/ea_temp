@@ -293,6 +293,30 @@ def process_excel_file(excel_path, output_dir):
             json.dump(roadmap_data, f, indent=2)
             files_created.append('technology-roadmap.json')
         
+        # Generate TIME matrix
+        print("Generating TIME matrix...")
+        time_matrix_data = generate_time_matrix(capability_data)
+        
+        with open(f"{output_dir}/time-matrix.json", 'w') as f:
+            json.dump(time_matrix_data, f, indent=2)
+            files_created.append('time-matrix.json')
+        
+        # Generate TIME matrix for technologies
+        print("Generating technology TIME matrix...")
+        time_tech_data = generate_time_technologies(excel_path)
+        
+        with open(f"{output_dir}/time-technologies.json", 'w') as f:
+            json.dump(time_tech_data, f, indent=2)
+            files_created.append('time-technologies.json')
+        
+        # Generate executive dashboard data
+        print("Generating executive dashboard...")
+        exec_data = generate_executive_dashboard(capability_data)
+        
+        with open(f"{output_dir}/executive-dashboard.json", 'w') as f:
+            json.dump(exec_data, f, indent=2)
+            files_created.append('executive-dashboard.json')
+        
         print("\n✅ SUCCESS! Generated files:")
         for file in files_created:
             file_path = f"{output_dir}/{file}"
@@ -652,6 +676,174 @@ def generate_technology_roadmap(cap_data):
         roadmap.append(roadmap_entry)
     
     return roadmap
+
+def generate_time_matrix(cap_data):
+    """Generate TIME matrix analysis data"""
+    
+    time_matrix = []
+    
+    for l1 in cap_data['capabilities']:
+        for l2 in l1['l2_capabilities']:
+            # Calculate TIME dimensions
+            # T = Technology complexity (inverse of tech fit)
+            tech_complexity = 6 - l2['technology_fit_score']
+            
+            # I = Impact/Importance
+            impact = l2['strategic_importance']
+            
+            # M = Maturity gap
+            maturity_gap = 5 - l2['current_maturity']
+            
+            # E = Effort (inverse of automation)
+            effort = 6 - l2['automation_level']
+            
+            # Overall TIME score (higher = more urgent)
+            time_score = (tech_complexity + maturity_gap + effort) / 3
+            
+            time_matrix.append({
+                'l1_capability': l1['l1_name'],
+                'l2_capability': l2['l2_name'],
+                'l2_id': l2['l2_id'],
+                'technology_complexity': tech_complexity,
+                'impact': impact,
+                'maturity_gap': maturity_gap,
+                'effort': effort,
+                'time_score': round(time_score, 2),
+                'current_maturity': l2['current_maturity'],
+                'automation_level': l2['automation_level'],
+                'tech_fit': l2['technology_fit_score'],
+                'strategic_importance': l2['strategic_importance'],
+                'business_tech_fit': l2['business_tech_fit']
+            })
+    
+    return time_matrix
+
+def generate_time_technologies(excel_path):
+    """Generate TIME matrix for technology portfolio"""
+    
+    # Read TH Assessment
+    th = pd.read_excel(excel_path, sheet_name='TH Assessment', header=2)
+    th.columns = ['ID', 'Application', 'Tech Owner', 'Assessment Date', 
+                  'Operational Health', 'Tech Standards', 'Cloud Strategy', 'Zero Trust', 'AI-Enablement',
+                  'Ops Health Score', 'Tech Std Score', 'Cloud Score', 'ZT Score', 'AI Score',
+                  'Alignment Pct', 'Alignment Score', 'Tech Health Score', 'Tech Health Status',
+                  'Recommended Action', 'Notes']
+    th = th.dropna(subset=['ID'])
+    
+    # Read Technology Catalog for priority
+    tech_cat = pd.read_excel(excel_path, sheet_name='Technology Catalog NEW', header=2)
+    tech_priorities = {}
+    for _, row in tech_cat.iterrows():
+        if pd.notna(row.iloc[0]) and pd.notna(row.iloc[-1]):
+            tech_priorities[str(row.iloc[0])] = str(row.iloc[-1])
+    
+    time_technologies = []
+    
+    for _, row in th.iterrows():
+        app_name = row['Application']
+        
+        tech_health = row['Tech Health Score'] if pd.notna(row['Tech Health Score']) else 2.0
+        alignment_score = row['Alignment Score'] if pd.notna(row['Alignment Score']) else 2.0
+        ops_health = row['Ops Health Score'] if pd.notna(row['Ops Health Score']) else 2.0
+        
+        priority = tech_priorities.get(app_name, 'MEDIUM')
+        
+        # Determine TIME quadrant
+        # X-axis: Tech Health (low left, high right)
+        # Y-axis: Strategic Alignment (low bottom, high top)
+        if tech_health >= 2.5 and alignment_score >= 2.5:
+            time_category = 'INVEST'  # Top-Right: High health, high alignment
+        elif tech_health < 2 and alignment_score >= 2:
+            time_category = 'TOLERATE'  # Top-Left: Low health, high alignment
+        elif tech_health >= 2.5 and alignment_score < 2:
+            time_category = 'MIGRATE'  # Bottom-Right: High health, low alignment
+        else:
+            time_category = 'ELIMINATE'  # Bottom-Left: Low health, low alignment
+        
+        # Strategic value based on priority
+        if priority == 'CRITICAL':
+            strategic_value = 5
+        elif priority == 'HIGH':
+            strategic_value = 4
+        else:
+            strategic_value = 3
+        
+        time_technologies.append({
+            'id': row['ID'],
+            'name': app_name,
+            'tech_health': round(tech_health, 1),
+            'alignment': round(alignment_score, 1),
+            'ops_health': round(ops_health, 1),
+            'tech_health_status': row['Tech Health Status'],
+            'alignment_pct': round(row['Alignment Pct'] * 100, 1) if pd.notna(row['Alignment Pct']) else 50.0,
+            'recommended_action': str(row['Recommended Action']) if pd.notna(row['Recommended Action']) else '',
+            'priority': priority,
+            'strategic_value': strategic_value,
+            'time_category': time_category,
+            'notes': str(row['Notes']) if pd.notna(row['Notes']) else ''
+        })
+    
+    return time_technologies
+
+def generate_executive_dashboard(cap_data):
+    """Generate executive-level transformation metrics"""
+    
+    # 1. Maturity radar
+    maturity_radar = {
+        'current_state': {},
+        'target_state': {},
+        'year_2027': {},
+        'year_2029': {}
+    }
+    
+    for l1 in cap_data['capabilities']:
+        l2_maturities = [l2['current_maturity'] for l2 in l1['l2_capabilities']]
+        current_avg = round(sum(l2_maturities) / len(l2_maturities), 1)
+        
+        maturity_radar['current_state'][l1['l1_name']] = current_avg
+        maturity_radar['target_state'][l1['l1_name']] = 4.5
+        maturity_radar['year_2027'][l1['l1_name']] = min(4.5, round(current_avg + 0.8, 1))
+        maturity_radar['year_2029'][l1['l1_name']] = min(4.5, round(current_avg + 1.6, 1))
+    
+    # 2. Technical debt burn-down
+    total_gaps = sum(1 for l1 in cap_data['capabilities'] for l2 in l1['l2_capabilities'] if l2['current_maturity'] < 3)
+    
+    debt_burndown = {
+        '2026': {'critical_issues': total_gaps, 'high_priority': 15, 'medium_priority': 10},
+        '2027': {'critical_issues': int(total_gaps * 0.7), 'high_priority': 10, 'medium_priority': 8},
+        '2028': {'critical_issues': int(total_gaps * 0.4), 'high_priority': 6, 'medium_priority': 5},
+        '2029': {'critical_issues': int(total_gaps * 0.2), 'high_priority': 3, 'medium_priority': 3},
+        '2030': {'critical_issues': 0, 'high_priority': 0, 'medium_priority': 2}
+    }
+    
+    # 3. Value realization (example numbers)
+    value_realization = {
+        '2026': {'investment': -2.5, 'annual_value': 0.3, 'cumulative_value': 0.3},
+        '2027': {'investment': -3.0, 'annual_value': 1.2, 'cumulative_value': 1.5},
+        '2028': {'investment': -2.0, 'annual_value': 2.5, 'cumulative_value': 4.0},
+        '2029': {'investment': -1.5, 'annual_value': 3.2, 'cumulative_value': 7.2},
+        '2030': {'investment': -1.0, 'annual_value': 4.0, 'cumulative_value': 11.2}
+    }
+    
+    # 4. Automation coverage
+    automation_coverage = {}
+    for l1 in cap_data['capabilities']:
+        automations = [l2['automation_level'] for l2 in l1['l2_capabilities']]
+        current_pct = (sum(automations) / (len(automations) * 5)) * 100
+        target_pct = 90
+        
+        automation_coverage[l1['l1_name']] = {
+            'current': round(current_pct, 1),
+            'target': target_pct,
+            'gap': round(target_pct - current_pct, 1)
+        }
+    
+    return {
+        'maturity_radar': maturity_radar,
+        'debt_burndown': debt_burndown,
+        'value_realization': value_realization,
+        'automation_coverage': automation_coverage
+    }
 
 def main():
     print("=" * 60)

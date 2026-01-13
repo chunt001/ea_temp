@@ -15,86 +15,69 @@
     "roadmap": {
       "2026": {
         "current": [
-          "Onit",
+          "Aosphere LLP",
+          "Docusign",
+          "FundApps",
+          "Litera Compare",
           "NetDocuments",
-          "Word",
-          "Email",
-          "Litera"
+          "Practical Law"
         ],
         "proposed": [
-          "CLM Platform (Icertis/Agiloft)",
-          "DocuSign",
-          "Contract AI Assistant"
+          "Platform Assessment & Selection",
+          "Integration Planning"
         ],
         "deliverables": [
-          "CLM platform selection & Phase 1 deployment",
-          "E-signature integration",
-          "Automated contract intake"
+          "Technology assessment",
+          "Vendor evaluation",
+          "Platform selection"
         ]
       },
       "2027": {
-        "current": [
-          "CLM Platform",
-          "DocuSign",
-          "NetDocuments",
-          "Contract AI"
-        ],
+        "current": [],
         "proposed": [
-          "AI Contract Analyzer",
-          "Advanced Workflow Engine",
-          "Obligation Management"
+          "New Platform Implementation",
+          "Enhanced Tools"
         ],
         "deliverables": [
-          "AI-powered contract analysis",
-          "Advanced workflow automation",
-          "Smart obligation tracking"
+          "Platform deployment",
+          "User training",
+          "Process automation"
         ]
       },
       "2028": {
-        "current": [
-          "CLM Platform",
-          "AI Suite",
-          "DocuSign"
-        ],
+        "current": [],
         "proposed": [
-          "Predictive Analytics",
-          "Smart Template Engine",
-          "Risk Scoring AI"
+          "AI/ML Capabilities",
+          "Advanced Analytics"
         ],
         "deliverables": [
-          "Predictive contracting",
-          "Intelligent templates with AI",
-          "Automated risk scoring"
+          "AI integration",
+          "Analytics implementation",
+          "Process optimization"
         ]
       },
       "2029": {
-        "current": [
-          "Integrated CLM Suite",
-          "AI Analytics Platform"
-        ],
+        "current": [],
         "proposed": [
-          "Advanced Contract Intelligence",
-          "Negotiation AI Support"
+          "Advanced Features",
+          "Predictive Capabilities"
         ],
         "deliverables": [
-          "Full lifecycle optimization",
-          "AI contract insights",
-          "Advanced analytics dashboards"
+          "Advanced capabilities",
+          "Predictive tools",
+          "Optimization"
         ]
       },
       "2030": {
-        "current": [
-          "Next-Gen CLM Platform",
+        "current": [],
+        "proposed": [
+          "Next-Gen Platform",
           "Autonomous AI"
         ],
-        "proposed": [
-          "Agentic Contract AI",
-          "Smart Contract Integration"
-        ],
         "deliverables": [
-          "Autonomous contract workflows",
-          "AI negotiation support",
-          "Blockchain integration"
+          "Next-generation capabilities",
+          "Full automation",
+          "AI-driven operations"
         ]
       }
     }
@@ -112,70 +95,66 @@
     "roadmap": {
       "2026": {
         "current": [
-          "Diligent Boards",
-          "NetDocuments",
-          "Word"
-        ],
-        "proposed": [
-          "Board Portal Enhancement",
-          "Policy Management System (Blueprint)"
-        ],
-        "deliverables": [
-          "Enhanced board collaboration tools",
-          "Centralized policy repository"
-        ]
-      },
-      "2027": {
-        "current": [
-          "Diligent Boards",
-          "Policy Mgmt System",
+          "Docusign",
+          "Litera Compare",
           "NetDocuments"
         ],
         "proposed": [
-          "AI Policy Analyzer",
-          "Compliance Workflow Automation"
+          "Platform Assessment & Selection",
+          "Integration Planning"
         ],
         "deliverables": [
-          "AI-powered policy analysis",
-          "Automated compliance workflows"
+          "Technology assessment",
+          "Vendor evaluation",
+          "Platform selection"
+        ]
+      },
+      "2027": {
+        "current": [],
+        "proposed": [
+          "New Platform Implementation",
+          "Enhanced Tools"
+        ],
+        "deliverables": [
+          "Platform deployment",
+          "User training",
+          "Process automation"
         ]
       },
       "2028": {
-        "current": [
-          "Governance Platform",
-          "AI Policy Tools"
-        ],
+        "current": [],
         "proposed": [
-          "Advanced Governance Analytics",
-          "Stakeholder Portal"
+          "AI/ML Capabilities",
+          "Advanced Analytics"
         ],
         "deliverables": [
-          "Governance dashboards",
-          "Enhanced stakeholder access"
+          "AI integration",
+          "Analytics implementation",
+          "Process optimization"
         ]
       },
       "2029": {
-        "current": [
-          "Comprehensive Governance Suite"
-        ],
+        "current": [],
         "proposed": [
-          "Predictive Compliance",
-          "Board Intelligence AI"
+          "Advanced Features",
+          "Predictive Capabilities"
         ],
         "deliverables": [
-          "Predictive governance insights",
-          "AI board support"
+          "Advanced capabilities",
+          "Predictive tools",
+          "Optimization"
         ]
       },
       "2030": {
-        "current": [
-          "Next-Gen Governance Platform"
-        ],
+        "current": [],
         "proposed": [
-          "Autonomous Governance AI"
+          "Next-Gen Platform",
+          "Autonomous AI"
         ],
         "deliverables": [
-          "Fully automated governance processes"
+          "Next-generation capabilities",
+          "Full automation",
+          "AI-driven operations"
         ]
       }
     }
@@ -192,66 +171,65 @@
     "roadmap": {
       "2026": {
         "current": [
-          "Email",
-          "SharePoint",
-          "Manual Processes"
+          "NetDocuments",
+          "Onit"
         ],
         "proposed": [
-          "Government Relations CRM",
-          "FOI Management System"
+          "Platform Assessment & Selection",
+          "Integration Planning"
         ],
         "deliverables": [
-          "Stakeholder relationship tracking",
-          "FOI request automation"
+          "Technology assessment",
+          "Vendor evaluation",
+          "Platform selection"
         ]
       },
       "2027": {
-        "current": [
-          "GR CRM",
-          "FOI System"
-        ],
+        "current": [],
         "proposed": [
-          "Regulatory Monitoring Tools",
-          "Communication Automation"
+          "New Platform Implementation",
+          "Enhanced Tools"
         ],
         "deliverables": [
-          "Proactive regulatory monitoring",
-          "Automated stakeholder comms"
+          "Platform deployment",
+          "User training",
+          "Process automation"
         ]
       },
       "2028": {
-        "current": [
-          "Integrated GR Platform"
-        ],
+        "current": [],
         "proposed": [
-          "AI Sentiment Analysis",
-          "Trend Prediction"
+          "AI/ML Capabilities",
+          "Advanced Analytics"
         ],
         "deliverables": [
-          "Stakeholder sentiment tracking",
-          "Policy trend analysis"
+          "AI integration",
+          "Analytics implementation",
+          "Process optimization"
         ]
       },
       "2029": {
-        "current": [
-          "Advanced GR Platform"
-        ],
+        "current": [],
         "proposed": [
-          "AI Engagement Optimizer"
+          "Advanced Features",
+          "Predictive Capabilities"
         ],
         "deliverables": [
-          "AI-optimized engagement strategies"
+          "Advanced capabilities",
+          "Predictive tools",
+          "Optimization"
         ]
       },
       "2030": {
-        "current": [
-          "Next-Gen GR Platform"
-        ],
+        "current": [],
         "proposed": [
-          "Autonomous Relationship AI"
+          "Next-Gen Platform",
+          "Autonomous AI"
         ],
         "deliverables": [
-          "AI-driven government relations"
+          "Next-generation capabilities",
+          "Full automation",
+          "AI-driven operations"
         ]
       }
     }
@@ -275,79 +253,72 @@
     "roadmap": {
       "2026": {
         "current": [
-          "NetDocuments",
-          "Thomson Reuters",
-          "FundApps",
-          "StarCompliance",
-          "Aosphere"
+          "Aosphere LLP",
+          "BB AIM",
+          "Confidentiality Walls & Restricted Lists",
+          "PIT Plans",
+          "Practical Law",
+          "STAR Compliance",
+          "ServiceNow",
+          "SharePoint Online",
+          "Workday"
         ],
         "proposed": [
-          "Investment Deal Platform",
-          "Enhanced Compliance Suite"
+          "Platform Assessment & Selection",
+          "Integration Planning"
         ],
         "deliverables": [
-          "Deal workflow management",
-          "Integrated compliance monitoring"
+          "Technology assessment",
+          "Vendor evaluation",
+          "Platform selection"
         ]
       },
       "2027": {
-        "current": [
-          "Deal Platform",
-          "Compliance Suite",
-          "Thomson Reuters"
-        ],
+        "current": [],
         "proposed": [
-          "AI Due Diligence Analyzer",
-          "Automated Compliance Alerts",
-          "Deal Analytics"
+          "New Platform Implementation",
+          "Enhanced Tools"
         ],
         "deliverables": [
-          "AI-powered due diligence",
-          "Proactive compliance monitoring",
-          "Deal intelligence"
+          "Platform deployment",
+          "User training",
+          "Process automation"
         ]
       },
       "2028": {
-        "current": [
-          "Integrated Investment Platform",
-          "AI DD Tools"
-        ],
+        "current": [],
         "proposed": [
-          "Predictive Risk Scoring",
-          "Portfolio Compliance AI",
-          "Deal Database"
+          "AI/ML Capabilities",
+          "Advanced Analytics"
         ],
         "deliverables": [
-          "Automated risk assessment",
-          "Portfolio-wide compliance",
-          "Deal precedent library"
+          "AI integration",
+          "Analytics implementation",
+          "Process optimization"
         ]
       },
       "2029": {
-        "current": [
-          "Advanced Investment Platform",
-          "AI Analytics"
-        ],
+        "current": [],
         "proposed": [
-          "Real-time Compliance Monitoring",
-          "AI Investment Analysis"
+          "Advanced Features",
+          "Predictive Capabilities"
         ],
         "deliverables": [
-          "Continuous compliance monitoring",
-          "AI-driven investment insights"
+          "Advanced capabilities",
+          "Predictive tools",
+          "Optimization"
         ]
       },
       "2030": {
-        "current": [
-          "Next-Gen Investment Platform"
-        ],
+        "current": [],
         "proposed": [
-          "Autonomous Compliance AI",
-          "AI Deal Structuring"
+          "Next-Gen Platform",
+          "Autonomous AI"
         ],
         "deliverables": [
-          "Fully autonomous compliance",
-          "AI-optimized deal structures"
+          "Next-generation capabilities",
+          "Full automation",
+          "AI-driven operations"
         ]
       }
     }
@@ -368,85 +339,69 @@
     "roadmap": {
       "2026": {
         "current": [
-          "Thomson Reuters Westlaw",
-          "Practical Law",
-          "Claude",
+          "Moody's Analytics Credit Ratings",
           "NetDocuments",
-          "Word"
+          "Practical Law",
+          "SharePoint Online",
+          "Westlaw Canada",
+          "Workday"
         ],
         "proposed": [
-          "Claude Enterprise/Team",
-          "Legal Knowledge Platform",
-          "AI Prompt Library"
+          "Platform Assessment & Selection",
+          "Integration Planning"
         ],
         "deliverables": [
-          "Enterprise AI governance framework",
-          "Centralized knowledge repository",
-          "Standard AI workflows"
+          "Technology assessment",
+          "Vendor evaluation",
+          "Platform selection"
         ]
       },
       "2027": {
-        "current": [
-          "Claude Enterprise",
-          "TR CoCounsel",
-          "KM Platform",
-          "Westlaw"
-        ],
+        "current": [],
         "proposed": [
-          "Custom Legal AI Models",
-          "AI Research Assistants",
-          "Knowledge Graphs"
+          "New Platform Implementation",
+          "Enhanced Tools"
         ],
         "deliverables": [
-          "BCI-specific AI models",
-          "Agentic research assistants",
-          "Semantic knowledge network"
+          "Platform deployment",
+          "User training",
+          "Process automation"
         ]
       },
       "2028": {
-        "current": [
-          "Integrated AI Research Platform",
-          "Custom Models"
-        ],
+        "current": [],
         "proposed": [
-          "Predictive Legal Analytics",
-          "AI Document Generation",
-          "Advisory AI"
+          "AI/ML Capabilities",
+          "Advanced Analytics"
         ],
         "deliverables": [
-          "AI-powered legal analytics",
-          "Automated document drafting",
-          "AI advisory support"
+          "AI integration",
+          "Analytics implementation",
+          "Process optimization"
         ]
       },
       "2029": {
-        "current": [
-          "Advanced AI Platform",
-          "Generative AI Suite"
-        ],
+        "current": [],
         "proposed": [
-          "Autonomous Research AI",
-          "Opinion Generation AI",
-          "Legal Intel Platform"
+          "Advanced Features",
+          "Predictive Capabilities"
         ],
         "deliverables": [
-          "AI-generated legal opinions",
-          "Fully autonomous research",
-          "Legal intelligence insights"
+          "Advanced capabilities",
+          "Predictive tools",
+          "Optimization"
         ]
       },
       "2030": {
-        "current": [
-          "Next-Gen AI Platform",
-          "Autonomous Agents"
-        ],
+        "current": [],
         "proposed": [
-          "Fully Autonomous Legal AI",
-          "Predictive Legal System"
+          "Next-Gen Platform",
+          "Autonomous AI"
         ],
         "deliverables": [
-          "Complete AI-driven research & advisory",
-          "Predictive legal analysis"
+          "Next-generation capabilities",
+          "Full automation",
+          "AI-driven operations"
         ]
       }
     }
@@ -464,80 +419,66 @@
     "roadmap": {
       "2026": {
         "current": [
-          "ServiceNow",
-          "PowerApps",
-          "PowerAutomate",
-          "WorkDay",
-          "PowerBI"
+          "Diligent Board Books",
+          "NetDocuments",
+          "SharePoint Online"
         ],
         "proposed": [
-          "Legal Ops Platform (Apperio/SimpleLegal)",
-          "Enhanced Analytics",
-          "Vendor Management"
+          "Platform Assessment & Selection",
+          "Integration Planning"
         ],
         "deliverables": [
-          "Unified legal operations platform",
-          "Legal spend analytics",
-          "Vendor performance tracking"
+          "Technology assessment",
+          "Vendor evaluation",
+          "Platform selection"
         ]
       },
       "2027": {
-        "current": [
-          "Legal Ops Platform",
-          "Enhanced Analytics",
-          "WorkDay"
-        ],
+        "current": [],
         "proposed": [
-          "AI Resource Planning",
-          "Automated Reporting",
-          "Matter Analytics"
+          "New Platform Implementation",
+          "Enhanced Tools"
         ],
         "deliverables": [
-          "AI-driven resource allocation",
-          "Automated legal dashboards",
-          "Matter intelligence"
+          "Platform deployment",
+          "User training",
+          "Process automation"
         ]
       },
       "2028": {
-        "current": [
-          "Integrated Ops Platform",
-          "AI Analytics"
-        ],
+        "current": [],
         "proposed": [
-          "Predictive Resource Analytics",
-          "Budget Optimization AI",
-          "Performance AI"
+          "AI/ML Capabilities",
+          "Advanced Analytics"
         ],
         "deliverables": [
-          "Predictive workload planning",
-          "AI budget optimization",
-          "Performance insights"
+          "AI integration",
+          "Analytics implementation",
+          "Process optimization"
         ]
       },
       "2029": {
-        "current": [
-          "Advanced Ops Platform",
-          "Predictive AI"
-        ],
+        "current": [],
         "proposed": [
-          "AI Operations Optimizer",
-          "Autonomous Workflow Engine"
+          "Advanced Features",
+          "Predictive Capabilities"
         ],
         "deliverables": [
-          "AI-optimized operations",
-          "Self-managing workflows"
+          "Advanced capabilities",
+          "Predictive tools",
+          "Optimization"
         ]
       },
       "2030": {
-        "current": [
-          "Next-Gen Ops Platform",
+        "current": [],
+        "proposed": [
+          "Next-Gen Platform",
           "Autonomous AI"
         ],
-        "proposed": [
-          "Fully Autonomous Ops AI"
-        ],
         "deliverables": [
-          "Completely automated legal operations"
+          "Next-generation capabilities",
+          "Full automation",
+          "AI-driven operations"
         ]
       }
     }
@@ -561,57 +502,72 @@
     "roadmap": {
       "2026": {
         "current": [
-          "SharePoint Online",
-          "LIPS",
-          "Workday",
+          "Diligent Board Books",
           "JIRA",
+          "LIPS",
+          "MS Dynamics NAV",
+          "NetDocuments",
           "Onit",
           "ServiceNow",
-          "NetDocuments",
-          "MS Dynamics NAV",
-          "Diligent Board Books"
+          "SharePoint Online",
+          "Workday"
         ],
         "proposed": [
-          "Platform TBD"
+          "Platform Assessment & Selection",
+          "Integration Planning"
         ],
         "deliverables": [
-          "Assessment & planning"
+          "Technology assessment",
+          "Vendor evaluation",
+          "Platform selection"
         ]
       },
       "2027": {
         "current": [],
         "proposed": [
-          "Implementation"
+          "New Platform Implementation",
+          "Enhanced Tools"
         ],
         "deliverables": [
-          "Platform deployment"
+          "Platform deployment",
+          "User training",
+          "Process automation"
         ]
       },
       "2028": {
         "current": [],
         "proposed": [
-          "Enhancement"
+          "AI/ML Capabilities",
+          "Advanced Analytics"
         ],
         "deliverables": [
-          "Capability enhancement"
+          "AI integration",
+          "Analytics implementation",
+          "Process optimization"
         ]
       },
       "2029": {
         "current": [],
         "proposed": [
-          "Optimization"
+          "Advanced Features",
+          "Predictive Capabilities"
         ],
         "deliverables": [
-          "Process optimization"
+          "Advanced capabilities",
+          "Predictive tools",
+          "Optimization"
         ]
       },
       "2030": {
         "current": [],
         "proposed": [
-          "Next-Gen"
+          "Next-Gen Platform",
+          "Autonomous AI"
         ],
         "deliverables": [
-          "Transformation complete"
+          "Next-generation capabilities",
+          "Full automation",
+          "AI-driven operations"
         ]
       }
     }
@@ -629,74 +585,66 @@
     "roadmap": {
       "2026": {
         "current": [
-          "Onit",
           "NetDocuments",
-          "Email"
+          "ServiceNow",
+          "SharePoint Online"
         ],
         "proposed": [
-          "Matter Management Platform (Smokeball/Clio)",
-          "E-Discovery Suite (Relativity)"
+          "Platform Assessment & Selection",
+          "Integration Planning"
         ],
         "deliverables": [
-          "Unified matter management",
-          "Enhanced e-discovery capabilities"
+          "Technology assessment",
+          "Vendor evaluation",
+          "Platform selection"
         ]
       },
       "2027": {
-        "current": [
-          "Matter Platform",
-          "E-Discovery Suite"
-        ],
+        "current": [],
         "proposed": [
-          "AI Document Review",
-          "Predictive Case Analytics",
-          "Timeline AI"
+          "New Platform Implementation",
+          "Enhanced Tools"
         ],
         "deliverables": [
-          "AI-assisted document review",
-          "Case outcome prediction",
-          "Automated timeline generation"
+          "Platform deployment",
+          "User training",
+          "Process automation"
         ]
       },
       "2028": {
-        "current": [
-          "Integrated Matter Platform",
-          "AI Review Tools"
-        ],
+        "current": [],
         "proposed": [
-          "Litigation Analytics",
-          "Settlement Prediction AI",
-          "Outside Counsel AI"
+          "AI/ML Capabilities",
+          "Advanced Analytics"
         ],
         "deliverables": [
-          "Data-driven litigation strategy",
-          "AI settlement recommendations",
-          "OC performance analytics"
+          "AI integration",
+          "Analytics implementation",
+          "Process optimization"
         ]
       },
       "2029": {
-        "current": [
-          "Advanced Matter Platform",
-          "Litigation AI"
-        ],
+        "current": [],
         "proposed": [
-          "AI Case Strategy Engine",
-          "Automated Workflows"
+          "Advanced Features",
+          "Predictive Capabilities"
         ],
         "deliverables": [
-          "AI-generated case strategies",
-          "Fully automated matter workflows"
+          "Advanced capabilities",
+          "Predictive tools",
+          "Optimization"
         ]
       },
       "2030": {
-        "current": [
-          "Next-Gen Matter Platform"
-        ],
+        "current": [],
         "proposed": [
-          "Autonomous Matter AI"
+          "Next-Gen Platform",
+          "Autonomous AI"
         ],
         "deliverables": [
-          "AI-managed matter lifecycle"
+          "Next-generation capabilities",
+          "Full automation",
+          "AI-driven operations"
         ]
       }
     }

@@ -1,0 +1,161 @@
+{
+  "maturity_distribution": {
+    "current": {
+      "1": 0,
+      "2": 8,
+      "3": 12,
+      "4": 0,
+      "5": 13
+    },
+    "target": {
+      "1": 0,
+      "2": 0,
+      "3": 1,
+      "4": 10,
+      "5": 22
+    }
+  },
+  "capability_health": {
+    "Contract Legal Services": {
+      "avg_maturity": 3.6,
+      "avg_automation": 3.6,
+      "avg_tech_fit": 2.6,
+      "avg_importance": 4.6,
+      "l2_count": 5
+    },
+    "Corporate Governance": {
+      "avg_maturity": 4.0,
+      "avg_automation": 2.5,
+      "avg_tech_fit": 4.0,
+      "avg_importance": 3.5,
+      "l2_count": 2
+    },
+    "Government Relations": {
+      "avg_maturity": 3.5,
+      "avg_automation": 4.0,
+      "avg_tech_fit": 3.0,
+      "avg_importance": 4.0,
+      "l2_count": 2
+    },
+    "Investment Legal Services": {
+      "avg_maturity": 3.6,
+      "avg_automation": 3.4,
+      "avg_tech_fit": 3.4,
+      "avg_importance": 4.8,
+      "l2_count": 5
+    },
+    "Legal Advisory & Research": {
+      "avg_maturity": 3.6,
+      "avg_automation": 2.6,
+      "avg_tech_fit": 3.4,
+      "avg_importance": 3.6,
+      "l2_count": 5
+    },
+    "Legal Operations & Administration": {
+      "avg_maturity": 3.2,
+      "avg_automation": 3.2,
+      "avg_tech_fit": 3.0,
+      "avg_importance": 4.0,
+      "l2_count": 4
+    },
+    "Legal Regulatory & Compliance": {
+      "avg_maturity": 3.5,
+      "avg_automation": 2.5,
+      "avg_tech_fit": 3.2,
+      "avg_importance": 3.5,
+      "l2_count": 8
+    },
+    "Matter & Case Management": {
+      "avg_maturity": 3.5,
+      "avg_automation": 4.0,
+      "avg_tech_fit": 3.0,
+      "avg_importance": 4.5,
+      "l2_count": 2
+    }
+  },
+  "gap_analysis": {
+    "Contract Legal Services": {
+      "maturity_gap": 1.4,
+      "automation_gap": 1.4,
+      "tech_fit_gap": 2.4
+    },
+    "Corporate Governance": {
+      "maturity_gap": 1.0,
+      "automation_gap": 2.5,
+      "tech_fit_gap": 1.0
+    },
+    "Government Relations": {
+      "maturity_gap": 1.5,
+      "automation_gap": 1.0,
+      "tech_fit_gap": 2.0
+    },
+    "Investment Legal Services": {
+      "maturity_gap": 1.4,
+      "automation_gap": 1.6,
+      "tech_fit_gap": 1.6
+    },
+    "Legal Advisory & Research": {
+      "maturity_gap": 1.4,
+      "automation_gap": 2.4,
+      "tech_fit_gap": 1.6
+    },
+    "Legal Operations & Administration": {
+      "maturity_gap": 1.8,
+      "automation_gap": 1.8,
+      "tech_fit_gap": 2.0
+    },
+    "Legal Regulatory & Compliance": {
+      "maturity_gap": 1.5,
+      "automation_gap": 2.5,
+      "tech_fit_gap": 1.8
+    },
+    "Matter & Case Management": {
+      "maturity_gap": 1.5,
+      "automation_gap": 1.0,
+      "tech_fit_gap": 2.0
+    }
+  },
+  "investment_distribution": {
+    "Quick Wins": 13,
+    "Medium Term": 12,
+    "Long Term": 8
+  },
+  "issue_severity": {
+    "Critical": 17,
+    "High": 3,
+    "Moderate": 32
+  },
+  "tech_coverage": {
+    "No Technology": 0,
+    "1-2 Technologies": 30,
+    "3-4 Technologies": 3,
+    "5+ Technologies": 0
+  },
+  "importance_distribution": {
+    "Mission-Critical (5)": 9,
+    "Important (4)": 16,
+    "Supporting (3)": 8
+  },
+  "progress_timeline": {
+    "2026": {
+      "capabilities_improved": 5,
+      "initiatives_completed": 8
+    },
+    "2027": {
+      "capabilities_improved": 8,
+      "initiatives_completed": 12
+    },
+    "2028": {
+      "capabilities_improved": 12,
+      "initiatives_completed": 10
+    },
+    "2029": {
+      "capabilities_improved": 15,
+      "initiatives_completed": 8
+    },
+    "2030": {
+      "capabilities_improved": 18,
+      "initiatives_completed": 5
+    }
+  }
+}
